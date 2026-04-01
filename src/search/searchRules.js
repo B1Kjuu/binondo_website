@@ -5,6 +5,30 @@ export const normalizeSearch = (value) =>
 
 export const SEARCH_ITEMS = [
   {
+    page: 'contacts',
+    label: 'District Contacts',
+    group: 'District',
+    match: ['contacts', 'district contacts', 'directory', 'officials', 'barangay'],
+  },
+  {
+    page: 'emergency',
+    label: 'Emergency Services',
+    group: 'District',
+    match: ['emergency', 'hotline', '911', 'police', 'fire', 'red cross'],
+  },
+  {
+    page: 'guidelines',
+    label: 'Heritage Guidelines',
+    group: 'District',
+    match: ['guidelines', 'rules', 'policy', 'conduct', "do's", "dont's"],
+  },
+  {
+    page: 'privacy',
+    label: 'Privacy Policy',
+    group: 'District',
+    match: ['privacy', 'privacy policy', 'data', 'cookies', 'policy'],
+  },
+  {
     page: 'food-wai-ying',
     label: 'Wai Ying Fastfood',
     group: 'Food Crawl',

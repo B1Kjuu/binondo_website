@@ -21,6 +21,10 @@ import LoginPage from './pages/system/LoginPage.jsx'
 import NewsLunarNewYearTraffic from './pages/news/NewsLunarNewYearTraffic.jsx'
 import PlaceholderPage from './pages/system/PlaceholderPage.jsx'
 import ProfileArchivist from './pages/system/ProfileArchivist.jsx'
+import DistrictContacts from './pages/footer/DistrictContacts.jsx'
+import EmergencyServices from './pages/footer/EmergencyServices.jsx'
+import HeritageGuidelines from './pages/footer/HeritageGuidelines.jsx'
+import PrivacyPolicy from './pages/footer/PrivacyPolicy.jsx'
 
 function App() {
   const [activePage, setActivePage] = useState('home')
@@ -107,11 +111,15 @@ function App() {
       case 'contributions':
       case 'badges':
       case 'settings':
-      case 'contacts':
-      case 'emergency':
-      case 'guidelines':
-      case 'privacy':
         return PlaceholderPage
+      case 'contacts':
+        return DistrictContacts
+      case 'emergency':
+        return EmergencyServices
+      case 'guidelines':
+        return HeritageGuidelines
+      case 'privacy':
+        return PrivacyPolicy
       case 'home':
       default:
         return HomePageExploreBinondo
