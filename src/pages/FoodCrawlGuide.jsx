@@ -1,4 +1,43 @@
-export default function FoodCrawlGuide() {
+import { useState } from 'react'
+
+export default function FoodCrawlGuide({ onNavigate }) {
+  const [streetFilter, setStreetFilter] = useState('all')
+  const [categoryFilter, setCategoryFilter] = useState('all')
+
+  const matches = (street, category) => {
+    const streetOk = streetFilter === 'all' || streetFilter === street
+    const categoryOk = categoryFilter === 'all' || categoryFilter === category
+    return streetOk && categoryOk
+  }
+
+  const hasMatches = [
+    matches('quintin-paredes', 'dim-sum'),
+    matches('quintin-paredes', 'street-food'),
+    matches('ongpin', 'pastries-hopia'),
+    matches('sabino-padilla', 'fine-dining'),
+  ].some(Boolean)
+
+  const openWaiYingProfile = () => {
+    onNavigate?.('food-wai-ying')
+  }
+
+  const openQuikSnackProfile = () => {
+    onNavigate?.('food-quik-snack')
+  }
+
+  const openEngBeeTinProfile = () => {
+    onNavigate?.('food-eng-bee-tin')
+  }
+
+  const openSincerityCafeProfile = () => {
+    onNavigate?.('food-sincerity-cafe')
+  }
+
+  const chipClass = (isActive) =>
+    isActive
+      ? 'px-5 py-2 rounded-full bg-secondary-container text-on-secondary-container font-bold text-sm shadow-sm'
+      : 'px-5 py-2 rounded-full bg-surface-container hover:bg-surface-container-highest transition-colors text-on-surface-variant font-bold text-sm'
+
   return (
     <main className="pt-28 pb-20 px-6 max-w-screen-2xl mx-auto">
       <header className="mb-16">
@@ -19,16 +58,32 @@ export default function FoodCrawlGuide() {
                 By Street
               </span>
               <div className="flex flex-wrap gap-2">
-                <button className="px-5 py-2 rounded-full bg-secondary-container text-on-secondary-container font-bold text-sm shadow-sm">
+                <button
+                  type="button"
+                  className={chipClass(streetFilter === 'all')}
+                  onClick={() => setStreetFilter('all')}
+                >
                   All Streets
                 </button>
-                <button className="px-5 py-2 rounded-full bg-surface-container hover:bg-surface-container-highest transition-colors text-on-surface-variant font-bold text-sm">
+                <button
+                  type="button"
+                  className={chipClass(streetFilter === 'ongpin')}
+                  onClick={() => setStreetFilter('ongpin')}
+                >
                   Ongpin
                 </button>
-                <button className="px-5 py-2 rounded-full bg-surface-container hover:bg-surface-container-highest transition-colors text-on-surface-variant font-bold text-sm">
+                <button
+                  type="button"
+                  className={chipClass(streetFilter === 'quintin-paredes')}
+                  onClick={() => setStreetFilter('quintin-paredes')}
+                >
                   Quintin Paredes
                 </button>
-                <button className="px-5 py-2 rounded-full bg-surface-container hover:bg-surface-container-highest transition-colors text-on-surface-variant font-bold text-sm">
+                <button
+                  type="button"
+                  className={chipClass(streetFilter === 'sabino-padilla')}
+                  onClick={() => setStreetFilter('sabino-padilla')}
+                >
                   Sabino Padilla
                 </button>
               </div>
@@ -38,19 +93,46 @@ export default function FoodCrawlGuide() {
                 By Category
               </span>
               <div className="flex flex-wrap gap-2">
-                <button className="px-5 py-2 rounded-full bg-surface-container hover:bg-surface-container-highest transition-colors text-on-surface-variant font-bold text-sm">
+                <button
+                  type="button"
+                  className={chipClass(categoryFilter === 'all')}
+                  onClick={() => setCategoryFilter('all')}
+                >
+                  All
+                </button>
+                <button
+                  type="button"
+                  className={chipClass(categoryFilter === 'dim-sum')}
+                  onClick={() => setCategoryFilter('dim-sum')}
+                >
                   Dim Sum
                 </button>
-                <button className="px-5 py-2 rounded-full bg-surface-container hover:bg-surface-container-highest transition-colors text-on-surface-variant font-bold text-sm">
+                <button
+                  type="button"
+                  className={chipClass(categoryFilter === 'noodle-houses')}
+                  onClick={() => setCategoryFilter('noodle-houses')}
+                >
                   Noodle Houses
                 </button>
-                <button className="px-5 py-2 rounded-full bg-surface-container hover:bg-surface-container-highest transition-colors text-on-surface-variant font-bold text-sm">
+                <button
+                  type="button"
+                  className={chipClass(categoryFilter === 'pastries-hopia')}
+                  onClick={() => setCategoryFilter('pastries-hopia')}
+                >
                   Pastries &amp; Hopia
                 </button>
-                <button className="px-5 py-2 rounded-full bg-secondary-container text-on-secondary-container font-bold text-sm">
+                <button
+                  type="button"
+                  className={chipClass(categoryFilter === 'street-food')}
+                  onClick={() => setCategoryFilter('street-food')}
+                >
                   Street Food
                 </button>
-                <button className="px-5 py-2 rounded-full bg-surface-container hover:bg-surface-container-highest transition-colors text-on-surface-variant font-bold text-sm">
+                <button
+                  type="button"
+                  className={chipClass(categoryFilter === 'fine-dining')}
+                  onClick={() => setCategoryFilter('fine-dining')}
+                >
                   Fine Dining
                 </button>
               </div>
@@ -58,7 +140,11 @@ export default function FoodCrawlGuide() {
           </section>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <article className="bg-surface-container-low rounded-xl overflow-hidden group transition-all duration-500 hover:shadow-2xl">
+            {matches('quintin-paredes', 'dim-sum') && (
+              <article
+                className="bg-surface-container-low rounded-xl overflow-hidden group transition-all duration-500 hover:shadow-2xl cursor-pointer"
+                onClick={openWaiYingProfile}
+              >
               <div className="relative h-64 overflow-hidden">
                 <img
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -104,15 +190,19 @@ export default function FoodCrawlGuide() {
                   and hand-pulled dim sum. Expect a queue during lunch hours.
                 </p>
                 <div className="flex gap-4 items-center">
-                  <a
+                  <button
                     className="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest group/link"
-                    href="#"
+                    type="button"
+                    onClick={(event) => {
+                      event.stopPropagation()
+                      openWaiYingProfile()
+                    }}
                   >
-                    View on Map
+                    View Profile
                     <span className="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">
                       arrow_forward
                     </span>
-                  </a>
+                  </button>
                   <div className="h-px flex-grow bg-outline-variant/30" />
                 </div>
                 <div className="mt-8 pt-6 border-t border-outline-variant/20">
@@ -121,9 +211,14 @@ export default function FoodCrawlGuide() {
                   </button>
                 </div>
               </div>
-            </article>
+              </article>
+            )}
 
-            <article className="bg-surface-container-low rounded-xl overflow-hidden group transition-all duration-500 hover:shadow-2xl">
+            {matches('quintin-paredes', 'street-food') && (
+              <article
+                className="bg-surface-container-low rounded-xl overflow-hidden group transition-all duration-500 hover:shadow-2xl cursor-pointer"
+                onClick={openQuikSnackProfile}
+              >
               <div className="relative h-64 overflow-hidden">
                 <img
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -172,6 +267,10 @@ export default function FoodCrawlGuide() {
                   <a
                     className="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest group/link"
                     href="#"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      onNavigate?.('map')
+                    }}
                   >
                     View on Map
                     <span className="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">
@@ -181,14 +280,23 @@ export default function FoodCrawlGuide() {
                   <div className="h-px flex-grow bg-outline-variant/30" />
                 </div>
                 <div className="mt-8 pt-6 border-t border-outline-variant/20">
-                  <button className="w-full py-3 rounded-lg bg-surface-container-highest text-on-surface font-bold text-xs uppercase tracking-widest hover:bg-secondary-container transition-colors">
+                  <button
+                    type="button"
+                    className="w-full py-3 rounded-lg bg-surface-container-highest text-on-surface font-bold text-xs uppercase tracking-widest hover:bg-secondary-container transition-colors"
+                    onClick={() => onNavigate?.('rate')}
+                  >
                     Rate Your Experience
                   </button>
                 </div>
               </div>
-            </article>
+              </article>
+            )}
 
-            <article className="bg-surface-container-low rounded-xl overflow-hidden group transition-all duration-500 hover:shadow-2xl">
+            {matches('ongpin', 'pastries-hopia') && (
+              <article
+                className="bg-surface-container-low rounded-xl overflow-hidden group transition-all duration-500 hover:shadow-2xl cursor-pointer"
+                onClick={openEngBeeTinProfile}
+              >
               <div className="relative h-64 overflow-hidden">
                 <img
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -231,6 +339,10 @@ export default function FoodCrawlGuide() {
                   <a
                     className="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest group/link"
                     href="#"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      onNavigate?.('map')
+                    }}
                   >
                     View on Map
                     <span className="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">
@@ -240,14 +352,23 @@ export default function FoodCrawlGuide() {
                   <div className="h-px flex-grow bg-outline-variant/30" />
                 </div>
                 <div className="mt-8 pt-6 border-t border-outline-variant/20">
-                  <button className="w-full py-3 rounded-lg bg-surface-container-highest text-on-surface font-bold text-xs uppercase tracking-widest hover:bg-secondary-container transition-colors">
+                  <button
+                    type="button"
+                    className="w-full py-3 rounded-lg bg-surface-container-highest text-on-surface font-bold text-xs uppercase tracking-widest hover:bg-secondary-container transition-colors"
+                    onClick={() => onNavigate?.('rate')}
+                  >
                     Rate Your Experience
                   </button>
                 </div>
               </div>
-            </article>
+              </article>
+            )}
 
-            <article className="bg-surface-container-low rounded-xl overflow-hidden group transition-all duration-500 hover:shadow-2xl">
+            {matches('sabino-padilla', 'fine-dining') && (
+              <article
+                className="bg-surface-container-low rounded-xl overflow-hidden group transition-all duration-500 hover:shadow-2xl cursor-pointer"
+                onClick={openSincerityCafeProfile}
+              >
               <div className="relative h-64 overflow-hidden">
                 <img
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -291,6 +412,10 @@ export default function FoodCrawlGuide() {
                   <a
                     className="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest group/link"
                     href="#"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      onNavigate?.('map')
+                    }}
                   >
                     View on Map
                     <span className="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">
@@ -300,13 +425,24 @@ export default function FoodCrawlGuide() {
                   <div className="h-px flex-grow bg-outline-variant/30" />
                 </div>
                 <div className="mt-8 pt-6 border-t border-outline-variant/20">
-                  <button className="w-full py-3 rounded-lg bg-surface-container-highest text-on-surface font-bold text-xs uppercase tracking-widest hover:bg-secondary-container transition-colors">
+                  <button
+                    type="button"
+                    className="w-full py-3 rounded-lg bg-surface-container-highest text-on-surface font-bold text-xs uppercase tracking-widest hover:bg-secondary-container transition-colors"
+                    onClick={() => onNavigate?.('rate')}
+                  >
                     Rate Your Experience
                   </button>
                 </div>
               </div>
-            </article>
+              </article>
+            )}
           </div>
+
+          {!hasMatches && (
+            <div className="mt-10 bg-surface-container-low rounded-xl p-8 text-on-surface-variant">
+              No matches found for your filters.
+            </div>
+          )}
         </div>
 
         <aside className="lg:col-span-3">

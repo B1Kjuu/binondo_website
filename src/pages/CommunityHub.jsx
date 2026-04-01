@@ -1,4 +1,4 @@
-export default function CommunityHub() {
+export default function CommunityHub({ onNavigate }) {
   return (
     <main className="pt-24 pb-12 max-w-screen-2xl mx-auto px-8 lg:grid lg:grid-cols-12 lg:gap-12">
       <div className="lg:col-span-8 space-y-16">
@@ -48,7 +48,11 @@ export default function CommunityHub() {
                   Prepare for the Year of the Dragon. Road closures expected
                   around Binondo Church and Ongpin Street from Feb 9-11.
                 </p>
-                <button className="mt-4 bg-secondary-container text-on-secondary-container px-6 py-3 rounded-lg font-bold text-sm flex items-center gap-2 hover:scale-105 transition-transform">
+                <button
+                  className="mt-4 bg-secondary-container text-on-secondary-container px-6 py-3 rounded-lg font-bold text-sm flex items-center gap-2 hover:scale-105 transition-transform"
+                  type="button"
+                  onClick={() => onNavigate?.('news')}
+                >
                   VIEW PARADE ROUTE{' '}
                   <span
                     className="material-symbols-outlined text-sm"

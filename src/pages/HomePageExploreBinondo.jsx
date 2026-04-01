@@ -1,4 +1,11 @@
-export default function HomePageExploreBinondo() {
+export default function HomePageExploreBinondo({ onNavigate }) {
+  const openFoodCrawl = () => onNavigate?.('food')
+  const openHeritage = () => onNavigate?.('heritage')
+  const openCommunity = () => onNavigate?.('community')
+  const openNews = () => onNavigate?.('news')
+  const openWaiYing = () => onNavigate?.('food-wai-ying')
+  const openBinondoChurch = () => onNavigate?.('heritage-binondo-church')
+
   return (
     <main className="pt-20">
       <section className="relative h-[870px] flex items-center overflow-hidden">
@@ -34,7 +41,11 @@ export default function HomePageExploreBinondo() {
                   type="text"
                 />
               </div>
-              <button className="bg-[linear-gradient(15deg,#610008_0%,#890613_100%)] text-white px-10 py-4 rounded-lg font-bold uppercase tracking-wider shadow-lg active:scale-95 transition-transform">
+              <button
+                className="bg-[linear-gradient(15deg,#610008_0%,#890613_100%)] text-white px-10 py-4 rounded-lg font-bold uppercase tracking-wider shadow-lg active:scale-95 transition-transform"
+                type="button"
+                onClick={openFoodCrawl}
+              >
                 Explore Now
               </button>
             </div>
@@ -81,9 +92,10 @@ export default function HomePageExploreBinondo() {
 
       <section className="py-24 px-8 max-w-screen-2xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <a
-            className="md:col-span-2 group relative h-64 overflow-hidden rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors duration-500"
-            href="#"
+          <button
+            className="md:col-span-2 group relative h-64 overflow-hidden rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors duration-500 text-left"
+            type="button"
+            onClick={openFoodCrawl}
           >
             <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity">
               <img
@@ -103,11 +115,12 @@ export default function HomePageExploreBinondo() {
                 Start a Food Crawl
               </h3>
             </div>
-          </a>
+          </button>
 
-          <a
-            className="group relative h-64 overflow-hidden rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors duration-500"
-            href="#"
+          <button
+            className="group relative h-64 overflow-hidden rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors duration-500 text-left"
+            type="button"
+            onClick={openHeritage}
           >
             <div className="relative p-10 h-full flex flex-col justify-end">
               <span
@@ -120,11 +133,12 @@ export default function HomePageExploreBinondo() {
                 Explore Landmarks
               </h3>
             </div>
-          </a>
+          </button>
 
-          <a
-            className="group relative h-64 overflow-hidden rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors duration-500"
-            href="#"
+          <button
+            className="group relative h-64 overflow-hidden rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors duration-500 text-left"
+            type="button"
+            onClick={openNews}
           >
             <div className="relative p-10 h-full flex flex-col justify-end">
               <span
@@ -135,12 +149,13 @@ export default function HomePageExploreBinondo() {
               </span>
               <h3 className="font-headline text-2xl font-bold">Community News</h3>
             </div>
-          </a>
+          </button>
 
           <div className="md:col-span-4 flex justify-end">
-            <a
-              className="group flex items-center gap-4 p-8 rounded-xl bg-secondary-container text-on-secondary-container hover:shadow-xl transition-shadow"
-              href="#"
+            <button
+              className="group flex items-center gap-4 p-8 rounded-xl bg-secondary-container text-on-secondary-container hover:shadow-xl transition-shadow text-left"
+              type="button"
+              onClick={openCommunity}
             >
               <span
                 className="material-symbols-outlined text-3xl"
@@ -157,7 +172,7 @@ export default function HomePageExploreBinondo() {
               <span className="material-symbols-outlined group-hover:translate-x-2 transition-transform">
                 arrow_forward
               </span>
-            </a>
+            </button>
           </div>
         </div>
       </section>
@@ -172,17 +187,30 @@ export default function HomePageExploreBinondo() {
               <h2 className="font-headline text-5xl font-black">Heritage Icons</h2>
             </div>
             <div className="flex gap-4">
-              <button className="w-12 h-12 rounded-full flex items-center justify-center border border-outline-variant hover:bg-surface-container-highest transition-colors">
+              <button
+                className="w-12 h-12 rounded-full flex items-center justify-center border border-outline-variant hover:bg-surface-container-highest transition-colors"
+                type="button"
+                aria-label="View more heritage icons"
+                onClick={openHeritage}
+              >
                 <span className="material-symbols-outlined">chevron_left</span>
               </button>
-              <button className="w-12 h-12 rounded-full flex items-center justify-center border border-outline-variant hover:bg-surface-container-highest transition-colors">
+              <button
+                className="w-12 h-12 rounded-full flex items-center justify-center border border-outline-variant hover:bg-surface-container-highest transition-colors"
+                type="button"
+                aria-label="View more heritage icons"
+                onClick={openHeritage}
+              >
                 <span className="material-symbols-outlined">chevron_right</span>
               </button>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div className="group">
+            <div
+              className="group cursor-pointer"
+              onClick={openWaiYing}
+            >
               <div className="h-[400px] overflow-hidden rounded-xl mb-6 relative">
                 <img
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
@@ -202,16 +230,23 @@ export default function HomePageExploreBinondo() {
                 The definitive Binondo dim sum experience. Famous for roasted duck
                 and curry beef brisket.
               </p>
-              <a
+              <button
                 className="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all"
-                href="#"
+                type="button"
+                onClick={(event) => {
+                  event.stopPropagation()
+                  openWaiYing()
+                }}
               >
                 View Menu{' '}
                 <span className="material-symbols-outlined">arrow_right_alt</span>
-              </a>
+              </button>
             </div>
 
-            <div className="group mt-12 md:mt-0">
+            <div
+              className="group mt-12 md:mt-0 cursor-pointer"
+              onClick={openBinondoChurch}
+            >
               <div className="h-[400px] overflow-hidden rounded-xl mb-6 relative">
                 <img
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
@@ -231,16 +266,23 @@ export default function HomePageExploreBinondo() {
                 Founded in 1594, this basilica is the center of spiritual life in
                 the district.
               </p>
-              <a
+              <button
                 className="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all"
-                href="#"
+                type="button"
+                onClick={(event) => {
+                  event.stopPropagation()
+                  openBinondoChurch()
+                }}
               >
                 History{' '}
                 <span className="material-symbols-outlined">arrow_right_alt</span>
-              </a>
+              </button>
             </div>
 
-            <div className="group">
+            <div
+              className="group cursor-pointer"
+              onClick={openFoodCrawl}
+            >
               <div className="h-[400px] overflow-hidden rounded-xl mb-6 relative">
                 <img
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
@@ -260,13 +302,17 @@ export default function HomePageExploreBinondo() {
                 Traditional Cantonese fine dining, perfect for grand family
                 celebrations and heritage feasts.
               </p>
-              <a
+              <button
                 className="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all"
-                href="#"
+                type="button"
+                onClick={(event) => {
+                  event.stopPropagation()
+                  openFoodCrawl()
+                }}
               >
-                Book Table{' '}
+                Explore{' '}
                 <span className="material-symbols-outlined">arrow_right_alt</span>
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -290,7 +336,11 @@ export default function HomePageExploreBinondo() {
             living archive. We invite you to explore, taste, and preserve the
             legacy of Manila&apos;s Chinatown.
           </p>
-          <button className="border-2 border-primary text-primary px-8 py-3 rounded-lg font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-colors">
+          <button
+            className="border-2 border-primary text-primary px-8 py-3 rounded-lg font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-colors"
+            type="button"
+            onClick={openCommunity}
+          >
             Join the Community
           </button>
         </div>

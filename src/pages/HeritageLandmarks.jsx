@@ -1,4 +1,8 @@
-export default function HeritageLandmarks() {
+export default function HeritageLandmarks({ onNavigate }) {
+  const openBinondoChurch = () => {
+    onNavigate?.('heritage-binondo-church')
+  }
+
   return (
     <>
       <main className="pt-24 pb-20">
@@ -36,7 +40,10 @@ export default function HeritageLandmarks() {
 
         <section className="px-8 max-w-screen-2xl mx-auto mb-24">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-            <div className="md:col-span-8 group cursor-pointer">
+            <div
+              className="md:col-span-8 group cursor-pointer"
+              onClick={openBinondoChurch}
+            >
               <div className="relative overflow-hidden rounded-xl h-[600px] bg-surface-container">
                 <img
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -251,6 +258,10 @@ export default function HeritageLandmarks() {
                       <a
                         className="text-primary font-bold flex items-center gap-2 hover:underline"
                         href="#"
+                        onClick={(e) => {
+                          e.preventDefault()
+                          onNavigate?.('map')
+                        }}
                       >
                         <span className="material-symbols-outlined text-sm">
                           map
