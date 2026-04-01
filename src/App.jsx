@@ -1,5 +1,9 @@
 import { useEffect, useMemo, useState } from 'react'
 
+import SearchSuggestionsDropdown from './components/SearchSuggestionsDropdown.jsx'
+import { useSearchAutosuggest } from './hooks/useSearchAutosuggest.js'
+import { getSearchDestination } from './search/searchRules.js'
+
 import CommunityHub from './pages/community/CommunityHub.jsx'
 import FoodCrawlGuide from './pages/food/FoodCrawlGuide.jsx'
 import FoodEngBeeTin from './pages/food/FoodEngBeeTin.jsx'
@@ -22,81 +26,47 @@ function App() {
   const [activePage, setActivePage] = useState('home')
   const [searchQuery, setSearchQuery] = useState('')
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false)
+
+  const {
+    containerRef: navSearchContainerRef,
+    suggestions: navSearchSuggestions,
+    shouldShow: navSearchShouldShow,
+    open: openNavSearchSuggest,
+    close: closeNavSearchSuggest,
+  } = useSearchAutosuggest(searchQuery)
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [activePage])
 
+  useEffect(() => {
+    if (!isMobileNavOpen) return
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') setIsMobileNavOpen(false)
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [isMobileNavOpen])
+
   const isSectionActive = (section) =>
     activePage === section || activePage.startsWith(`${section}-`)
 
-  const normalizeSearch = (value) => value.toLowerCase().trim()
-
-  const handleSearchSubmit = () => {
-    const query = normalizeSearch(searchQuery)
-    if (!query) return
-
-    const rules = [
-      {
-        match: ['wai ying', 'waiying', 'fastfood', 'hakaw', 'dim sum'],
-        page: 'food-wai-ying',
-      },
-      {
-        match: ['eng bee tin', 'engbeetin', 'hopia', 'ube', 'ongpin'],
-        page: 'food-eng-bee-tin',
-      },
-      {
-        match: ['quik snack', 'carvajal', 'tauhu', 'oyster cake'],
-        page: 'food-quik-snack',
-      },
-      {
-        match: ['sincerity', 'sincerity cafe', 'fried chicken', 'yuchengco'],
-        page: 'food-sincerity-cafe',
-      },
-      {
-        match: ['binondo church', 'church', 'basilica', 'minor basilica'],
-        page: 'heritage-binondo-church',
-      },
-      {
-        match: ['kuang kong', 'kuang', 'kong temple'],
-        page: 'heritage-kuang-kong-temple',
-      },
-      {
-        match: ['first united', 'escolta', 'art deco'],
-        page: 'heritage-first-united-building',
-      },
-      {
-        match: ['plaza calderon', 'calderon', 'de la barca'],
-        page: 'heritage-plaza-calderon-de-la-barca',
-      },
-      {
-        match: ['bahay tsinoy', 'tsinoy museum', 'tsinoy'],
-        page: 'heritage-bahay-tsinoy',
-      },
-      {
-        match: ['lunar', 'new year', 'traffic', 'rerouting', 'route', 'parade'],
-        page: 'news',
-      },
-      { match: ['news', 'article'], page: 'news' },
-      { match: ['food', 'crawl', 'restaurants', 'eat'], page: 'food' },
-      {
-        match: ['heritage', 'landmark', 'landmarks', 'churches', 'temple', 'temples'],
-        page: 'heritage',
-      },
-      { match: ['community', 'hub'], page: 'community' },
-      { match: ['profile', 'account', 'archivist'], page: 'profile' },
-      { match: ['home', 'explore'], page: 'home' },
-    ]
-
-    const hit = rules.find((rule) => rule.match.some((m) => query.includes(m)))
-    const nextPage = hit?.page ?? 'home'
-
+  const navigateToPage = (nextPage) => {
     if (nextPage === 'profile' && !isLoggedIn) {
       setActivePage('login')
       return
     }
 
     setActivePage(nextPage)
+  }
+
+  const handleSearchSubmit = (rawQuery = searchQuery) => {
+    const nextPage = getSearchDestination(rawQuery)
+    if (!nextPage) return
+    navigateToPage(nextPage)
   }
 
   const Page = useMemo(() => {
@@ -149,16 +119,32 @@ function App() {
   }, [activePage])
 
   return (
-    <div className="min-h-full bg-background text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+    <div className="min-h-full bg-background text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container pb-24 md:pb-0">
       <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md shadow-[0_24px_32px_-4px_rgba(28,28,24,0.06)]">
-        <div className="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto gap-6">
-          <button
-            className="font-headline text-2xl font-black text-primary text-left"
-            type="button"
-            onClick={() => setActivePage('home')}
-          >
-            Binondo Heritage
-          </button>
+        <div className="flex justify-between items-center w-full px-6 md:px-8 py-4 max-w-screen-2xl mx-auto gap-6">
+          <div className="flex items-center gap-4">
+            <button
+              type="button"
+              aria-label="Menu"
+              className="md:hidden text-primary active:scale-95 transition-transform"
+              aria-expanded={isMobileNavOpen}
+              aria-controls="mobile-nav-panel"
+              onClick={() => setIsMobileNavOpen((value) => !value)}
+            >
+              <span className="material-symbols-outlined text-3xl">menu</span>
+            </button>
+            <button
+              className="font-headline text-2xl font-black text-primary text-left uppercase tracking-widest md:tracking-normal md:normal-case"
+              type="button"
+              onClick={() => {
+                setIsMobileNavOpen(false)
+                setActivePage('home')
+              }}
+            >
+              <span className="md:hidden">Binondo</span>
+              <span className="hidden md:inline">Binondo Heritage</span>
+            </button>
+          </div>
 
           <div className="hidden md:flex gap-8 items-center">
             <button
@@ -219,15 +205,23 @@ function App() {
           </div>
 
           <div className="flex items-center gap-4">
-            <div className="relative hidden lg:block">
+            <div ref={navSearchContainerRef} className="relative hidden lg:block">
               <input
                 className="bg-surface-container-highest text-sm px-4 py-2 rounded-sm border-none focus:ring-1 focus:ring-primary/20 w-64"
                 placeholder="Heritage & Food"
                 type="text"
                 value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
+                onFocus={openNavSearchSuggest}
+                onChange={(e) => {
+                  setSearchQuery(e.target.value)
+                  openNavSearchSuggest()
+                }}
                 onKeyDown={(e) => {
-                  if (e.key === 'Enter') handleSearchSubmit()
+                  if (e.key === 'Escape') closeNavSearchSuggest()
+                  if (e.key === 'Enter') {
+                    closeNavSearchSuggest()
+                    handleSearchSubmit(e.currentTarget.value)
+                  }
                 }}
                 autoComplete="off"
                 autoCorrect="off"
@@ -238,10 +232,23 @@ function App() {
                 type="button"
                 className="material-symbols-outlined absolute right-3 top-2 text-on-surface-variant active:scale-95 transition-transform"
                 aria-label="Search"
-                onClick={handleSearchSubmit}
+                onClick={() => {
+                  closeNavSearchSuggest()
+                  handleSearchSubmit(searchQuery)
+                }}
               >
                 search
               </button>
+
+              <SearchSuggestionsDropdown
+                isOpen={navSearchShouldShow}
+                suggestions={navSearchSuggestions}
+                onSelect={(item) => {
+                  setSearchQuery(item.label)
+                  closeNavSearchSuggest()
+                  navigateToPage(item.page)
+                }}
+              />
             </div>
             <button
               type="button"
@@ -258,12 +265,95 @@ function App() {
             </button>
           </div>
         </div>
+
+        {isMobileNavOpen ? (
+          <div className="md:hidden fixed inset-0 z-[60]">
+            <button
+              type="button"
+              aria-label="Close menu"
+              className="absolute inset-0 bg-black/30"
+              onClick={() => setIsMobileNavOpen(false)}
+              onWheel={() => setIsMobileNavOpen(false)}
+              onTouchMove={() => setIsMobileNavOpen(false)}
+            />
+
+            <div
+              id="mobile-nav-panel"
+              className="absolute top-0 left-0 right-0 mt-[72px] mx-4 rounded-xl bg-surface border border-outline-variant/30 shadow-[0_24px_32px_-4px_rgba(28,28,24,0.12)] overflow-hidden"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Mobile navigation"
+            >
+              <div className="flex items-center justify-between px-5 py-4 bg-surface-container">
+                <div className="font-headline font-black text-primary tracking-widest uppercase text-sm">
+                  Menu
+                </div>
+                <button
+                  type="button"
+                  className="text-primary active:scale-95 transition-transform"
+                  aria-label="Close"
+                  onClick={() => setIsMobileNavOpen(false)}
+                >
+                  <span className="material-symbols-outlined">close</span>
+                </button>
+              </div>
+
+              <div className="p-2">
+                {[
+                  { key: 'home', label: 'Home', icon: 'home' },
+                  { key: 'food', label: 'Food Crawl', icon: 'restaurant_menu' },
+                  { key: 'heritage', label: 'Heritage', icon: 'history_edu' },
+                  { key: 'news', label: 'News', icon: 'newspaper' },
+                  { key: 'community', label: 'Community', icon: 'groups' },
+                ].map((item) => (
+                  <button
+                    key={item.key}
+                    type="button"
+                    onClick={() => {
+                      setIsMobileNavOpen(false)
+                      setActivePage(item.key)
+                    }}
+                    className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left transition-colors ${
+                      isSectionActive(item.key)
+                        ? 'bg-secondary-container text-on-secondary-container'
+                        : 'hover:bg-surface-container-low'
+                    }`}
+                  >
+                    <span className="material-symbols-outlined">{item.icon}</span>
+                    <span className="font-body font-bold">{item.label}</span>
+                  </button>
+                ))}
+
+                <div className="h-px bg-outline-variant/30 my-2" />
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIsMobileNavOpen(false)
+                    setActivePage(isLoggedIn ? 'profile' : 'login')
+                  }}
+                  className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left transition-colors ${
+                    activePage === 'profile' || activePage === 'login'
+                      ? 'bg-secondary-container text-on-secondary-container'
+                      : 'hover:bg-surface-container-low'
+                  }`}
+                >
+                  <span className="material-symbols-outlined">bookmark</span>
+                  <span className="font-body font-bold">Saved</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        ) : null}
       </nav>
 
       <Page
         onNavigate={setActivePage}
         activePage={activePage}
         isLoggedIn={isLoggedIn}
+        searchQuery={searchQuery}
+        onSearchQueryChange={setSearchQuery}
+        onSearchSubmit={handleSearchSubmit}
         onLogin={() => {
           setIsLoggedIn(true)
           setActivePage('profile')
@@ -311,6 +401,73 @@ function App() {
           </div>
         </div>
       </footer>
+
+      <nav className="fixed bottom-0 left-0 right-0 rounded-t-xl z-50 bg-background/80 backdrop-blur-md shadow-[0_-8px_24px_-4px_rgba(28,28,24,0.04)] border-t-[0.5px] border-outline-variant/15 flex justify-around items-center px-2 py-3 md:hidden">
+        <button
+          type="button"
+          onClick={() => setActivePage('home')}
+          className={`flex flex-col items-center justify-center rounded-xl px-4 py-1.5 active:scale-90 transition-transform duration-150 ${
+            isSectionActive('home')
+              ? 'bg-gradient-to-tr from-primary to-primary-container text-white'
+              : 'text-secondary hover:opacity-80'
+          }`}
+        >
+          <span
+            className="material-symbols-outlined"
+            style={{ fontVariationSettings: isSectionActive('home') ? "'FILL' 1" : "'FILL' 0" }}
+          >
+            home
+          </span>
+          <span className="font-body font-medium text-[10px] uppercase tracking-tighter mt-1">
+            Home
+          </span>
+        </button>
+
+        <button
+          type="button"
+          onClick={() => setActivePage('food')}
+          className={`flex flex-col items-center justify-center rounded-xl px-4 py-1.5 hover:opacity-80 active:scale-90 transition-transform duration-150 ${
+            isSectionActive('food')
+              ? 'bg-gradient-to-tr from-primary to-primary-container text-white'
+              : 'text-secondary'
+          }`}
+        >
+          <span className="material-symbols-outlined">restaurant_menu</span>
+          <span className="font-body font-medium text-[10px] uppercase tracking-tighter mt-1">
+            Crawl
+          </span>
+        </button>
+
+        <button
+          type="button"
+          onClick={() => setActivePage('heritage')}
+          className={`flex flex-col items-center justify-center rounded-xl px-4 py-1.5 hover:opacity-80 active:scale-90 transition-transform duration-150 ${
+            isSectionActive('heritage')
+              ? 'bg-gradient-to-tr from-primary to-primary-container text-white'
+              : 'text-secondary'
+          }`}
+        >
+          <span className="material-symbols-outlined">history_edu</span>
+          <span className="font-body font-medium text-[10px] uppercase tracking-tighter mt-1">
+            History
+          </span>
+        </button>
+
+        <button
+          type="button"
+          onClick={() => setActivePage(isLoggedIn ? 'profile' : 'login')}
+          className={`flex flex-col items-center justify-center rounded-xl px-4 py-1.5 hover:opacity-80 active:scale-90 transition-transform duration-150 ${
+            activePage === 'profile' || activePage === 'login'
+              ? 'bg-gradient-to-tr from-primary to-primary-container text-white'
+              : 'text-secondary'
+          }`}
+        >
+          <span className="material-symbols-outlined">bookmark</span>
+          <span className="font-body font-medium text-[10px] uppercase tracking-tighter mt-1">
+            Saved
+          </span>
+        </button>
+      </nav>
     </div>
   )
 }

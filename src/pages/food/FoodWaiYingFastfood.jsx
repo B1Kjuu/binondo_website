@@ -1,6 +1,281 @@
 export default function FoodWaiYingFastfood({ onNavigate }) {
   return (
-    <main className="pt-28 pb-20">
+    <>
+      <main className="md:hidden pt-20 pb-32 max-w-md mx-auto">
+        <div className="px-4 py-4">
+          <button
+            type="button"
+            className="inline-flex items-center gap-2 text-secondary font-bold text-xs uppercase tracking-widest hover:underline"
+            onClick={() => onNavigate?.('food')}
+          >
+            <span className="material-symbols-outlined text-sm">arrow_back</span>
+            Back to Food Crawl
+          </button>
+        </div>
+
+        <section className="relative h-72 w-full overflow-hidden">
+          <img
+            alt="Wai Ying dim sum"
+            className="w-full h-full object-cover"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq2Iqop9VM8A2qvTdCyKcRDnmPbmeHY8cbrC6GBCO_vuKN1ARKhevndFOD9mug983-QgfKunQUt-rjjMAm5l0i-Tci5ZiTOkKlG5DeYC34TEEY4JH4rR_4j1N2p050yRb53vPabqq4jTTJqUOEBCLwnEc2d1jIv65P4vg22zr3o3GryKu4gtbQNzG0xqvTpo8R91ENV3r5BdUOC69PHR3QSjQO1RtP2dxcxjsVe0iDvb15Wy7WvuKyRB3PrDsouSiZncVygjMguNk"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+          <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
+            <div>
+              <span className="bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-widest mb-1 inline-block">
+                Established 1998
+              </span>
+              <h1 className="font-headline text-3xl text-white font-bold leading-tight">
+                Wai Ying Fastfood
+              </h1>
+              <p className="text-white/80 text-sm font-medium">
+                Binondo&apos;s Essential Tea House
+              </p>
+            </div>
+            <div className="bg-secondary-container text-on-secondary-container p-3 rounded-xl flex flex-col items-center shadow-xl">
+              <span className="text-[10px] font-bold uppercase tracking-tighter">
+                Rank
+              </span>
+              <span className="text-2xl font-headline font-bold">#1</span>
+            </div>
+          </div>
+        </section>
+
+        <section className="px-4 py-6 flex gap-3 overflow-x-auto hide-scrollbar">
+          <div className="flex items-center gap-2 bg-surface-container-low px-4 py-2 rounded-full whitespace-nowrap">
+            <span className="material-symbols-outlined text-secondary text-sm">
+              payments
+            </span>
+            <span className="text-sm font-semibold">₱₱ • Moderate</span>
+          </div>
+          <div className="flex items-center gap-2 bg-surface-container-low px-4 py-2 rounded-full whitespace-nowrap">
+            <span className="material-symbols-outlined text-secondary text-sm">
+              schedule
+            </span>
+            <span className="text-sm font-semibold">07:00 AM - 02:00 AM</span>
+          </div>
+          <div className="flex items-center gap-2 bg-surface-container-low px-4 py-2 rounded-full whitespace-nowrap">
+            <span className="material-symbols-outlined text-secondary text-sm">
+              stars
+            </span>
+            <span className="text-sm font-semibold">4.8 Rating</span>
+          </div>
+        </section>
+
+        <section className="px-6 py-8 bg-surface-container-low">
+          <div className="flex items-center gap-4 mb-4">
+            <div className="h-[1px] flex-grow bg-outline-variant/30" />
+            <h2 className="font-headline italic text-xl text-primary">
+              Chronicles of the Tea House
+            </h2>
+            <div className="h-[1px] flex-grow bg-outline-variant/30" />
+          </div>
+          <p className="font-body text-on-surface/80 leading-relaxed italic text-center text-sm">
+            &quot;In the labyrinthine streets of Binondo, Wai Ying stands as a
+            sanctuary of steam and tradition. Founded as a humble fastfood
+            outlet, it quickly became the definitive dim sum landmark of
+            Manila&apos;s Chinatown.&quot;
+          </p>
+          <div className="mt-6 grid grid-cols-2 gap-4">
+            <div className="aspect-square bg-surface-container overflow-hidden rounded-xl">
+              <img
+                alt="Interior of Wai Ying"
+                className="w-full h-full object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq2Iqop9VM8A2qvTdCyKcRDnmPbmeHY8cbrC6GBCO_vuKN1ARKhevndFOD9mug983-QgfKunQUt-rjjMAm5l0i-Tci5ZiTOkKlG5DeYC34TEEY4JH4rR_4j1N2p050yRb53vPabqq4jTTJqUOEBCLwnEc2d1jIv65P4vg22zr3o3GryKu4gtbQNzG0xqvTpo8R91ENV3r5BdUOC69PHR3QSjQO1RtP2dxcxjsVe0iDvb15Wy7WvuKyRB3PrDsouSiZncVygjMguNk"
+              />
+            </div>
+            <div className="flex flex-col justify-center">
+              <p className="font-headline text-primary font-bold text-lg mb-1">
+                Authentic Craft
+              </p>
+              <p className="text-xs text-on-surface-variant leading-tight">
+                Every dumpling hand-folded daily following generations-old
+                Cantonese recipes.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="px-4 py-10">
+          <h2 className="font-headline text-2xl font-bold mb-6 text-on-surface">
+            The Signature Registry
+          </h2>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="col-span-2 relative h-48 bg-surface-container rounded-2xl overflow-hidden group">
+              <img
+                alt="Shrimp hakao"
+                className="w-full h-full object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq2Iqop9VM8A2qvTdCyKcRDnmPbmeHY8cbrC6GBCO_vuKN1ARKhevndFOD9mug983-QgfKunQUt-rjjMAm5l0i-Tci5ZiTOkKlG5DeYC34TEEY4JH4rR_4j1N2p050yRb53vPabqq4jTTJqUOEBCLwnEc2d1jIv65P4vg22zr3o3GryKu4gtbQNzG0xqvTpo8R91ENV3r5BdUOC69PHR3QSjQO1RtP2dxcxjsVe0iDvb15Wy7WvuKyRB3PrDsouSiZncVygjMguNk"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+              <div className="absolute bottom-4 left-4">
+                <span className="text-secondary-fixed text-[10px] font-bold uppercase">
+                  House Specialty
+                </span>
+                <h3 className="text-white font-headline text-xl">
+                  Shrimp Hakao
+                </h3>
+              </div>
+            </div>
+            <div className="h-40 bg-surface-container-high rounded-2xl p-4 flex flex-col justify-between">
+              <div>
+                <h3 className="font-headline text-lg text-primary font-bold">
+                  Pork Siomai
+                </h3>
+                <p className="text-xs text-on-surface-variant">
+                  Traditional open-top steamed meat dumplings.
+                </p>
+              </div>
+              <span className="text-sm font-bold text-secondary">₱115.00</span>
+            </div>
+            <div className="h-40 bg-surface-container-highest rounded-2xl overflow-hidden">
+              <img
+                alt="Roast duck"
+                className="w-full h-full object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq2Iqop9VM8A2qvTdCyKcRDnmPbmeHY8cbrC6GBCO_vuKN1ARKhevndFOD9mug983-QgfKunQUt-rjjMAm5l0i-Tci5ZiTOkKlG5DeYC34TEEY4JH4rR_4j1N2p050yRb53vPabqq4jTTJqUOEBCLwnEc2d1jIv65P4vg22zr3o3GryKu4gtbQNzG0xqvTpo8R91ENV3r5BdUOC69PHR3QSjQO1RtP2dxcxjsVe0iDvb15Wy7WvuKyRB3PrDsouSiZncVygjMguNk"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section className="px-4 py-8">
+          <div className="bg-surface-container-lowest p-6 rounded-3xl shadow-[0_4px_24px_rgba(28,28,24,0.04)] border-[0.5px] border-outline-variant/15">
+            <h2 className="font-headline text-xl font-bold mb-6 border-b border-outline-variant/20 pb-4">
+              Concierge Details
+            </h2>
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <span className="material-symbols-outlined text-secondary mt-1">
+                  location_on
+                </span>
+                <div>
+                  <p className="font-bold text-sm">Address</p>
+                  <p className="text-sm text-on-surface-variant">
+                    810 Benavidez St, Binondo, Manila
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <span className="material-symbols-outlined text-secondary mt-1">
+                  directions_walk
+                </span>
+                <div>
+                  <p className="font-bold text-sm">Accessibility</p>
+                  <p className="text-sm text-on-surface-variant">
+                    5 min walk from Binondo Church. Limited street parking.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="mt-8">
+              <div className="w-full h-32 rounded-2xl overflow-hidden bg-surface-container">
+                <img
+                  alt="Map preview"
+                  className="w-full h-full object-cover opacity-60 grayscale"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR4mDzGrkRqkfWSlar-rVa_Tnhx2NjS2B1sGMfGpzUAaddiaNSH6GLnOQZYw2oVuUjgQX0CxCC0eSYdGrtSyexTVrdzwoYcqiHUb2V_sU3-Uc-ySdw3H4Th0PMLZgbiXLo6GuwmaZnUC360UYPEoMucppI3_Ivt4oIx3Pu_2kQllB2dYDhri-LK_J7dfbrMXaoPN0mKXFQ_h5XJn7X6zu0vdAwFTyz64Eb7EsVAFF1M41C602Jzdt6qgUdcifkstjch5kWzdpD29Y"
+                />
+              </div>
+              <button
+                type="button"
+                className="w-full mt-4 bg-primary text-on-primary py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition-transform active:scale-[0.98]"
+                onClick={() => onNavigate?.('map')}
+              >
+                <span className="material-symbols-outlined text-sm">
+                  near_me
+                </span>
+                Get Directions
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section className="px-4 py-8">
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="font-headline text-2xl font-bold">Public Registry</h2>
+            <button
+              type="button"
+              className="text-sm font-bold text-primary"
+              onClick={() => onNavigate?.('rate')}
+            >
+              Write Review
+            </button>
+          </div>
+          <div className="space-y-6">
+            <div className="bg-surface-container-low p-5 rounded-2xl">
+              <div className="flex justify-between items-start mb-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-bold">
+                    AM
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold">Antonio M.</p>
+                    <p className="text-[10px] text-on-surface-variant/60 uppercase">
+                      Elite Historian
+                    </p>
+                  </div>
+                </div>
+                <div className="flex text-secondary-container">
+                  {Array.from({ length: 5 }).map((_, index) => (
+                    <span
+                      key={`waiying-review1-star-${index}`}
+                      className="material-symbols-outlined text-sm"
+                      style={{ fontVariationSettings: "'FILL' 1" }}
+                    >
+                      star
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <p className="text-sm leading-relaxed text-on-surface-variant">
+                The Hakao remains the gold standard in Binondo. Even with the
+                long queues, the experience of dining in this historical
+                atmosphere is unmatched.
+              </p>
+            </div>
+
+            <div className="bg-surface-container p-5 rounded-2xl">
+              <div className="flex justify-between items-start mb-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-bold">
+                    SC
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold">Sofia C.</p>
+                    <p className="text-[10px] text-on-surface-variant/60 uppercase">
+                      Food Voyager
+                    </p>
+                  </div>
+                </div>
+                <div className="flex text-secondary-container">
+                  {Array.from({ length: 4 }).map((_, index) => (
+                    <span
+                      key={`waiying-review2-star-${index}`}
+                      className="material-symbols-outlined text-sm"
+                      style={{ fontVariationSettings: "'FILL' 1" }}
+                    >
+                      star
+                    </span>
+                  ))}
+                  <span className="material-symbols-outlined text-sm">star</span>
+                </div>
+              </div>
+              <p className="text-sm leading-relaxed text-on-surface-variant">
+                Best roast duck in the district. Don&apos;t skip the milk tea—it&apos;s
+                the authentic Hong Kong style that Binondo is famous for.
+              </p>
+            </div>
+          </div>
+          <button
+            type="button"
+            className="w-full mt-8 py-3 text-secondary font-bold text-sm border border-secondary/20 rounded-xl hover:bg-secondary-container/10 transition-colors"
+            onClick={() => onNavigate?.('archive')}
+          >
+            View All Entries
+          </button>
+        </section>
+      </main>
+
+      <main className="hidden md:block pt-28 pb-20">
       <section className="px-8 mb-20 max-w-screen-2xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-end">
           <div className="md:col-span-7">
@@ -289,6 +564,7 @@ export default function FoodWaiYingFastfood({ onNavigate }) {
           </div>
         </aside>
       </section>
-    </main>
+      </main>
+    </>
   )
 }

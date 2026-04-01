@@ -4,6 +4,14 @@ export default function FoodCrawlGuide({ onNavigate }) {
   const [streetFilter, setStreetFilter] = useState('all')
   const [categoryFilter, setCategoryFilter] = useState('all')
 
+  const toggleStreetFilter = (value) => {
+    setStreetFilter((current) => (current === value ? 'all' : value))
+  }
+
+  const toggleCategoryFilter = (value) => {
+    setCategoryFilter((current) => (current === value ? 'all' : value))
+  }
+
   const matches = (street, category) => {
     const streetOk = streetFilter === 'all' || streetFilter === street
     const categoryOk = categoryFilter === 'all' || categoryFilter === category
@@ -38,8 +46,422 @@ export default function FoodCrawlGuide({ onNavigate }) {
       ? 'px-5 py-2 rounded-full bg-secondary-container text-on-secondary-container font-bold text-sm shadow-sm'
       : 'px-5 py-2 rounded-full bg-surface-container hover:bg-surface-container-highest transition-colors text-on-surface-variant font-bold text-sm'
 
+  const mobileChipClass = (isActive) =>
+    isActive
+      ? 'bg-secondary-container text-on-secondary-container px-5 py-2 rounded-full font-label text-sm font-bold flex-shrink-0'
+      : 'bg-surface-container-highest text-on-surface-variant px-5 py-2 rounded-full font-label text-sm font-medium flex-shrink-0'
+
+  const goToMap = () => onNavigate?.('map')
+  const goToRate = () => onNavigate?.('rate')
+
   return (
-    <main className="pt-28 pb-20 px-6 max-w-screen-2xl mx-auto">
+    <>
+      <main className="md:hidden pt-20 pb-32">
+        <section className="px-6 mb-10 relative">
+          <div className="relative h-[400px] rounded-xl overflow-hidden mb-6 group">
+            <img
+              className="w-full h-full object-cover"
+              alt="Atmospheric street view of Binondo Manila at dusk"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ5QIKmfkWTsPwPK9vU-JJJa8OO0ULfWridK4LKzPM0uHd0kllV3tzbyjzbfUO0XddyXaC4ti12skJrwKLlXF3e5GdWdrNGYw7AbUW6SEpT16BiG_sMLIa-_q-8oAcjR9fvKvhKbrT33SpGURkj9gHoTO8T_2cEkXVe_TN6WaxngKs2lTbgAmZHXfGiCIUHNj6iTuP-QYEDAm0nezz96uqfekRX7EdR7gCM5GGsY5mcdV4H9VlRlN1gwfSrJHyLMcpcjsoxxTOZ5E"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent" />
+            <div className="absolute bottom-0 left-0 p-8">
+              <span className="font-label text-secondary-fixed text-xs uppercase tracking-[0.2em] mb-2 block">
+                Binondo Heritage Series
+              </span>
+              <h1 className="font-headline text-5xl font-bold text-white leading-tight">
+                The Great Food Crawl
+              </h1>
+            </div>
+          </div>
+          <div className="ml-4 border-l-2 border-secondary/20 pl-6">
+            <p className="text-on-surface-variant font-body leading-relaxed max-w-[85%]">
+              Embark on a curated culinary journey through the world&apos;s oldest
+              Chinatown. Experience centuries of Fujianese and Cantonese
+              heritage through every bite.
+            </p>
+          </div>
+        </section>
+
+        <section className="mb-10 px-6 overflow-x-auto hide-scrollbar">
+          <div className="flex flex-col gap-4 min-w-max">
+            <div className="flex gap-2">
+              <button
+                type="button"
+                className={mobileChipClass(streetFilter === 'all')}
+                onClick={() => setStreetFilter('all')}
+              >
+                All
+              </button>
+              <button
+                type="button"
+                className={mobileChipClass(streetFilter === 'ongpin')}
+                onClick={() => toggleStreetFilter('ongpin')}
+              >
+                Ongpin
+              </button>
+              <button
+                type="button"
+                className={mobileChipClass(streetFilter === 'sabino-padilla')}
+                onClick={() => toggleStreetFilter('sabino-padilla')}
+              >
+                Yuchengco
+              </button>
+              <button
+                type="button"
+                className={mobileChipClass(streetFilter === 'quintin-paredes')}
+                onClick={() => toggleStreetFilter('quintin-paredes')}
+              >
+                Carvajal
+              </button>
+            </div>
+            <div className="flex gap-2">
+              <button
+                type="button"
+                className={mobileChipClass(categoryFilter === 'all')}
+                onClick={() => setCategoryFilter('all')}
+              >
+                All
+              </button>
+              <button
+                type="button"
+                className={mobileChipClass(categoryFilter === 'dim-sum')}
+                onClick={() => toggleCategoryFilter('dim-sum')}
+              >
+                Dim Sum
+              </button>
+              <button
+                type="button"
+                className={mobileChipClass(categoryFilter === 'noodle-houses')}
+                onClick={() => toggleCategoryFilter('noodle-houses')}
+              >
+                Noodle Houses
+              </button>
+              <button
+                type="button"
+                className={mobileChipClass(categoryFilter === 'pastries-hopia')}
+                onClick={() => toggleCategoryFilter('pastries-hopia')}
+              >
+                Bakeries
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section className="px-6 space-y-10">
+          {matches('quintin-paredes', 'dim-sum') && (
+            <article
+              className="bg-surface-container-low rounded-xl overflow-hidden"
+              onClick={openWaiYingProfile}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(event) => {
+                if (event.key === 'Enter') openWaiYingProfile()
+              }}
+            >
+              <div className="relative h-64">
+                <img
+                  className="w-full h-full object-cover"
+                  alt="Steaming dim sum and shrimp dumplings"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuC860uVLU3ShbvtJhNyDSbkSDQOQ8Rj2x6QZ9B5aAhXbaZ442mKNQGvfeoT7pegn8hppR9P8yw6EO2a1Cdm1MgbBm9VdCBfrEBjEIppSrw-fOLxsx9EWEc_02h-eKZli5wyqJ45UBLQ88sAMNvcdW3LFcizj_vnFMTYz-BmV7Aa_zhdshx3Qx74EjXCDAh3-j96ZUJ0g9J2WlGbrjO7e5qv5hmxIceZzIoDH5s_jPjK8ZCrDIqHbSDRStQngOv2SoUy6nVyPjU6sRY"
+                />
+                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-1">
+                  <span
+                    className="material-symbols-outlined text-secondary text-sm"
+                    style={{ fontVariationSettings: "'FILL' 1" }}
+                  >
+                    star
+                  </span>
+                  <span className="font-bold text-on-surface text-sm">4.8</span>
+                </div>
+              </div>
+              <div className="p-6">
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <h3 className="font-headline text-2xl font-bold text-primary">
+                      Wai Ying Fastfood
+                    </h3>
+                    <p className="text-secondary font-label text-sm font-medium">
+                      Binondo Masterpiece • Dim Sum
+                    </p>
+                  </div>
+                </div>
+                <p className="text-on-surface-variant mb-6 text-sm leading-relaxed">
+                  Famous for their signature Curry Beef Brisket and Hakaw. A
+                  staple destination for every Binondo visitor seeking authentic
+                  Cantonese flavors.
+                </p>
+                <div className="flex gap-3">
+                  <button
+                    type="button"
+                    className="flex-1 bg-gradient-to-tr from-primary to-primary-container text-on-primary py-3 rounded-lg font-label text-sm font-bold flex items-center justify-center gap-2"
+                    onClick={(event) => {
+                      event.stopPropagation()
+                      goToMap()
+                    }}
+                  >
+                    <span className="material-symbols-outlined text-lg">map</span>
+                    View Map
+                  </button>
+                  <button
+                    type="button"
+                    className="flex-1 bg-surface-container-highest text-on-surface py-3 rounded-lg font-label text-sm font-bold flex items-center justify-center gap-2"
+                    onClick={(event) => {
+                      event.stopPropagation()
+                      goToRate()
+                    }}
+                  >
+                    <span className="material-symbols-outlined text-lg">grade</span>
+                    Rate
+                  </button>
+                </div>
+              </div>
+            </article>
+          )}
+
+          {matches('quintin-paredes', 'street-food') && (
+            <article
+              className="bg-surface-container-low rounded-xl overflow-hidden"
+              onClick={openQuikSnackProfile}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(event) => {
+                if (event.key === 'Enter') openQuikSnackProfile()
+              }}
+            >
+              <div className="relative h-64">
+                <img
+                  className="w-full h-full object-cover"
+                  alt="Traditional noodle and street food"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1jNRFdloJ4bHYGEe2ySaeqNYLL1xJKIHZ8e5l2gxAScceOw6BWIiXzWGzOd-Wgy8dxquXSFJTxIYggytg_8Yxq0gzl6dlCSZJFoVz8fpvZQt-lXR12vtqw856eItOekh4BjyjItvccf2npyoepsz3YpKjAnTmqctsRtjHQMpQCYtUeHJ5-MxXc6zg_Cd-dNaivx9eaWG7-Suhl2Jn7rU2mmALYINigRtTknUa3JWPnzamC1CvRJDK1EAPIXKFFaPWyEUsD6xJ_YE"
+                />
+                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-1">
+                  <span
+                    className="material-symbols-outlined text-secondary text-sm"
+                    style={{ fontVariationSettings: "'FILL' 1" }}
+                  >
+                    star
+                  </span>
+                  <span className="font-bold text-on-surface text-sm">4.6</span>
+                </div>
+              </div>
+              <div className="p-6">
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <h3 className="font-headline text-2xl font-bold text-primary">
+                      Quik Snack
+                    </h3>
+                    <p className="text-secondary font-label text-sm font-medium">
+                      Carvajal Alley • Heritage Cuisine
+                    </p>
+                  </div>
+                </div>
+                <p className="text-on-surface-variant mb-6 text-sm leading-relaxed">
+                  Hidden in the heart of Carvajal Street. Their Oyster Cake and
+                  Indonesian Tauhu are legendary recipes preserved through
+                  generations.
+                </p>
+                <div className="flex gap-3">
+                  <button
+                    type="button"
+                    className="flex-1 bg-gradient-to-tr from-primary to-primary-container text-on-primary py-3 rounded-lg font-label text-sm font-bold flex items-center justify-center gap-2"
+                    onClick={(event) => {
+                      event.stopPropagation()
+                      goToMap()
+                    }}
+                  >
+                    <span className="material-symbols-outlined text-lg">map</span>
+                    View Map
+                  </button>
+                  <button
+                    type="button"
+                    className="flex-1 bg-surface-container-highest text-on-surface py-3 rounded-lg font-label text-sm font-bold flex items-center justify-center gap-2"
+                    onClick={(event) => {
+                      event.stopPropagation()
+                      goToRate()
+                    }}
+                  >
+                    <span className="material-symbols-outlined text-lg">grade</span>
+                    Rate
+                  </button>
+                </div>
+              </div>
+            </article>
+          )}
+
+          {matches('ongpin', 'pastries-hopia') && (
+            <article
+              className="bg-surface-container-low rounded-xl overflow-hidden"
+              onClick={openEngBeeTinProfile}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(event) => {
+                if (event.key === 'Enter') openEngBeeTinProfile()
+              }}
+            >
+              <div className="relative h-64">
+                <img
+                  className="w-full h-full object-cover"
+                  alt="Stack of hopia pastries"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8ua5S5w6KMMWTxBLfHQ-KsXQIeeFFbe6MyAJ5S-VNoPVosU88DFtJDz0nHwuFsr3HXjIt2T5K_boTjwFrOeYz6I0RbAkuUeAacech6r435EebLzcR4lDJz33G0jb7uLZZ9XZrX8UMuPG0OddTV7iGEdylTB3YzcYwDRvGX4oohaKEHVrTTUkRTRyvwRR8i2gVeaeQ9jmGyig9-zWwKVeeyekukWLgXREVAyw7yuCDA43ynpeLATJeotI5sp3bm2jyLY-jsD5rXZA"
+                />
+                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-1">
+                  <span
+                    className="material-symbols-outlined text-secondary text-sm"
+                    style={{ fontVariationSettings: "'FILL' 1" }}
+                  >
+                    star
+                  </span>
+                  <span className="font-bold text-on-surface text-sm">4.9</span>
+                </div>
+              </div>
+              <div className="p-6">
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <h3 className="font-headline text-2xl font-bold text-primary">
+                      Eng Bee Tin
+                    </h3>
+                    <p className="text-secondary font-label text-sm font-medium">
+                      Ongpin Street • Bakeries
+                    </p>
+                  </div>
+                </div>
+                <p className="text-on-surface-variant mb-6 text-sm leading-relaxed">
+                  The pioneer of Ube Hopia. A must-stop souvenir shop for
+                  visitors exploring Ongpin.
+                </p>
+                <div className="flex gap-3">
+                  <button
+                    type="button"
+                    className="flex-1 bg-gradient-to-tr from-primary to-primary-container text-on-primary py-3 rounded-lg font-label text-sm font-bold flex items-center justify-center gap-2"
+                    onClick={(event) => {
+                      event.stopPropagation()
+                      goToMap()
+                    }}
+                  >
+                    <span className="material-symbols-outlined text-lg">map</span>
+                    View Map
+                  </button>
+                  <button
+                    type="button"
+                    className="flex-1 bg-surface-container-highest text-on-surface py-3 rounded-lg font-label text-sm font-bold flex items-center justify-center gap-2"
+                    onClick={(event) => {
+                      event.stopPropagation()
+                      goToRate()
+                    }}
+                  >
+                    <span className="material-symbols-outlined text-lg">grade</span>
+                    Rate
+                  </button>
+                </div>
+              </div>
+            </article>
+          )}
+
+          {matches('sabino-padilla', 'fine-dining') && (
+            <article
+              className="bg-surface-container-low rounded-xl overflow-hidden"
+              onClick={openSincerityCafeProfile}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(event) => {
+                if (event.key === 'Enter') openSincerityCafeProfile()
+              }}
+            >
+              <div className="relative h-64">
+                <img
+                  className="w-full h-full object-cover"
+                  alt="Traditional fried chicken"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcRsm0BcLO3zpNqsa4KnhzVR40pGE7AEenWFuCew5-G8dlZv3rxBOwaWi1HcwLh04hyDu0XKeih9r7jzwuglczmoyiFHv5Ogl7pg2QmpSOgt8xBOTfqT7EYtiLPFeFpc4AQkra_K3vL021P43zqF11j5CmxCzSXKkHfUNOlmUuWAq5-ce2L0z3MRPKkFgYS9G3gmFMAbtdujroMIaSmxyPpU5cZJl6eLKmXDT0AZf9niqg81gROihCXFOXaPBnSwK0D5fdglnDRu8"
+                />
+                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-1">
+                  <span
+                    className="material-symbols-outlined text-secondary text-sm"
+                    style={{ fontVariationSettings: "'FILL' 1" }}
+                  >
+                    star
+                  </span>
+                  <span className="font-bold text-on-surface text-sm">4.7</span>
+                </div>
+              </div>
+              <div className="p-6">
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <h3 className="font-headline text-2xl font-bold text-primary">
+                      Sincerity Cafe
+                    </h3>
+                    <p className="text-secondary font-label text-sm font-medium">
+                      Yuchengco Street • Fine Dining
+                    </p>
+                  </div>
+                </div>
+                <p className="text-on-surface-variant mb-6 text-sm leading-relaxed">
+                  A Binondo classic known for their signature Fried Chicken and
+                  comfort dishes served family-style.
+                </p>
+                <div className="flex gap-3">
+                  <button
+                    type="button"
+                    className="flex-1 bg-gradient-to-tr from-primary to-primary-container text-on-primary py-3 rounded-lg font-label text-sm font-bold flex items-center justify-center gap-2"
+                    onClick={(event) => {
+                      event.stopPropagation()
+                      goToMap()
+                    }}
+                  >
+                    <span className="material-symbols-outlined text-lg">map</span>
+                    View Map
+                  </button>
+                  <button
+                    type="button"
+                    className="flex-1 bg-surface-container-highest text-on-surface py-3 rounded-lg font-label text-sm font-bold flex items-center justify-center gap-2"
+                    onClick={(event) => {
+                      event.stopPropagation()
+                      goToRate()
+                    }}
+                  >
+                    <span className="material-symbols-outlined text-lg">grade</span>
+                    Rate
+                  </button>
+                </div>
+              </div>
+            </article>
+          )}
+
+          {!hasMatches && (
+            <div className="bg-surface-container-low rounded-xl p-6 text-on-surface-variant">
+              No matches found for your filters.
+            </div>
+          )}
+
+          <div className="bg-secondary-container/30 p-8 rounded-xl relative overflow-hidden">
+            <div className="absolute -right-4 -top-4 opacity-10">
+              <span className="material-symbols-outlined text-9xl">info</span>
+            </div>
+            <h4 className="font-headline text-xl font-bold text-secondary mb-4 flex items-center gap-2">
+              <span className="material-symbols-outlined">lightbulb</span>
+              Food Crawl Tip
+            </h4>
+            <p className="text-on-secondary-container font-body text-sm leading-relaxed">
+              Start your journey early around 10:00 AM to beat the lunch crowd.
+              Bring cash as many traditional heritage spots do not accept cards.
+              Don&apos;t forget to try the sugar-cane juice at street stalls!
+            </p>
+          </div>
+        </section>
+
+        <section className="px-6 mt-12 mb-8">
+          <button
+            type="button"
+            className="w-full bg-primary text-on-primary py-5 rounded-xl font-headline text-lg font-bold shadow-lg flex items-center justify-center gap-3 active:scale-[0.98] transition-transform"
+            onClick={goToMap}
+          >
+            <span className="material-symbols-outlined">download</span>
+            Download Crawl Route
+          </button>
+        </section>
+      </main>
+
+      <main className="hidden md:block pt-28 pb-20 px-6 max-w-screen-2xl mx-auto">
       <header className="mb-16">
         <h1 className="font-headline text-6xl md:text-8xl font-black text-primary leading-none tracking-tighter mb-4">
           The Great <br />Food Crawl
@@ -68,21 +490,21 @@ export default function FoodCrawlGuide({ onNavigate }) {
                 <button
                   type="button"
                   className={chipClass(streetFilter === 'ongpin')}
-                  onClick={() => setStreetFilter('ongpin')}
+                  onClick={() => toggleStreetFilter('ongpin')}
                 >
                   Ongpin
                 </button>
                 <button
                   type="button"
                   className={chipClass(streetFilter === 'quintin-paredes')}
-                  onClick={() => setStreetFilter('quintin-paredes')}
+                  onClick={() => toggleStreetFilter('quintin-paredes')}
                 >
                   Quintin Paredes
                 </button>
                 <button
                   type="button"
                   className={chipClass(streetFilter === 'sabino-padilla')}
-                  onClick={() => setStreetFilter('sabino-padilla')}
+                  onClick={() => toggleStreetFilter('sabino-padilla')}
                 >
                   Sabino Padilla
                 </button>
@@ -103,35 +525,35 @@ export default function FoodCrawlGuide({ onNavigate }) {
                 <button
                   type="button"
                   className={chipClass(categoryFilter === 'dim-sum')}
-                  onClick={() => setCategoryFilter('dim-sum')}
+                  onClick={() => toggleCategoryFilter('dim-sum')}
                 >
                   Dim Sum
                 </button>
                 <button
                   type="button"
                   className={chipClass(categoryFilter === 'noodle-houses')}
-                  onClick={() => setCategoryFilter('noodle-houses')}
+                  onClick={() => toggleCategoryFilter('noodle-houses')}
                 >
                   Noodle Houses
                 </button>
                 <button
                   type="button"
                   className={chipClass(categoryFilter === 'pastries-hopia')}
-                  onClick={() => setCategoryFilter('pastries-hopia')}
+                  onClick={() => toggleCategoryFilter('pastries-hopia')}
                 >
                   Pastries &amp; Hopia
                 </button>
                 <button
                   type="button"
                   className={chipClass(categoryFilter === 'street-food')}
-                  onClick={() => setCategoryFilter('street-food')}
+                  onClick={() => toggleCategoryFilter('street-food')}
                 >
                   Street Food
                 </button>
                 <button
                   type="button"
                   className={chipClass(categoryFilter === 'fine-dining')}
-                  onClick={() => setCategoryFilter('fine-dining')}
+                  onClick={() => toggleCategoryFilter('fine-dining')}
                 >
                   Fine Dining
                 </button>
@@ -520,6 +942,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
           </div>
         </aside>
       </div>
-    </main>
+      </main>
+    </>
   )
 }

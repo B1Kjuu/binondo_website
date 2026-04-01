@@ -34,9 +34,332 @@ export default function HeritageLandmarks({ onNavigate }) {
       ? 'px-6 py-3 bg-secondary-container text-on-secondary-container rounded-full font-bold text-sm tracking-widest uppercase hover:opacity-90 transition-all'
       : 'px-6 py-3 bg-surface-container-high text-on-surface-variant rounded-full font-bold text-sm tracking-widest uppercase hover:bg-surface-container-highest transition-all'
 
+  const mobileFilterButtonClass = (key) =>
+    key === activeFilter
+      ? 'bg-secondary-container text-on-secondary-container font-label text-sm px-6 py-2 rounded-full whitespace-nowrap shadow-sm'
+      : 'bg-surface-container-highest text-on-surface-variant font-label text-sm px-6 py-2 rounded-full whitespace-nowrap'
+
+  const toggleActiveFilter = (value) => {
+    setActiveFilter((current) => (current === value ? 'all' : value))
+  }
+
   return (
     <>
-      <main className="pt-24 pb-20">
+      <main className="md:hidden pt-20 pb-32">
+        <section className="px-6 mb-8">
+          <div className="flex gap-3 overflow-x-auto hide-scrollbar py-2">
+            <button
+              type="button"
+              className={mobileFilterButtonClass('all')}
+              onClick={() => setActiveFilter('all')}
+            >
+              All Records
+            </button>
+            <button
+              type="button"
+              className={mobileFilterButtonClass('temple')}
+              onClick={() => toggleActiveFilter('temple')}
+            >
+              Temples
+            </button>
+            <button
+              type="button"
+              className={mobileFilterButtonClass('church')}
+              onClick={() => toggleActiveFilter('church')}
+            >
+              Churches
+            </button>
+            <button
+              type="button"
+              className={mobileFilterButtonClass('museum')}
+              onClick={() => toggleActiveFilter('museum')}
+            >
+              Museums
+            </button>
+          </div>
+        </section>
+
+        {isTypeVisible('church') ? (
+          <section className="px-6 mb-12">
+            <div
+              className="relative rounded-xl overflow-hidden bg-surface-container group"
+              role="button"
+              tabIndex={0}
+              onClick={openBinondoChurch}
+              onKeyDown={(event) => {
+                if (event.key === 'Enter') openBinondoChurch()
+              }}
+            >
+              <div className="aspect-[4/5] relative">
+                <img
+                  className="w-full h-full object-cover"
+                  alt="Minor Basilica of St. Lorenzo Ruiz"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDI2msI2Qce1yPc0ezA0Da9Rgv31HXE8TRgfzxWAB5EtYLQGHViSd9HLjmNNs7Y2iHLWpIWL9ccSP_eaOEpZ53ONLvbKjDezIeMZtAiJdjciUh-5_yJoqAZyrHOyI4ZZuuAbXNwDcJVPgf4yNXFXPHtNOviHGHgoiG7QsNqMx3b7p9sa6pUzKS7m1yU8FwZbU7GedduBol8LsCXNarqR6vKee6J6CJlc7Gs7BvYDo-1-OoaTeM8h9NZ2GnlBFqX46zZYuCViJ17wZQ"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent" />
+              </div>
+              <div className="absolute bottom-0 left-0 p-6 text-white">
+                <span className="text-secondary-fixed font-label text-[10px] uppercase tracking-[0.2em] mb-2 block">
+                  Primary Heritage Landmark
+                </span>
+                <h2 className="font-headline text-3xl mb-3 leading-tight">
+                  Minor Basilica of St. Lorenzo Ruiz
+                </h2>
+                <p className="font-body text-sm text-on-primary-container mb-6 opacity-90 line-clamp-2">
+                  The spiritual heart of Binondo, standing as a testament to the
+                  blend of Chinese and Filipino Baroque architecture since 1594.
+                </p>
+                <button
+                  type="button"
+                  className="bg-white text-primary px-6 py-3 rounded-md font-bold text-sm inline-flex items-center gap-2"
+                  onClick={(event) => {
+                    event.stopPropagation()
+                    openBinondoChurch()
+                  }}
+                >
+                  Enter Archive
+                  <span className="material-symbols-outlined text-sm">
+                    arrow_forward
+                  </span>
+                </button>
+              </div>
+            </div>
+          </section>
+        ) : null}
+
+        <section className="px-6 mb-12">
+          <h3 className="font-headline text-2xl text-primary mb-6">
+            Historical Registry
+          </h3>
+          <div className="space-y-10">
+            {isTypeVisible('temple') ? (
+              <div className="grid grid-cols-12 gap-4">
+                <div className="col-span-4 aspect-square rounded-lg overflow-hidden bg-surface-container-low">
+                  <img
+                    className="w-full h-full object-cover"
+                    alt="Kuang Kong Temple"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6dyUqSd85PsnESoU2c29BYWOHPQ3ma0pRp7kOxBIkfPc_GU8x2B1hk_0RhVz-Wtt2rT95_Kod2AHkl-EXqftbREKdDRCUTr2sawsWjox8L36jvvFRHJlIu35Q2TWU7NA7pv21tpstnkE0OgMPJ5-3aKbuDNbGZ7D_bK6k1Bq5ktQSOByOB1BSvXAAtuvIcoK0P9oPQ3b5RE8Ig1Clk9aXvJSVaq4DCutcRJfNHx_NpSuuXv5ySVjpEnx_NAWdRhFdDYbpXxv2kxo"
+                  />
+                </div>
+                <div className="col-span-8 flex flex-col justify-center">
+                  <h4 className="font-headline text-lg text-on-surface mb-1">
+                    Kuang Kong Temple
+                  </h4>
+                  <p className="font-body text-xs text-on-surface-variant mb-3">
+                    Dedicated to the God of War and commerce, this hidden gem is
+                    a cornerstone of local business faith.
+                  </p>
+                  <button
+                    type="button"
+                    className="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-1"
+                    onClick={openKuangKongTemple}
+                  >
+                    Explore Profile{' '}
+                    <span className="material-symbols-outlined text-sm">
+                      chevron_right
+                    </span>
+                  </button>
+                </div>
+              </div>
+            ) : null}
+
+            {isTypeVisible('museum') ? (
+              <div className="grid grid-cols-12 gap-4">
+                <div className="col-span-4 aspect-square rounded-lg overflow-hidden bg-surface-container-low">
+                  <img
+                    className="w-full h-full object-cover"
+                    alt="Bahay Tsinoy museum"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCk55y7sYiYmATmbNk8MOFSPCejfXcv9pJo4cXwAJDmsSwJveUp2TxlbgPFHs6r6hBYiFa38H3c3bmXmWoSg-tMtIl__ZjR3su4jjCMT9WWj9BSRfCeU4TY2nLV0e_1F5zbncm3ZXSZVeMlxl9Imj8iYEjUWmMK95sohdTdz4sXh-ag3C-8CwLxUWfMhRp6TuGSOXiVGPQ7lPpdHCVsUrA7yoZb3unTp7GFiZMnyIsYpOJibP5UuPcGqcgCfHRSKrqe-vdx-8bS2-E"
+                  />
+                </div>
+                <div className="col-span-8 flex flex-col justify-center">
+                  <h4 className="font-headline text-lg text-on-surface mb-1">
+                    Bahay Tsinoy
+                  </h4>
+                  <p className="font-body text-xs text-on-surface-variant mb-3">
+                    A curated record of the Chinese role in Philippine history
+                    and identity.
+                  </p>
+                  <button
+                    type="button"
+                    className="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-1"
+                    onClick={openBahayTsinoy}
+                  >
+                    Explore Profile{' '}
+                    <span className="material-symbols-outlined text-sm">
+                      chevron_right
+                    </span>
+                  </button>
+                </div>
+              </div>
+            ) : null}
+
+            {isTypeVisible('landmark') ? (
+              <div className="grid grid-cols-12 gap-4">
+                <div className="col-span-4 aspect-square rounded-lg overflow-hidden bg-surface-container-low">
+                  <img
+                    className="w-full h-full object-cover"
+                    alt="First United Building facade"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGkMMGmZgDi6HucaZZv0NtKonbcNZm71slcD0mtIaZbTHf7a_73UMt1lwNc4DiTW9OEYSjFmQNSUBjRthmnClfNoR_MGCDHzHJAHgxagIEDnFoMBzjf3zCEN1HN2th-jGXyFwlc3TjX_2RkWWkBXRpGQpCdkUBkpSkdKGu_I8chrP3CgHtk7S3hC1ROzfkT5lkcB4SSNRNvXliL_ICjILecwT7Gsyau62g199WrRxw1opLxI4KLb2n4WosRnxqOQC3eBFED9kudgo"
+                  />
+                </div>
+                <div className="col-span-8 flex flex-col justify-center">
+                  <h4 className="font-headline text-lg text-on-surface mb-1">
+                    First United Building
+                  </h4>
+                  <p className="font-body text-xs text-on-surface-variant mb-3">
+                    Art Deco architecture on Escolta, once the financial heart
+                    of the Philippines.
+                  </p>
+                  <button
+                    type="button"
+                    className="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-1"
+                    onClick={openFirstUnitedBuilding}
+                  >
+                    Explore Profile{' '}
+                    <span className="material-symbols-outlined text-sm">
+                      chevron_right
+                    </span>
+                  </button>
+                </div>
+              </div>
+            ) : null}
+          </div>
+        </section>
+
+        <section className="bg-surface-container-low py-12 px-6 mb-12">
+          <div className="mb-8">
+            <span className="text-secondary font-label text-xs font-bold uppercase tracking-widest mb-2 block">
+              Special Feature
+            </span>
+            <h3 className="font-headline text-3xl text-primary leading-tight">
+              Deep Dive: Escolta&apos;s Neoclassical Soul
+            </h3>
+          </div>
+          <div className="relative mb-6">
+            <img
+              className="w-full rounded-xl grayscale contrast-125"
+              alt="Black and white architectural shot of Regina Building"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbD8yuDgT0Zj1DV0AbNbl9dwQxCjQKRYU6Z6Ijw1-6uXe4SBJGTM8BW5N2r-R-AjmSEtLW1slFqWnrwS1hp3i-pljQrBqyYkt8mLl7P2WKoWENHPLNz2Sry889NEoqI44q-pPIRuhaHqvXY2etrauePmgvrGMQqEX8-vF6UKQ7AJfNfgy_4QMEjyXlbLpK2FhqLZ1AILGEXqm9NgrztX3f78XHvDypuy_Ga0ssOg4_1nQKt6HuXx3lbEGfoGIu1a2Gx_fnnni2jR0"
+            />
+            <div className="absolute -bottom-4 -right-2 bg-secondary text-on-secondary px-4 py-2 font-headline italic text-sm shadow-xl">
+              &quot;The Wall Street of the East&quot;
+            </div>
+          </div>
+          <p className="font-body text-sm text-on-surface leading-relaxed mb-6">
+            Escolta Street remains a living museum of Manila&apos;s early
+            20th-century grandeur. From the Art Deco curves of the First United
+            Building to the Neoclassical strength of the Regina Building, each
+            facade tells a story of an era of unprecedented growth.
+          </p>
+          <button
+            type="button"
+            className="w-full bg-primary text-on-primary py-4 rounded-md font-bold tracking-widest uppercase text-sm"
+            onClick={() => onNavigate?.('map')}
+          >
+            View Architectural Map
+          </button>
+        </section>
+
+        <section className="px-6 mb-12">
+          <div className="flex justify-between items-end mb-6">
+            <h3 className="font-headline text-2xl text-primary">Archivist Notes</h3>
+            <button
+              type="button"
+              className="text-secondary text-sm font-bold border-b border-secondary/30"
+              onClick={() => onNavigate?.('contributions')}
+            >
+              Add Note
+            </button>
+          </div>
+          <div className="space-y-4">
+            <div className="bg-white p-5 rounded-xl shadow-sm">
+              <div className="flex justify-between mb-3">
+                <span className="font-bold text-sm">Elena V.</span>
+                <div className="flex text-secondary text-xs">
+                  {Array.from({ length: 5 }).map((_, index) => (
+                    <span
+                      key={index}
+                      className="material-symbols-outlined text-[14px]"
+                      style={{ fontVariationSettings: "'FILL' 1" }}
+                    >
+                      star
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <p className="font-body text-sm text-on-surface-variant italic">
+                &quot;The light inside the Basilica at 4PM is otherworldly. A perfect
+                time for quiet reflection before the evening rush.&quot;
+              </p>
+            </div>
+
+            <div className="bg-white p-5 rounded-xl shadow-sm">
+              <div className="flex justify-between mb-3">
+                <span className="font-bold text-sm">Marcus Lim</span>
+                <div className="flex text-secondary text-xs">
+                  {Array.from({ length: 4 }).map((_, index) => (
+                    <span
+                      key={index}
+                      className="material-symbols-outlined text-[14px]"
+                      style={{ fontVariationSettings: "'FILL' 1" }}
+                    >
+                      star
+                    </span>
+                  ))}
+                  <span
+                    className="material-symbols-outlined text-[14px]"
+                    style={{ fontVariationSettings: "'FILL' 0" }}
+                  >
+                    star
+                  </span>
+                </div>
+              </div>
+              <p className="font-body text-sm text-on-surface-variant italic">
+                &quot;Escolta is best explored on foot. Don&apos;t miss the small museum
+                in the First United Building.&quot;
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="px-6 pb-12">
+          <h3 className="font-headline text-lg text-primary mb-4">
+            Essential Services
+          </h3>
+          <div className="flex gap-4 overflow-x-auto hide-scrollbar">
+            <div className="min-w-[140px] bg-surface-container p-4 rounded-lg">
+              <span className="material-symbols-outlined text-secondary mb-2">
+                tour
+              </span>
+              <h5 className="text-xs font-bold mb-1">Local Guides</h5>
+              <p className="text-[10px] text-on-surface-variant">
+                Vetted heritage experts
+              </p>
+            </div>
+            <div className="min-w-[140px] bg-surface-container p-4 rounded-lg">
+              <span className="material-symbols-outlined text-secondary mb-2">
+                directions_walk
+              </span>
+              <h5 className="text-xs font-bold mb-1">Audio Walks</h5>
+              <p className="text-[10px] text-on-surface-variant">
+                Offline guided maps
+              </p>
+            </div>
+            <div className="min-w-[140px] bg-surface-container p-4 rounded-lg">
+              <span className="material-symbols-outlined text-secondary mb-2">
+                camera
+              </span>
+              <h5 className="text-xs font-bold mb-1">Photo Permits</h5>
+              <p className="text-[10px] text-on-surface-variant">
+                Landmark guidelines
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <main className="hidden md:block pt-24 pb-20">
         <header className="px-8 max-w-screen-2xl mx-auto mb-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
             <div className="lg:col-span-7">
@@ -60,28 +383,28 @@ export default function HeritageLandmarks({ onNavigate }) {
               <button
                 type="button"
                 className={filterButtonClass('temple')}
-                onClick={() => setActiveFilter('temple')}
+                onClick={() => toggleActiveFilter('temple')}
               >
                 Temples
               </button>
               <button
                 type="button"
                 className={filterButtonClass('church')}
-                onClick={() => setActiveFilter('church')}
+                onClick={() => toggleActiveFilter('church')}
               >
                 Churches
               </button>
               <button
                 type="button"
                 className={filterButtonClass('museum')}
-                onClick={() => setActiveFilter('museum')}
+                onClick={() => toggleActiveFilter('museum')}
               >
                 Museums
               </button>
               <button
                 type="button"
                 className={filterButtonClass('marker')}
-                onClick={() => setActiveFilter('marker')}
+                onClick={() => toggleActiveFilter('marker')}
               >
                 Historical Markers
               </button>
@@ -566,10 +889,6 @@ export default function HeritageLandmarks({ onNavigate }) {
           </div>
         </section>
       </main>
-
-      <button className="fixed bottom-8 right-8 w-14 h-14 bg-primary text-on-primary rounded-full shadow-[0_24px_32px_-4px_rgba(28,28,24,0.2)] flex items-center justify-center md:hidden">
-        <span className="material-symbols-outlined">search</span>
-      </button>
     </>
   )
 }
