@@ -1,6 +1,16 @@
-export default function HeritageBinondoChurch() {
+export default function HeritageBinondoChurch({ onNavigate }) {
   return (
     <main className="pt-28 pb-20">
+      <div className="px-8 lg:px-16 max-w-screen-2xl mx-auto mb-6">
+        <button
+          type="button"
+          onClick={() => onNavigate?.('heritage')}
+          className="inline-flex items-center gap-2 text-primary font-bold hover:underline"
+        >
+          <span className="material-symbols-outlined">arrow_back</span>
+          Back to Heritage
+        </button>
+      </div>
       <header className="relative w-full h-[716px] flex items-end overflow-hidden mb-20 px-8 lg:px-16">
         <img
           alt="Binondo Church Facade"

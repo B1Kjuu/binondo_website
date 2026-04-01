@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
 import CommunityHub from './pages/CommunityHub.jsx'
 import FoodCrawlGuide from './pages/FoodCrawlGuide.jsx'
@@ -6,8 +6,12 @@ import FoodEngBeeTin from './pages/FoodEngBeeTin.jsx'
 import FoodQuikSnack from './pages/FoodQuikSnack.jsx'
 import FoodSincerityCafe from './pages/FoodSincerityCafe.jsx'
 import FoodWaiYingFastfood from './pages/FoodWaiYingFastfood.jsx'
+import HeritageBahayTsinoy from './pages/HeritageBahayTsinoy.jsx'
 import HeritageBinondoChurch from './pages/HeritageBinondoChurch.jsx'
+import HeritageFirstUnitedBuilding from './pages/HeritageFirstUnitedBuilding.jsx'
+import HeritageKuangKongTemple from './pages/HeritageKuangKongTemple.jsx'
 import HeritageLandmarks from './pages/HeritageLandmarks.jsx'
+import HeritagePlazaCalderonDeLaBarca from './pages/HeritagePlazaCalderonDeLaBarca.jsx'
 import HomePageExploreBinondo from './pages/HomePageExploreBinondo.jsx'
 import LoginPage from './pages/LoginPage.jsx'
 import NewsLunarNewYearTraffic from './pages/NewsLunarNewYearTraffic.jsx'
@@ -18,6 +22,10 @@ function App() {
   const [activePage, setActivePage] = useState('home')
   const [searchQuery, setSearchQuery] = useState('')
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [activePage])
 
   const isSectionActive = (section) =>
     activePage === section || activePage.startsWith(`${section}-`)
@@ -48,6 +56,22 @@ function App() {
       {
         match: ['binondo church', 'church', 'basilica', 'minor basilica'],
         page: 'heritage-binondo-church',
+      },
+      {
+        match: ['kuang kong', 'kuang', 'kong temple'],
+        page: 'heritage-kuang-kong-temple',
+      },
+      {
+        match: ['first united', 'escolta', 'art deco'],
+        page: 'heritage-first-united-building',
+      },
+      {
+        match: ['plaza calderon', 'calderon', 'de la barca'],
+        page: 'heritage-plaza-calderon-de-la-barca',
+      },
+      {
+        match: ['bahay tsinoy', 'tsinoy museum', 'tsinoy'],
+        page: 'heritage-bahay-tsinoy',
       },
       {
         match: ['lunar', 'new year', 'traffic', 'rerouting', 'route', 'parade'],
@@ -93,6 +117,14 @@ function App() {
         return HeritageLandmarks
       case 'heritage-binondo-church':
         return HeritageBinondoChurch
+      case 'heritage-kuang-kong-temple':
+        return HeritageKuangKongTemple
+      case 'heritage-first-united-building':
+        return HeritageFirstUnitedBuilding
+      case 'heritage-plaza-calderon-de-la-barca':
+        return HeritagePlazaCalderonDeLaBarca
+      case 'heritage-bahay-tsinoy':
+        return HeritageBahayTsinoy
       case 'community':
         return CommunityHub
       case 'news':

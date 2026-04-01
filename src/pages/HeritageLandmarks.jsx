@@ -1,7 +1,38 @@
+import { useState } from 'react'
+
 export default function HeritageLandmarks({ onNavigate }) {
   const openBinondoChurch = () => {
     onNavigate?.('heritage-binondo-church')
   }
+
+  const openKuangKongTemple = () => {
+    onNavigate?.('heritage-kuang-kong-temple')
+  }
+
+  const openFirstUnitedBuilding = () => {
+    onNavigate?.('heritage-first-united-building')
+  }
+
+  const openPlazaCalderonDeLaBarca = () => {
+    onNavigate?.('heritage-plaza-calderon-de-la-barca')
+  }
+
+  const openBahayTsinoy = () => {
+    onNavigate?.('heritage-bahay-tsinoy')
+  }
+
+  const [activeFilter, setActiveFilter] = useState('all')
+
+  const isTypeVisible = (type) => {
+    if (activeFilter === 'all') return true
+    if (activeFilter === 'marker') return type === 'marker' || type === 'landmark'
+    return type === activeFilter
+  }
+
+  const filterButtonClass = (key) =>
+    key === activeFilter
+      ? 'px-6 py-3 bg-secondary-container text-on-secondary-container rounded-full font-bold text-sm tracking-widest uppercase hover:opacity-90 transition-all'
+      : 'px-6 py-3 bg-surface-container-high text-on-surface-variant rounded-full font-bold text-sm tracking-widest uppercase hover:bg-surface-container-highest transition-all'
 
   return (
     <>
@@ -19,19 +50,39 @@ export default function HeritageLandmarks({ onNavigate }) {
               </p>
             </div>
             <div className="lg:col-span-5 flex flex-wrap gap-3">
-              <button className="px-6 py-3 bg-secondary-container text-on-secondary-container rounded-full font-bold text-sm tracking-widest uppercase hover:opacity-90 transition-all">
+              <button
+                type="button"
+                className={filterButtonClass('all')}
+                onClick={() => setActiveFilter('all')}
+              >
                 All Types
               </button>
-              <button className="px-6 py-3 bg-surface-container-high text-on-surface-variant rounded-full font-bold text-sm tracking-widest uppercase hover:bg-surface-container-highest transition-all">
+              <button
+                type="button"
+                className={filterButtonClass('temple')}
+                onClick={() => setActiveFilter('temple')}
+              >
                 Temples
               </button>
-              <button className="px-6 py-3 bg-surface-container-high text-on-surface-variant rounded-full font-bold text-sm tracking-widest uppercase hover:bg-surface-container-highest transition-all">
+              <button
+                type="button"
+                className={filterButtonClass('church')}
+                onClick={() => setActiveFilter('church')}
+              >
                 Churches
               </button>
-              <button className="px-6 py-3 bg-surface-container-high text-on-surface-variant rounded-full font-bold text-sm tracking-widest uppercase hover:bg-surface-container-highest transition-all">
+              <button
+                type="button"
+                className={filterButtonClass('museum')}
+                onClick={() => setActiveFilter('museum')}
+              >
                 Museums
               </button>
-              <button className="px-6 py-3 bg-surface-container-high text-on-surface-variant rounded-full font-bold text-sm tracking-widest uppercase hover:bg-surface-container-highest transition-all">
+              <button
+                type="button"
+                className={filterButtonClass('marker')}
+                onClick={() => setActiveFilter('marker')}
+              >
                 Historical Markers
               </button>
             </div>
@@ -40,10 +91,11 @@ export default function HeritageLandmarks({ onNavigate }) {
 
         <section className="px-8 max-w-screen-2xl mx-auto mb-24">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-            <div
-              className="md:col-span-8 group cursor-pointer"
-              onClick={openBinondoChurch}
-            >
+            {isTypeVisible('church') ? (
+              <div
+                className="md:col-span-8 group cursor-pointer"
+                onClick={openBinondoChurch}
+              >
               <div className="relative overflow-hidden rounded-xl h-[600px] bg-surface-container">
                 <img
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -78,9 +130,14 @@ export default function HeritageLandmarks({ onNavigate }) {
                   </div>
                 </div>
               </div>
-            </div>
+              </div>
+            ) : null}
 
-            <div className="md:col-span-4 group cursor-pointer">
+            {isTypeVisible('temple') ? (
+              <div
+                className="md:col-span-4 group cursor-pointer"
+                onClick={openKuangKongTemple}
+              >
               <div className="relative overflow-hidden rounded-xl h-[600px] bg-surface-container-low">
                 <img
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -99,14 +156,22 @@ export default function HeritageLandmarks({ onNavigate }) {
                     A hidden sanctuary dedicated to the God of War and Loyalty,
                     favored by local merchants.
                   </p>
-                  <button className="w-full py-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg hover:bg-white/20 transition-all font-bold text-xs uppercase tracking-widest">
+                  <button
+                    className="w-full py-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg hover:bg-white/20 transition-all font-bold text-xs uppercase tracking-widest"
+                    type="button"
+                  >
                     Explore Profile
                   </button>
                 </div>
               </div>
-            </div>
+              </div>
+            ) : null}
 
-            <div className="md:col-span-4 group cursor-pointer">
+            {isTypeVisible('landmark') ? (
+              <div
+                className="md:col-span-4 group cursor-pointer"
+                onClick={openFirstUnitedBuilding}
+              >
               <div className="bg-surface-container p-6 rounded-xl h-full flex flex-col justify-between">
                 <div>
                   <img
@@ -132,9 +197,14 @@ export default function HeritageLandmarks({ onNavigate }) {
                   </span>
                 </div>
               </div>
-            </div>
+              </div>
+            ) : null}
 
-            <div className="md:col-span-4 group cursor-pointer">
+            {isTypeVisible('marker') ? (
+              <div
+                className="md:col-span-4 group cursor-pointer"
+                onClick={openPlazaCalderonDeLaBarca}
+              >
               <div className="bg-surface-container p-6 rounded-xl h-full flex flex-col justify-between">
                 <div>
                   <img
@@ -160,9 +230,14 @@ export default function HeritageLandmarks({ onNavigate }) {
                   </span>
                 </div>
               </div>
-            </div>
+              </div>
+            ) : null}
 
-            <div className="md:col-span-4 group cursor-pointer">
+            {isTypeVisible('museum') ? (
+              <div
+                className="md:col-span-4 group cursor-pointer"
+                onClick={openBahayTsinoy}
+              >
               <div className="bg-surface-container p-6 rounded-xl h-full flex flex-col justify-between">
                 <div>
                   <img
@@ -190,7 +265,8 @@ export default function HeritageLandmarks({ onNavigate }) {
                   </span>
                 </div>
               </div>
-            </div>
+              </div>
+            ) : null}
           </div>
         </section>
 
