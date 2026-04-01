@@ -32,6 +32,11 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false)
 
+  const isFooterNavPage = useMemo(
+    () => ['contacts', 'guidelines', 'emergency', 'privacy'].includes(activePage),
+    [activePage]
+  )
+
   const {
     containerRef: navSearchContainerRef,
     suggestions: navSearchSuggestions,
@@ -410,72 +415,108 @@ function App() {
         </div>
       </footer>
 
-      <nav className="fixed bottom-0 left-0 right-0 rounded-t-xl z-50 bg-background/80 backdrop-blur-md shadow-[0_-8px_24px_-4px_rgba(28,28,24,0.04)] border-t-[0.5px] border-outline-variant/15 flex justify-around items-center px-2 py-3 md:hidden">
-        <button
-          type="button"
-          onClick={() => setActivePage('home')}
-          className={`flex flex-col items-center justify-center rounded-xl px-4 py-1.5 active:scale-90 transition-transform duration-150 ${
-            isSectionActive('home')
-              ? 'bg-gradient-to-tr from-primary to-primary-container text-white'
-              : 'text-secondary hover:opacity-80'
-          }`}
-        >
-          <span
-            className="material-symbols-outlined"
-            style={{ fontVariationSettings: isSectionActive('home') ? "'FILL' 1" : "'FILL' 0" }}
+      {isFooterNavPage ? (
+        <nav className="fixed bottom-0 left-0 right-0 rounded-t-xl z-50 bg-background/80 backdrop-blur-md shadow-[0_-8px_24px_-4px_rgba(28,28,24,0.04)] border-t-[0.5px] border-outline-variant/15 flex justify-around items-center px-2 py-3 md:hidden">
+          {[
+            { key: 'contacts', label: 'Contacts', icon: 'contacts' },
+            { key: 'guidelines', label: 'Guidelines', icon: 'history_edu' },
+            { key: 'emergency', label: 'Emergency', icon: 'emergency' },
+            { key: 'privacy', label: 'Policy', icon: 'policy' },
+          ].map((item) => {
+            const isActive = activePage === item.key
+
+            return (
+              <button
+                key={item.key}
+                type="button"
+                onClick={() => setActivePage(item.key)}
+                className={
+                  isActive
+                    ? 'flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 mt-1 active:scale-90 transition-transform'
+                    : 'flex flex-col items-center justify-center text-on-surface opacity-60 hover:opacity-100 p-2 active:scale-90 transition-[opacity,transform]'
+                }
+              >
+                <span
+                  className="material-symbols-outlined"
+                  style={{ fontVariationSettings: isActive ? "'FILL' 1" : "'FILL' 0" }}
+                >
+                  {item.icon}
+                </span>
+                <span className="font-body text-[10px] font-medium tracking-wide uppercase mt-1">
+                  {item.label}
+                </span>
+              </button>
+            )
+          })}
+        </nav>
+      ) : (
+        <nav className="fixed bottom-0 left-0 right-0 rounded-t-xl z-50 bg-background/80 backdrop-blur-md shadow-[0_-8px_24px_-4px_rgba(28,28,24,0.04)] border-t-[0.5px] border-outline-variant/15 flex justify-around items-center px-2 py-3 md:hidden">
+          <button
+            type="button"
+            onClick={() => setActivePage('home')}
+            className={`flex flex-col items-center justify-center rounded-xl px-4 py-1.5 active:scale-90 transition-transform duration-150 ${
+              isSectionActive('home')
+                ? 'bg-gradient-to-tr from-primary to-primary-container text-white'
+                : 'text-secondary hover:opacity-80'
+            }`}
           >
-            home
-          </span>
-          <span className="font-body font-medium text-[10px] uppercase tracking-tighter mt-1">
-            Home
-          </span>
-        </button>
+            <span
+              className="material-symbols-outlined"
+              style={{ fontVariationSettings: isSectionActive('home') ? "'FILL' 1" : "'FILL' 0" }}
+            >
+              home
+            </span>
+            <span className="font-body font-medium text-[10px] uppercase tracking-tighter mt-1">
+              Home
+            </span>
+          </button>
 
-        <button
-          type="button"
-          onClick={() => setActivePage('food')}
-          className={`flex flex-col items-center justify-center rounded-xl px-4 py-1.5 hover:opacity-80 active:scale-90 transition-transform duration-150 ${
-            isSectionActive('food')
-              ? 'bg-gradient-to-tr from-primary to-primary-container text-white'
-              : 'text-secondary'
-          }`}
-        >
-          <span className="material-symbols-outlined">restaurant_menu</span>
-          <span className="font-body font-medium text-[10px] uppercase tracking-tighter mt-1">
-            Crawl
-          </span>
-        </button>
+          <button
+            type="button"
+            onClick={() => setActivePage('food')}
+            className={`flex flex-col items-center justify-center rounded-xl px-4 py-1.5 hover:opacity-80 active:scale-90 transition-transform duration-150 ${
+              isSectionActive('food')
+                ? 'bg-gradient-to-tr from-primary to-primary-container text-white'
+                : 'text-secondary'
+            }`}
+          >
+            <span className="material-symbols-outlined">restaurant_menu</span>
+            <span className="font-body font-medium text-[10px] uppercase tracking-tighter mt-1">
+              Crawl
+            </span>
+          </button>
 
-        <button
-          type="button"
-          onClick={() => setActivePage('heritage')}
-          className={`flex flex-col items-center justify-center rounded-xl px-4 py-1.5 hover:opacity-80 active:scale-90 transition-transform duration-150 ${
-            isSectionActive('heritage')
-              ? 'bg-gradient-to-tr from-primary to-primary-container text-white'
-              : 'text-secondary'
-          }`}
-        >
-          <span className="material-symbols-outlined">history_edu</span>
-          <span className="font-body font-medium text-[10px] uppercase tracking-tighter mt-1">
-            History
-          </span>
-        </button>
+          <button
+            type="button"
+            onClick={() => setActivePage('heritage')}
+            className={`flex flex-col items-center justify-center rounded-xl px-4 py-1.5 hover:opacity-80 active:scale-90 transition-transform duration-150 ${
+              isSectionActive('heritage')
+                ? 'bg-gradient-to-tr from-primary to-primary-container text-white'
+                : 'text-secondary'
+            }`}
+          >
+            <span className="material-symbols-outlined">history_edu</span>
+            <span className="font-body font-medium text-[10px] uppercase tracking-tighter mt-1">
+              History
+            </span>
+          </button>
 
-        <button
-          type="button"
-          onClick={() => setActivePage(isLoggedIn ? 'profile' : 'login')}
-          className={`flex flex-col items-center justify-center rounded-xl px-4 py-1.5 hover:opacity-80 active:scale-90 transition-transform duration-150 ${
-            activePage === 'profile' || activePage === 'login'
-              ? 'bg-gradient-to-tr from-primary to-primary-container text-white'
-              : 'text-secondary'
-          }`}
-        >
-          <span className="material-symbols-outlined">bookmark</span>
-          <span className="font-body font-medium text-[10px] uppercase tracking-tighter mt-1">
-            Saved
-          </span>
-        </button>
-      </nav>
+          <button
+            type="button"
+            onClick={() => setActivePage(isLoggedIn ? 'profile' : 'login')}
+            className={`flex flex-col items-center justify-center rounded-xl px-4 py-1.5 hover:opacity-80 active:scale-90 transition-transform duration-150 ${
+              activePage === 'profile' || activePage === 'login'
+                ? 'bg-gradient-to-tr from-primary to-primary-container text-white'
+                : 'text-secondary'
+            }`}
+          >
+            <span className="material-symbols-outlined">bookmark</span>
+            <span className="font-body font-medium text-[10px] uppercase tracking-tighter mt-1">
+              Saved
+            </span>
+          </button>
+        </nav>
+      )}
     </div>
   )
 }
