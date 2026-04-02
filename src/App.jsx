@@ -8,6 +8,7 @@ import CommunityHub from './pages/community/CommunityHub.jsx'
 import FoodCrawlGuide from './pages/food/FoodCrawlGuide.jsx'
 import FoodEngBeeTin from './pages/food/FoodEngBeeTin.jsx'
 import FoodQuikSnack from './pages/food/FoodQuikSnack.jsx'
+import FoodPresidentGrandPalace from './pages/food/FoodPresidentGrandPalace.jsx'
 import FoodSincerityCafe from './pages/food/FoodSincerityCafe.jsx'
 import FoodWaiYingFastfood from './pages/food/FoodWaiYingFastfood.jsx'
 import HeritageBahayTsinoy from './pages/heritage/HeritageBahayTsinoy.jsx'
@@ -25,12 +26,16 @@ import DistrictContacts from './pages/footer/DistrictContacts.jsx'
 import EmergencyServices from './pages/footer/EmergencyServices.jsx'
 import HeritageGuidelines from './pages/footer/HeritageGuidelines.jsx'
 import PrivacyPolicy from './pages/footer/PrivacyPolicy.jsx'
+import TravelLogisticsPage from './pages/logistics/TravelLogisticsPage.jsx'
+import SignupPage from './pages/system/SignupPage.jsx'
 
 function App() {
   const [activePage, setActivePage] = useState('home')
   const [searchQuery, setSearchQuery] = useState('')
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false)
+
+  const isLoginPage = activePage === 'login' || activePage === 'signup'
 
   const isFooterNavPage = useMemo(
     () => ['contacts', 'guidelines', 'emergency', 'privacy'].includes(activePage),
@@ -82,10 +87,16 @@ function App() {
     switch (activePage) {
       case 'login':
         return LoginPage
+      case 'signup':
+        return SignupPage
+      case 'logistics':
+        return TravelLogisticsPage
       case 'food':
         return FoodCrawlGuide
       case 'food-wai-ying':
         return FoodWaiYingFastfood
+      case 'food-president-grand-palace':
+        return FoodPresidentGrandPalace
       case 'food-eng-bee-tin':
         return FoodEngBeeTin
       case 'food-quik-snack':
@@ -133,7 +144,8 @@ function App() {
 
   return (
     <div className="min-h-full bg-background text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container pb-24 md:pb-0">
-      <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md shadow-[0_24px_32px_-4px_rgba(28,28,24,0.06)]">
+      {isLoginPage ? null : (
+        <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md shadow-[0_24px_32px_-4px_rgba(28,28,24,0.06)]">
         <div className="flex justify-between items-center w-full px-6 md:px-8 py-4 max-w-screen-2xl mx-auto gap-6">
           <div className="flex items-center gap-4">
             <button
@@ -358,10 +370,11 @@ function App() {
             </div>
           </div>
         ) : null}
-      </nav>
+        </nav>
+      )}
 
       <Page
-        onNavigate={setActivePage}
+        onNavigate={navigateToPage}
         activePage={activePage}
         isLoggedIn={isLoggedIn}
         searchQuery={searchQuery}
@@ -373,7 +386,8 @@ function App() {
         }}
       />
 
-      <footer className="bg-surface-container w-full">
+      {isLoginPage ? null : (
+        <footer className="bg-surface-container w-full">
         <div className="flex flex-col md:flex-row justify-between items-center w-full px-12 py-10 gap-6 max-w-screen-2xl mx-auto">
           <div className="font-headline text-xl font-bold text-primary">
             Binondo Digital Archivist
@@ -413,9 +427,10 @@ function App() {
             Chinatown.
           </div>
         </div>
-      </footer>
+        </footer>
+      )}
 
-      {isFooterNavPage ? (
+      {isLoginPage ? null : isFooterNavPage ? (
         <nav className="fixed bottom-0 left-0 right-0 rounded-t-xl z-50 bg-background/80 backdrop-blur-md shadow-[0_-8px_24px_-4px_rgba(28,28,24,0.04)] border-t-[0.5px] border-outline-variant/15 flex justify-around items-center px-2 py-3 md:hidden">
           {[
             { key: 'contacts', label: 'Contacts', icon: 'contacts' },

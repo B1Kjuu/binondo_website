@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 
 import SearchSuggestionsDropdown from '../../components/SearchSuggestionsDropdown.jsx'
 import { useSearchAutosuggest } from '../../hooks/useSearchAutosuggest.js'
@@ -11,16 +11,40 @@ export default function HomePageExploreBinondo({
 }) {
   const [localSearchQuery, setLocalSearchQuery] = useState('')
 
+  const heritageIconsRef = useRef(null)
+
   const openFoodCrawl = () => onNavigate?.('food')
+  const openPresidentGrandPalace = () =>
+    onNavigate?.('food-president-grand-palace')
   const openHeritage = () => onNavigate?.('heritage')
-  const openCommunity = () => onNavigate?.('community')
+  const openLogin = () => onNavigate?.('login')
   const openNews = () => onNavigate?.('news')
-  const openMap = () => onNavigate?.('map')
+  const openMap = () => onNavigate?.('logistics')
   const openWaiYing = () => onNavigate?.('food-wai-ying')
   const openBinondoChurch = () => onNavigate?.('heritage-binondo-church')
+  const openKuangKongTemple = () => onNavigate?.('heritage-kuang-kong-temple')
+  const openFirstUnitedBuilding = () =>
+    onNavigate?.('heritage-first-united-building')
+  const openPlazaCalderon = () =>
+    onNavigate?.('heritage-plaza-calderon-de-la-barca')
+  const openBahayTsinoy = () => onNavigate?.('heritage-bahay-tsinoy')
+
+  const scrollHeritageIcons = (direction) => {
+    const container = heritageIconsRef.current
+    if (!container) return
+
+    const amount = Math.max(320, Math.floor(container.clientWidth * 0.75))
+    container.scrollBy({ left: direction * amount, behavior: 'smooth' })
+  }
 
   const value = typeof searchQuery === 'string' ? searchQuery : localSearchQuery
   const setValue = onSearchQueryChange ?? setLocalSearchQuery
+
+  const submitSearch = (rawValue = value) => {
+    const query = String(rawValue ?? '').trim()
+    if (!query) return
+    onSearchSubmit?.(query)
+  }
 
   const {
     containerRef: mobileSearchContainerRef,
@@ -47,7 +71,7 @@ export default function HomePageExploreBinondo({
             <img
               className="w-full h-full object-cover"
               alt="Atmospheric night view of Binondo street with glowing red lanterns"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrZbW3UT_-dClLjvL8Z6XjIvIZsnJ_T9DuN3neWz0LSXZ4l-hyKp2_qmBtF2YDn0PaHDNwt6ir3UnN99cX6dVIAB0DH-iqTRqABnsO6U-8PsQs2EvnOI7LrsGSUBqHxpZrq3H6Qp4eahqPVrPbIq2knZ1dPz0sOikT9H2yP0n1jm68Nn58BYAXruQXnXTRiAQeC4VEYDvD17g9xuQ96kBaKM2SN67fafMUk6fKVIyGEwdUx1sx1Qfj3PUORhmqwslYX5edlWbdexA"
+              src="https://cdn.sanity.io/images/nxpteyfv/goguides/5cc123604009ae2d3544bd33854f1703e64017ee-1600x1066.jpg?fp-x=0.5&fp-y=0.5&w=2054&fit=max&auto=format"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
           </div>
@@ -60,7 +84,15 @@ export default function HomePageExploreBinondo({
               The World's Oldest Chinatown
             </h2>
 
-            <div ref={mobileSearchContainerRef} className="mt-8 relative">
+            <form
+              ref={mobileSearchContainerRef}
+              className="mt-8 relative"
+              onSubmit={(event) => {
+                event.preventDefault()
+                closeMobileSearchSuggest()
+                submitSearch(value)
+              }}
+            >
               <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
                 <span className="material-symbols-outlined text-outline-variant">
                   search
@@ -69,7 +101,7 @@ export default function HomePageExploreBinondo({
               <input
                 className="w-full bg-surface/90 backdrop-blur-md border-none rounded-xl py-4 pl-12 pr-4 text-on-surface placeholder:text-outline focus:ring-2 focus:ring-primary/20"
                 placeholder="Search heritage, food, or streets..."
-                type="text"
+                type="search"
                 value={value}
                 onFocus={openMobileSearchSuggest}
                 onChange={(e) => {
@@ -78,11 +110,8 @@ export default function HomePageExploreBinondo({
                 }}
                 onKeyDown={(e) => {
                   if (e.key === 'Escape') closeMobileSearchSuggest()
-                  if (e.key === 'Enter') {
-                    closeMobileSearchSuggest()
-                    onSearchSubmit?.(e.currentTarget.value)
-                  }
                 }}
+                enterKeyHint="search"
                 autoComplete="off"
                 autoCorrect="off"
                 autoCapitalize="none"
@@ -95,10 +124,10 @@ export default function HomePageExploreBinondo({
                 onSelect={(item) => {
                   setValue(item.label)
                   closeMobileSearchSuggest()
-                  onSearchSubmit?.(item.label)
+                  submitSearch(item.label)
                 }}
               />
-            </div>
+            </form>
           </div>
         </section>
 
@@ -268,7 +297,7 @@ export default function HomePageExploreBinondo({
 
             <button
               type="button"
-              onClick={openFoodCrawl}
+              onClick={openPresidentGrandPalace}
               className="flex-shrink-0 w-64 bg-surface-container-low rounded-xl overflow-hidden text-left"
             >
               <img
@@ -292,6 +321,15 @@ export default function HomePageExploreBinondo({
         </section>
 
         <section className="mt-12 mx-6 p-8 bg-primary rounded-xl relative overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <img
+              className="w-full h-full object-cover"
+              alt="Binondo streetscape"
+              src="https://cdn.tatlerasia.com/asiatatler/i/ph/2020/01/20113401-binondo-143_cover_2000x1333.jpg"
+            />
+            <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(28,28,24,0.4),rgba(97,0,8,0.7))]" />
+          </div>
+
           <div className="relative z-10 text-center space-y-6">
             <span
               className="material-symbols-outlined text-secondary-container scale-150"
@@ -305,7 +343,7 @@ export default function HomePageExploreBinondo({
             </p>
             <button
               type="button"
-              onClick={openCommunity}
+              onClick={openLogin}
               className="bg-gradient-to-tr from-primary to-primary-container border border-outline-variant/30 text-white font-label font-bold py-4 px-8 rounded-full text-xs uppercase tracking-widest shadow-xl active:scale-95 transition-transform"
             >
               Join the Community
@@ -322,7 +360,7 @@ export default function HomePageExploreBinondo({
             <img
               className="w-full h-full object-cover"
               alt="Ongpin Street at dusk with lanterns"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHxUP-e-4LTPE28wVorSE0uOghZbuvbMCqJbgaxf6o7FUhcaKd0NA3CtVroBEWAfebbqbFL7pPWTb6rRybF9zkhoVOYqevSi90KSqowst2I-3uOdTNgOreOM4_J9pEVJ0R-KCVq9TymmMJjfbwlHFAz0VGxWOqoMIdXk7DkXOFIjAb1iwot0Yt5wq9BXbQ2bWQxdmZb2BJVKpIhoKCKrA1eNRiZBuDkKwPNQ0Dv3er7m1GGP_Q-kNDrvwSmYorEmKktfifZv0F-4U"
+              src="https://cdn.sanity.io/images/nxpteyfv/goguides/5cc123604009ae2d3544bd33854f1703e64017ee-1600x1066.jpg?fp-x=0.5&fp-y=0.5&w=2054&fit=max&auto=format"
             />
             <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(28,28,24,0.4),rgba(97,0,8,0.6))]" />
           </div>
@@ -340,9 +378,14 @@ export default function HomePageExploreBinondo({
                 the soul of Binondo.
               </p>
               <div className="flex flex-col md:flex-row gap-4 items-stretch">
-                <div
+                <form
                   ref={desktopSearchContainerRef}
                   className="bg-surface p-1 rounded-lg flex-grow flex items-center shadow-2xl relative"
+                  onSubmit={(event) => {
+                    event.preventDefault()
+                    closeDesktopSearchSuggest()
+                    submitSearch(value)
+                  }}
                 >
                   <span className="material-symbols-outlined text-primary px-4">
                     search
@@ -350,7 +393,7 @@ export default function HomePageExploreBinondo({
                   <input
                     className="w-full bg-transparent border-none text-on-surface focus:ring-0 font-body py-4"
                     placeholder="Search heritage sites, dim sum spots..."
-                    type="text"
+                    type="search"
                     value={value}
                     onFocus={openDesktopSearchSuggest}
                     onChange={(e) => {
@@ -359,11 +402,8 @@ export default function HomePageExploreBinondo({
                     }}
                     onKeyDown={(e) => {
                       if (e.key === 'Escape') closeDesktopSearchSuggest()
-                      if (e.key === 'Enter') {
-                        closeDesktopSearchSuggest()
-                        onSearchSubmit?.(e.currentTarget.value)
-                      }
                     }}
+                    enterKeyHint="search"
                     autoComplete="off"
                     autoCorrect="off"
                     autoCapitalize="none"
@@ -376,14 +416,14 @@ export default function HomePageExploreBinondo({
                     onSelect={(item) => {
                       setValue(item.label)
                       closeDesktopSearchSuggest()
-                      onSearchSubmit?.(item.label)
+                      submitSearch(item.label)
                     }}
                   />
-                </div>
+                </form>
                 <button
                   className="bg-gradient-to-tr from-primary to-primary-container text-white px-10 py-4 rounded-lg font-bold uppercase tracking-wider shadow-lg active:scale-95 transition-transform"
                   type="button"
-                  onClick={openFoodCrawl}
+                  onClick={() => submitSearch(value)}
                 >
                   Explore Now
                 </button>
@@ -534,7 +574,7 @@ export default function HomePageExploreBinondo({
                   className="w-12 h-12 rounded-full flex items-center justify-center border border-outline-variant hover:bg-surface-container-highest transition-colors"
                   type="button"
                   aria-label="View more heritage icons"
-                  onClick={openHeritage}
+                  onClick={() => scrollHeritageIcons(-1)}
                 >
                   <span className="material-symbols-outlined">chevron_left</span>
                 </button>
@@ -542,15 +582,21 @@ export default function HomePageExploreBinondo({
                   className="w-12 h-12 rounded-full flex items-center justify-center border border-outline-variant hover:bg-surface-container-highest transition-colors"
                   type="button"
                   aria-label="View more heritage icons"
-                  onClick={openHeritage}
+                  onClick={() => scrollHeritageIcons(1)}
                 >
                   <span className="material-symbols-outlined">chevron_right</span>
                 </button>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-              <div className="group cursor-pointer" onClick={openWaiYing}>
+            <div
+              ref={heritageIconsRef}
+              className="flex gap-10 overflow-x-auto hide-scrollbar pb-4 scroll-smooth"
+            >
+              <div
+                className="group cursor-pointer flex-shrink-0 w-[360px]"
+                onClick={openWaiYing}
+              >
                 <div className="h-[400px] overflow-hidden rounded-xl mb-6 relative">
                   <img
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
@@ -584,7 +630,7 @@ export default function HomePageExploreBinondo({
               </div>
 
               <div
-                className="group mt-12 md:mt-0 cursor-pointer"
+                className="group cursor-pointer flex-shrink-0 w-[360px]"
                 onClick={openBinondoChurch}
               >
                 <div className="h-[400px] overflow-hidden rounded-xl mb-6 relative">
@@ -619,7 +665,10 @@ export default function HomePageExploreBinondo({
                 </button>
               </div>
 
-              <div className="group cursor-pointer" onClick={openFoodCrawl}>
+              <div
+                className="group cursor-pointer flex-shrink-0 w-[360px]"
+                onClick={openPresidentGrandPalace}
+              >
                 <div className="h-[400px] overflow-hidden rounded-xl mb-6 relative">
                   <img
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
@@ -644,10 +693,150 @@ export default function HomePageExploreBinondo({
                   type="button"
                   onClick={(event) => {
                     event.stopPropagation()
-                    openFoodCrawl()
+                    openPresidentGrandPalace()
                   }}
                 >
                   Explore{' '}
+                  <span className="material-symbols-outlined">arrow_right_alt</span>
+                </button>
+              </div>
+
+              <div
+                className="group cursor-pointer flex-shrink-0 w-[360px]"
+                onClick={openKuangKongTemple}
+              >
+                <div className="h-[400px] overflow-hidden rounded-xl mb-6 relative">
+                  <img
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    alt="Kuang Kong Temple interior"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6dyUqSd85PsnESoU2c29BYWOHPQ3ma0pRp7kOxBIkfPc_GU8x2B1hk_0RhVz-Wtt2rT95_Kod2AHkl-EXqftbREKdDRCUTr2sawsWjox8L36jvvFRHJlIu35Q2TWU7NA7pv21tpstnkE0OgMPJ5-3aKbuDNbGZ7D_bK6k1Bq5ktQSOByOB1BSvXAAtuvIcoK0P9oPQ3b5RE8Ig1Clk9aXvJSVaq4DCutcRJfNHx_NpSuuXv5ySVjpEnx_NAWdRhFdDYbpXxv2kxo"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold uppercase">
+                      Temple
+                    </span>
+                  </div>
+                </div>
+                <h3 className="font-headline text-2xl font-bold mb-2">
+                  Kuang Kong Temple
+                </h3>
+                <p className="text-on-surface-variant font-body mb-4">
+                  A hidden sanctuary favored by local merchants.
+                </p>
+                <button
+                  className="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all"
+                  type="button"
+                  onClick={(event) => {
+                    event.stopPropagation()
+                    openKuangKongTemple()
+                  }}
+                >
+                  View{' '}
+                  <span className="material-symbols-outlined">arrow_right_alt</span>
+                </button>
+              </div>
+
+              <div
+                className="group cursor-pointer flex-shrink-0 w-[360px]"
+                onClick={openFirstUnitedBuilding}
+              >
+                <div className="h-[400px] overflow-hidden rounded-xl mb-6 relative">
+                  <img
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    alt="First United Building facade"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGkMMGmZgDi6HucaZZv0NtKonbcNZm71slcD0mtIaZbTHf7a_73UMt1lwNc4DiTW9OEYSjFmQNSUBjRthmnClfNoR_MGCDHzHJAHgxagIEDnFoMBzjf3zCEN1HN2th-jGXyFwlc3TjX_2RkWWkBXRpGQpCdkUBkpSkdKGu_I8chrP3CgHtk7S3hC1ROzfkT5lkcB4SSNRNvXliL_ICjILecwT7Gsyau62g199WrRxw1opLxI4KLb2n4WosRnxqOQC3eBFED9kudgo"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-primary text-white px-3 py-1 rounded-full text-xs font-bold uppercase">
+                      Landmark
+                    </span>
+                  </div>
+                </div>
+                <h3 className="font-headline text-2xl font-bold mb-2">
+                  First United Building
+                </h3>
+                <p className="text-on-surface-variant font-body mb-4">
+                  An Art Deco icon on Escolta Street.
+                </p>
+                <button
+                  className="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all"
+                  type="button"
+                  onClick={(event) => {
+                    event.stopPropagation()
+                    openFirstUnitedBuilding()
+                  }}
+                >
+                  Explore{' '}
+                  <span className="material-symbols-outlined">arrow_right_alt</span>
+                </button>
+              </div>
+
+              <div
+                className="group cursor-pointer flex-shrink-0 w-[360px]"
+                onClick={openBahayTsinoy}
+              >
+                <div className="h-[400px] overflow-hidden rounded-xl mb-6 relative">
+                  <img
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    alt="Bahay Tsinoy museum"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqs1l4hGwmP2T0k15sQ2xoqoSWSKAmkK3wqg6oXlOaQO3bV6w3cYQh3nQJdVd8qmxHh4vO4hHqK9wqV7Xf9v0lTn3o1eV6h1t0xVY1d9eHk9eM7_2Y0x5E3yE8M5H8g"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold uppercase">
+                      Museum
+                    </span>
+                  </div>
+                </div>
+                <h3 className="font-headline text-2xl font-bold mb-2">
+                  Bahay Tsinoy
+                </h3>
+                <p className="text-on-surface-variant font-body mb-4">
+                  Chinese-Filipino history, trade, and culture.
+                </p>
+                <button
+                  className="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all"
+                  type="button"
+                  onClick={(event) => {
+                    event.stopPropagation()
+                    openBahayTsinoy()
+                  }}
+                >
+                  Visit{' '}
+                  <span className="material-symbols-outlined">arrow_right_alt</span>
+                </button>
+              </div>
+
+              <div
+                className="group cursor-pointer flex-shrink-0 w-[360px]"
+                onClick={openPlazaCalderon}
+              >
+                <div className="h-[400px] overflow-hidden rounded-xl mb-6 relative">
+                  <img
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    alt="Plaza Calderon de la Barca"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOVtkmwU7bWlJ5Lx9iyUKfZkYQmKc2GmXoZV0j8bi2wzY1mTnFf7Bl8jb5O5Q0oFShkJt1bVcgH1ABR3W4qJq7v0o5QxKZ_6J4cRwqi9_2n6t5QmA2O0I5dV4pGzpjJ8o-7fJf2u7xTvyK0f5K2RxgH7y0x9Z9X8Kc2e8Bt2m2mQEDbC-YxH_2U3dQ_MG1v5d4xtmTZg0Z0f_RR9bGgNf5xgIu1nYw4KQ0"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-primary text-white px-3 py-1 rounded-full text-xs font-bold uppercase">
+                      Plaza
+                    </span>
+                  </div>
+                </div>
+                <h3 className="font-headline text-2xl font-bold mb-2">
+                  Plaza Calderon
+                </h3>
+                <p className="text-on-surface-variant font-body mb-4">
+                  A quiet pocket to reset your walk.
+                </p>
+                <button
+                  className="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all"
+                  type="button"
+                  onClick={(event) => {
+                    event.stopPropagation()
+                    openPlazaCalderon()
+                  }}
+                >
+                  Discover{' '}
                   <span className="material-symbols-outlined">arrow_right_alt</span>
                 </button>
               </div>
@@ -655,10 +844,19 @@ export default function HomePageExploreBinondo({
           </div>
         </section>
 
-        <section className="py-32 bg-background">
-          <div className="max-w-4xl mx-auto px-8 text-center">
+        <section className="py-32 relative overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <img
+              className="w-full h-full object-cover"
+              alt="Binondo streetscape"
+              src="https://cdn.tatlerasia.com/asiatatler/i/ph/2020/01/20113401-binondo-143_cover_2000x1333.jpg"
+            />
+            <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(28,28,24,0.5),rgba(97,0,8,0.75))]" />
+          </div>
+
+          <div className="relative z-10 max-w-4xl mx-auto px-8 text-center text-white">
             <span
-              className="material-symbols-outlined text-6xl text-secondary mb-8"
+              className="material-symbols-outlined text-6xl text-secondary-fixed mb-8"
               data-weight="fill"
             >
               history_edu
@@ -667,16 +865,16 @@ export default function HomePageExploreBinondo({
               &quot;Every corner in Binondo tells a story that has been centuries in
               the making.&quot;
             </h2>
-            <p className="font-body text-xl text-on-surface-variant leading-relaxed mb-10">
+            <p className="font-body text-xl text-white/90 leading-relaxed mb-10">
               From the incense-filled air of Kuang Kong Temple to the steam of
               fresh Xiao Long Bao, Binondo is not just a destination—it&apos;s a
               living archive. We invite you to explore, taste, and preserve the
               legacy of Manila&apos;s Chinatown.
             </p>
             <button
-              className="border-2 border-primary text-primary px-8 py-3 rounded-lg font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-colors"
+              className="bg-gradient-to-tr from-primary to-primary-container text-white px-10 py-4 rounded-lg font-bold uppercase tracking-wider shadow-lg active:scale-95 transition-transform"
               type="button"
-              onClick={openCommunity}
+              onClick={openLogin}
             >
               Join the Community
             </button>

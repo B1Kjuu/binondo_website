@@ -1,7 +1,7 @@
 const TITLES = {
   map: {
-    title: 'Heritage Map',
-    subtitle: 'Map features are not available yet in this build.',
+    title: 'Map & Routes',
+    subtitle: 'Route guidance and map features are not available yet in this build.',
   },
   rate: {
     title: 'Rate Your Experience',

@@ -5,6 +5,21 @@ export const normalizeSearch = (value) =>
 
 export const SEARCH_ITEMS = [
   {
+    page: 'logistics',
+    label: 'Travel Logistics',
+    group: 'Explore',
+    match: [
+      'travel logistics',
+      'logistics',
+      'transportation',
+      'lrt',
+      'carriedo',
+      'jeepney',
+      'parking',
+      'essentials',
+    ],
+  },
+  {
     page: 'contacts',
     label: 'District Contacts',
     group: 'District',
@@ -33,6 +48,12 @@ export const SEARCH_ITEMS = [
     label: 'Wai Ying Fastfood',
     group: 'Food Crawl',
     match: ['wai ying', 'waiying', 'fastfood', 'hakaw', 'dim sum'],
+  },
+  {
+    page: 'food-president-grand-palace',
+    label: 'President Grand Palace',
+    group: 'Food Crawl',
+    match: ['president grand palace', 'grand palace', 'banquet', 'fine dining'],
   },
   {
     page: 'food-eng-bee-tin',

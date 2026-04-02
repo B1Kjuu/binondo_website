@@ -41,6 +41,10 @@ export default function FoodCrawlGuide({ onNavigate }) {
     onNavigate?.('food-sincerity-cafe')
   }
 
+  const openPresidentGrandPalaceProfile = () => {
+    onNavigate?.('food-president-grand-palace')
+  }
+
   const chipClass = (isActive) =>
     isActive
       ? 'px-5 py-2 rounded-full bg-secondary-container text-on-secondary-container font-bold text-sm shadow-sm'
@@ -329,6 +333,75 @@ export default function FoodCrawlGuide({ onNavigate }) {
                 <p className="text-on-surface-variant mb-6 text-sm leading-relaxed">
                   The pioneer of Ube Hopia. A must-stop souvenir shop for
                   visitors exploring Ongpin.
+                </p>
+                <div className="flex gap-3">
+                  <button
+                    type="button"
+                    className="flex-1 bg-gradient-to-tr from-primary to-primary-container text-on-primary py-3 rounded-lg font-label text-sm font-bold flex items-center justify-center gap-2"
+                    onClick={(event) => {
+                      event.stopPropagation()
+                      goToMap()
+                    }}
+                  >
+                    <span className="material-symbols-outlined text-lg">map</span>
+                    View Map
+                  </button>
+                  <button
+                    type="button"
+                    className="flex-1 bg-surface-container-highest text-on-surface py-3 rounded-lg font-label text-sm font-bold flex items-center justify-center gap-2"
+                    onClick={(event) => {
+                      event.stopPropagation()
+                      goToRate()
+                    }}
+                  >
+                    <span className="material-symbols-outlined text-lg">grade</span>
+                    Rate
+                  </button>
+                </div>
+              </div>
+            </article>
+          )}
+
+          {matches('sabino-padilla', 'fine-dining') && (
+            <article
+              className="bg-surface-container-low rounded-xl overflow-hidden mt-6"
+              onClick={openPresidentGrandPalaceProfile}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(event) => {
+                if (event.key === 'Enter') openPresidentGrandPalaceProfile()
+              }}
+            >
+              <div className="relative h-64">
+                <img
+                  className="w-full h-full object-cover"
+                  alt="Traditional Cantonese banquet table"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUE0jdi21Dob0RVFk6RQQ5kCTesyZ1NL_s5AdZT6Mwf1_blFck_ffvXOd2VDND9_TfepCWDDyQOoIvi1x6ta9U1VKFyj2u34v7V2JWqylYsyf62rx8SvysDvi8c3bi1tZqqr-GavucofJ96Zu_woMvwMy86FJ7bR_euAld4RBXC1KAtFg3iMjL6AjrSkGpbsbCjAp8Lw80x1EMpz9SiKQ6p7zAN33kyb8Y6O1fWbNYGeTUU1tsju1hp-83qVCkxF7VHfAT2NLSbg8"
+                />
+                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-1">
+                  <span
+                    className="material-symbols-outlined text-secondary text-sm"
+                    style={{ fontVariationSettings: "'FILL' 1" }}
+                  >
+                    star
+                  </span>
+                  <span className="font-bold text-on-surface text-sm">4.6</span>
+                </div>
+              </div>
+              <div className="p-6">
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <h3 className="font-headline text-2xl font-bold text-primary">
+                      President Grand Palace
+                    </h3>
+                    <p className="text-secondary font-label text-sm font-medium">
+                      Yuchengco Street • Fine Dining
+                    </p>
+                  </div>
+                </div>
+                <p className="text-on-surface-variant mb-6 text-sm leading-relaxed">
+                  Traditional Cantonese banquet dining—best shared family-style
+                  for celebrations and big gatherings.
                 </p>
                 <div className="flex gap-3">
                   <button
@@ -778,6 +851,80 @@ export default function FoodCrawlGuide({ onNavigate }) {
                     type="button"
                     className="w-full py-3 rounded-lg bg-surface-container-highest text-on-surface font-bold text-xs uppercase tracking-widest hover:bg-secondary-container transition-colors"
                     onClick={() => onNavigate?.('rate')}
+                  >
+                    Rate Your Experience
+                  </button>
+                </div>
+              </div>
+              </article>
+            )}
+
+            {matches('sabino-padilla', 'fine-dining') && (
+              <article
+                className="bg-surface-container-low rounded-xl overflow-hidden group transition-all duration-500 hover:shadow-2xl cursor-pointer"
+                onClick={openPresidentGrandPalaceProfile}
+              >
+              <div className="relative h-64 overflow-hidden">
+                <img
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  alt="Traditional Cantonese banquet table"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUE0jdi21Dob0RVFk6RQQ5kCTesyZ1NL_s5AdZT6Mwf1_blFck_ffvXOd2VDND9_TfepCWDDyQOoIvi1x6ta9U1VKFyj2u34v7V2JWqylYsyf62rx8SvysDvi8c3bi1tZqqr-GavucofJ96Zu_woMvwMy86FJ7bR_euAld4RBXC1KAtFg3iMjL6AjrSkGpbsbCjAp8Lw80x1EMpz9SiKQ6p7zAN33kyb8Y6O1fWbNYGeTUU1tsju1hp-83qVCkxF7VHfAT2NLSbg8"
+                />
+              </div>
+              <div className="p-8">
+                <div className="flex justify-between items-start mb-2">
+                  <h3 className="font-headline text-2xl font-bold text-primary">
+                    President Grand Palace
+                  </h3>
+                  <div className="flex items-center gap-1 text-secondary">
+                    <span
+                      className="material-symbols-outlined text-sm"
+                      style={{ fontVariationSettings: "'FILL' 1" }}
+                    >
+                      star
+                    </span>
+                    <span className="font-bold text-sm">4.6</span>
+                  </div>
+                </div>
+                <p className="text-xs font-bold text-on-surface-variant mb-4 flex items-center gap-1">
+                  <span className="material-symbols-outlined text-sm">
+                    payments
+                  </span>{' '}
+                  $$$ •{' '}
+                  <span className="material-symbols-outlined text-sm">
+                    location_on
+                  </span>{' '}
+                  497 E.T. Yuchengco St.
+                </p>
+                <p className="text-on-surface/80 text-sm mb-6 leading-relaxed">
+                  Traditional Cantonese banquet dining—best shared family-style
+                  for celebrations and big gatherings.
+                </p>
+                <div className="flex gap-4 items-center">
+                  <a
+                    className="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest group/link"
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      e.stopPropagation()
+                      onNavigate?.('map')
+                    }}
+                  >
+                    View on Map
+                    <span className="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">
+                      arrow_forward
+                    </span>
+                  </a>
+                  <div className="h-px flex-grow bg-outline-variant/30" />
+                </div>
+                <div className="mt-8 pt-6 border-t border-outline-variant/20">
+                  <button
+                    type="button"
+                    className="w-full py-3 rounded-lg bg-surface-container-highest text-on-surface font-bold text-xs uppercase tracking-widest hover:bg-secondary-container transition-colors"
+                    onClick={(event) => {
+                      event.stopPropagation()
+                      onNavigate?.('rate')
+                    }}
                   >
                     Rate Your Experience
                   </button>
