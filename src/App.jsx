@@ -6,20 +6,33 @@ import { getSearchDestination } from './search/searchRules.js'
 
 import CommunityHub from './pages/community/CommunityHub.jsx'
 import FoodCrawlGuide from './pages/food/FoodCrawlGuide.jsx'
+import FoodDongBeiDumplings from './pages/food/FoodDongBeiDumplings.jsx'
 import FoodEngBeeTin from './pages/food/FoodEngBeeTin.jsx'
+import FoodFriedShanghaiSiopao from './pages/food/FoodFriedShanghaiSiopao.jsx'
+import Food1919GrandCafe from './pages/food/Food1919GrandCafe.jsx'
+import FoodPollandFreshLumpia from './pages/food/FoodPollandFreshLumpia.jsx'
+import FoodTastyDumplings from './pages/food/FoodTastyDumplings.jsx'
 import FoodQuikSnack from './pages/food/FoodQuikSnack.jsx'
 import FoodPresidentGrandPalace from './pages/food/FoodPresidentGrandPalace.jsx'
 import FoodSincerityCafe from './pages/food/FoodSincerityCafe.jsx'
 import FoodWaiYingFastfood from './pages/food/FoodWaiYingFastfood.jsx'
 import HeritageBahayTsinoy from './pages/heritage/HeritageBahayTsinoy.jsx'
 import HeritageBinondoChurch from './pages/heritage/HeritageBinondoChurch.jsx'
+import HeritageEscoltaStreet from './pages/heritage/HeritageEscoltaStreet.jsx'
 import HeritageFirstUnitedBuilding from './pages/heritage/HeritageFirstUnitedBuilding.jsx'
+import HeritageJonesBridge from './pages/heritage/HeritageJonesBridge.jsx'
 import HeritageKuangKongTemple from './pages/heritage/HeritageKuangKongTemple.jsx'
 import HeritageLandmarks from './pages/heritage/HeritageLandmarks.jsx'
+import HeritageOngpinStreet from './pages/heritage/HeritageOngpinStreet.jsx'
 import HeritagePlazaCalderonDeLaBarca from './pages/heritage/HeritagePlazaCalderonDeLaBarca.jsx'
+import HeritagePlazaSanLorenzoRuiz from './pages/heritage/HeritagePlazaSanLorenzoRuiz.jsx'
+import HeritageReginaBuilding from './pages/heritage/HeritageReginaBuilding.jsx'
+import HeritageSengGuanTemple from './pages/heritage/HeritageSengGuanTemple.jsx'
 import HomePageExploreBinondo from './pages/home/HomePageExploreBinondo.jsx'
 import LoginPage from './pages/system/LoginPage.jsx'
 import NewsLunarNewYearTraffic from './pages/news/NewsLunarNewYearTraffic.jsx'
+import NewsArchive from './pages/news/NewsArchive.jsx'
+import NewsLunarNewYear2024 from './pages/news/NewsLunarNewYear2024.jsx'
 import PlaceholderPage from './pages/system/PlaceholderPage.jsx'
 import ProfileArchivist from './pages/system/ProfileArchivist.jsx'
 import DistrictContacts from './pages/footer/DistrictContacts.jsx'
@@ -97,6 +110,16 @@ function App() {
         return FoodWaiYingFastfood
       case 'food-president-grand-palace':
         return FoodPresidentGrandPalace
+      case 'food-dong-bei-dumplings':
+        return FoodDongBeiDumplings
+      case 'food-tasty-dumplings':
+        return FoodTastyDumplings
+      case 'food-polland-fresh-lumpia':
+        return FoodPollandFreshLumpia
+      case 'food-fried-shanghai-siopao':
+        return FoodFriedShanghaiSiopao
+      case 'food-1919-grand-cafe':
+        return Food1919GrandCafe
       case 'food-eng-bee-tin':
         return FoodEngBeeTin
       case 'food-quik-snack':
@@ -107,18 +130,34 @@ function App() {
         return HeritageLandmarks
       case 'heritage-binondo-church':
         return HeritageBinondoChurch
+      case 'heritage-jones-bridge':
+        return HeritageJonesBridge
+      case 'heritage-ongpin-street':
+        return HeritageOngpinStreet
+      case 'heritage-seng-guan-temple':
+        return HeritageSengGuanTemple
       case 'heritage-kuang-kong-temple':
         return HeritageKuangKongTemple
       case 'heritage-first-united-building':
         return HeritageFirstUnitedBuilding
+      case 'heritage-plaza-san-lorenzo-ruiz':
+        return HeritagePlazaSanLorenzoRuiz
       case 'heritage-plaza-calderon-de-la-barca':
         return HeritagePlazaCalderonDeLaBarca
+      case 'heritage-escolta-street':
+        return HeritageEscoltaStreet
+      case 'heritage-regina-building':
+        return HeritageReginaBuilding
       case 'heritage-bahay-tsinoy':
         return HeritageBahayTsinoy
       case 'community':
         return CommunityHub
       case 'news':
         return NewsLunarNewYearTraffic
+      case 'news-archive':
+        return NewsArchive
+      case 'news-lunar-2024':
+        return NewsLunarNewYear2024
       case 'profile':
         return ProfileArchivist
       case 'map':

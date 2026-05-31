@@ -15,7 +15,7 @@ export default function HeritagePlazaCalderonDeLaBarca({ onNavigate }) {
         <img
           alt="Plaza Calderon de la Barca"
           className="absolute inset-0 w-full h-full object-cover grayscale-[0.2]"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOVtkmwU7bWlJ5Lx9iyUKfZkYQmKc2GmXoZV0j8bi2wzY1mTnFf7Bl8jb5O5Q0oFShkJt1bVcgH1ABR3W4qJq7v0o5QxKZ_6J4cRwqi9_2n6t5QmA2O0I5dV4pGzpjJ8o-7fJf2u7xTvyK0f5K2RxgH7y0x9Z9X8Kc2e8Bt2m2mQEDbC-YxH_2U3dQ_MG1v5d4xtmTZg0Z0f_RR9bGgNf5xgIu1nYw4KQ0"
+          src="/images/heritage/plaza-calderon-de-la-barca.jpg"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
         <div className="relative z-10 max-w-4xl mb-12">

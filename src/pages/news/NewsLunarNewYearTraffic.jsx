@@ -1,8 +1,8 @@
 export default function NewsLunarNewYearTraffic({ onNavigate }) {
   const handleShare = () => {
     const shareData = {
-      title: 'Lunar New Year 2024 Traffic Rerouting',
-      text: 'Lunar New Year 2024 Traffic Rerouting — Binondo Heritage Journal',
+      title: 'Binondo fire affects over 2,500 families — Manila mayor',
+      text: 'Binondo fire affects over 2,500 families — Binondo Heritage Journal',
       url: window.location?.href,
     }
 
@@ -29,7 +29,15 @@ export default function NewsLunarNewYearTraffic({ onNavigate }) {
               Heritage Journal
             </h1>
           </div>
-
+          <div className="flex items-center gap-4">
+            <button
+              type="button"
+              className="text-on-surface-variant hover:text-primary"
+              onClick={() => onNavigate?.('news-archive')}
+            >
+              Older posts
+            </button>
+          </div>
           <button
             type="button"
             aria-label="Share"
@@ -44,124 +52,82 @@ export default function NewsLunarNewYearTraffic({ onNavigate }) {
           <img
             alt="Ongpin Street Lanterns"
             className="w-full h-full object-cover"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUnV7w5BsB8lICNn8bke-_gBLrUibA9Nz0q6UPjYyE3RiNjCiKBd8pPg9h_RitRO_rMXU57uFmd3ZUuPlIryUqX60hiojVQ_lTbdygusdRWSu6pp-zb0-qgSen3WX18E2x9OnVvf6Fa6wtqi3GVnxdjzcf1BCROdQT4mgdXQE99xZk_DSt0pSwwtT0ujo6DfWSCcfbWZriQICK-IyPltP2HYCwZrtaVXDoyxqvU0TJ5aM1pmJXK5RgmoeG9p35pHs54YcOoJHEPHg"
+              src="https://newsinfo.inquirer.net/files/2026/05/Binondo-fire-24May2026.jpg.avif"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />
           <div className="absolute bottom-0 left-0 p-6 w-full">
             <span className="inline-block px-3 py-1 bg-secondary-container text-on-secondary-container font-label text-xs font-bold tracking-widest rounded-full mb-4">
-              City Advisory
+              Breaking
             </span>
             <h2 className="font-headline font-black text-4xl leading-tight text-on-surface mb-2">
-              Lunar New Year 2024 Traffic Rerouting
+              Binondo fire affects over 2,500 families — Manila mayor
             </h2>
             <p className="font-body text-on-surface-variant text-sm">
-              Published Feb 05, 2024 • 4 min read
+              Published May 24, 2026 • Updated May 24, 2026
             </p>
           </div>
         </section>
 
-        <article className="px-6 space-y-10 pt-10">
-          <section className="space-y-4">
-            <h3 className="font-headline font-bold text-xl text-primary flex items-center gap-2">
-              <span className="material-symbols-outlined">calendar_today</span>
-              Key Dates
-            </h3>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-surface-container-low p-5 rounded-xl">
-                <p className="font-label text-[10px] uppercase tracking-widest text-secondary font-bold mb-1">
-                  Eve Celebration
-                </p>
-                <p className="font-headline font-black text-2xl text-on-surface">Feb 9</p>
-                <p className="font-body text-xs text-on-surface-variant mt-2">
-                  Starting 6:00 PM
-                </p>
-              </div>
-              <div className="bg-surface-container-low p-5 rounded-xl">
-                <p className="font-label text-[10px] uppercase tracking-widest text-secondary font-bold mb-1">
-                  New Year&apos;s Day
-                </p>
-                <p className="font-headline font-black text-2xl text-on-surface">Feb 10</p>
-                <p className="font-body text-xs text-on-surface-variant mt-2">
-                  Full Day Closure
-                </p>
-              </div>
+        <article className="px-6 space-y-8 pt-8">
+          <div className="text-sm text-on-surface-variant">
+            <div className="mb-2">
+              <strong>Metro</strong>
             </div>
-          </section>
-
-          <section className="relative py-8 px-4">
-            <div className="absolute left-0 top-0 text-6xl text-outline-variant opacity-30 font-headline">
-              “
+            <div className="mb-1">
+              <span className="font-bold">Binondo fire affects over 2,500 families — Manila mayor</span>
             </div>
-            <blockquote className="font-headline italic text-lg leading-relaxed text-on-surface pl-6">
-              We urge residents and visitors to plan their journeys ahead. This rerouting ensures the safety and sanctity of our heritage celebrations in Binondo.
-            </blockquote>
-            <cite className="block font-label text-sm font-bold text-secondary mt-4 pl-6">
-              — Hon. Ricardo Chua, District Representative
-            </cite>
-          </section>
-
-          <section className="space-y-6">
-            <h3 className="font-headline font-bold text-xl text-primary">
-              Primary Street Closures
-            </h3>
-            <div className="space-y-4">
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center shrink-0">
-                  <span className="material-symbols-outlined text-secondary">block</span>
-                </div>
-                <div>
-                  <h4 className="font-body font-bold text-on-surface">Ongpin Street</h4>
-                  <p className="font-body text-sm text-on-surface-variant">
-                    Full pedestrianization from Quintin Paredes to Salazar St.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center shrink-0">
-                  <span className="material-symbols-outlined text-secondary">block</span>
-                </div>
-                <div>
-                  <h4 className="font-body font-bold text-on-surface">Quintin Paredes</h4>
-                  <p className="font-body text-sm text-on-surface-variant">
-                    Northbound lane closed from Jones Bridge to Dasmariñas St.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center shrink-0">
-                  <span className="material-symbols-outlined text-secondary">block</span>
-                </div>
-                <div>
-                  <h4 className="font-body font-bold text-on-surface">Plaza Lorenzo Ruiz</h4>
-                  <p className="font-body text-sm text-on-surface-variant">
-                    Total closure of the perimeter road for the Grand Parade.
-                  </p>
-                </div>
-              </div>
+            <div className="text-xs mb-4">
+              By: <a href="https://newsinfo.inquirer.net/byline/zacarian-sarao" target="_blank" rel="noreferrer" className="underline">Zacarian Sarao</a> — Reporter / <a href="https://www.twitter.com/@zacariansINQ" target="_blank" rel="noreferrer" className="underline">@zacariansINQ</a>
+              <span className="mx-2">•</span>
+              <a href="https://newsinfo.inquirer.net/source/inquirer-net" target="_blank" rel="noreferrer" className="underline">INQUIRER.net</a>
+              <span className="mx-2">•</span>
+              06:51 PM May 24, 2026
             </div>
-          </section>
 
-          <section className="bg-surface-container p-6 rounded-xl border border-outline-variant/10 shadow-sm">
-            <h3 className="font-headline font-bold text-xl text-primary mb-4">
-              Alternative Access
-            </h3>
-            <p className="font-body text-on-surface-variant text-sm leading-relaxed mb-6">
-              Light vehicles coming from Roxas Blvd may use the McArthur Bridge or Quezon Bridge to avoid the Binondo core. Dedicated parking is available at the Lucky Chinatown Mall and Escolta Carpark.
+            <p className="font-body text-sm text-on-surface-variant">
+              Thick black smoke billows into the sky, visible from Quezon City, after a massive fire broke out at the Parola Compound near Gate 46 in Delpan, Binondo, Manila, on Saturday, May 23, 2026. The fast-moving blaze quickly escalated to Task Force Bravo as firefighters battled to contain the flames in the densely populated area.
             </p>
-            <button
-              type="button"
-              onClick={() => onNavigate?.('map')}
-              className="w-full bg-gradient-to-tr from-primary to-primary-container text-white py-4 px-6 rounded-xl font-label font-bold tracking-widest flex items-center justify-center gap-3 active:scale-95 transition-transform shadow-lg"
-            >
-              <span
-                className="material-symbols-outlined"
-                style={{ fontVariationSettings: "'FILL' 1" }}
-              >
-                map
-              </span>
-              Download Rerouting Map
-            </button>
-          </section>
+
+            <p className="font-body text-sm text-on-surface-variant">
+              MANILA, Philippines — The number of families affected by the blaze that ravaged a residential area in Binondo, Manila, over the weekend has reached more than 2,500, Mayor Francisco “Isko Moreno” Domagoso said Sunday.
+            </p>
+
+            <p className="font-body text-sm text-on-surface-variant">
+              He gave the figure after inspecting the Parola Compound in Binondo, where the fire broke out, as well as the Delpan Evacuation Center, where displaced families are currently staying.
+            </p>
+
+            <p className="font-body text-sm text-on-surface-variant">
+              “This is serious because it already involves around 3,000 families. Earlier, when I went there, it was already about 2,500, and many still have not been able to register their families in the family card,” Domagoso said in a chance interview with reporters during the inspection.
+            </p>
+
+            <p className="font-body text-sm text-on-surface-variant">
+              The mayor also said he had ordered the city engineering office to clear the debris left by the blaze.
+            </p>
+
+            <p className="font-body text-sm text-on-surface-variant">
+              “Simultaneously, the Manila Social Welfare Department can register the families and, at the same time, we can house as many of them as we can,” he added.
+            </p>
+
+            <p className="font-body text-sm text-on-surface-variant">
+              Domagoso has assured fire victims that the city government is ready to provide financial assistance to affected families as early as Monday afternoon to help them recover from the disaster.
+            </p>
+
+            <p className="font-body text-sm text-on-surface-variant">
+              The fire in Parola Compound broke out on Saturday at around 3 p.m. and spread quickly through the densely packed residential area, reaching Task Force Charlie in a little over two hours, or at exactly 5:19 p.m.
+            </p>
+
+            <p className="font-body text-sm text-on-surface-variant">
+              The blaze raged for more than 10 hours before it was finally extinguished at around 1:16 a.m. on Sunday.
+            </p>
+
+            <p className="font-body text-sm text-on-surface-variant">
+              <em>READ: <a href="https://newsinfo.inquirer.net/2212981/fire-hits-houses-in-tondo-manila-wednesday-night" target="_blank" rel="noreferrer" className="underline">Fire hits houses in Tondo, Manila Wednesday night</a></em>
+            </p>
+
+            <div className="mt-4 text-sm text-on-surface-variant">
+              Source: <a href="https://newsinfo.inquirer.net/2233735/over-2500-families-affected-by-binondo-fire-manila-mayor" target="_blank" rel="noreferrer" className="text-primary underline">INQUIRER.net — Binondo fire affects over 2,500 families</a>
+            </div>
+          </div>
         </article>
       </div>
 
@@ -171,18 +137,20 @@ export default function NewsLunarNewYearTraffic({ onNavigate }) {
           <div className="flex flex-col md:flex-row gap-8 items-end mb-12">
             <div className="md:w-2/3">
               <nav className="flex items-center gap-2 text-secondary font-label font-bold text-xs uppercase tracking-widest mb-4">
-                <span>Community News</span>
+                <span>Metro</span>
                 <span className="w-1 h-1 bg-secondary rounded-full" />
-                <span>Jan 28, 2024</span>
+                <span>May 24, 2026</span>
               </nav>
               <h1 className="font-headline text-5xl md:text-7xl font-black text-primary leading-[1.1] tracking-tight">
-                Lunar New Year 2024 Traffic Rerouting
+                Binondo fire affects over 2,500 families — Manila mayor
               </h1>
+              <div className="text-sm mt-2">
+                By: <a href="https://newsinfo.inquirer.net/byline/zacarian-sarao" target="_blank" rel="noreferrer" className="underline">Zacarian Sarao</a> — Reporter
+              </div>
             </div>
             <div className="md:w-1/3 pb-2">
               <p className="text-on-surface-variant font-body leading-relaxed border-l-2 border-outline-variant pl-6">
-                Essential information for residents and visitors during the
-                world&apos;s oldest Chinatown&apos;s grandest celebration.
+                Latest update on the Binondo residential fire and relief efforts.
               </p>
             </div>
           </div>
@@ -191,7 +159,7 @@ export default function NewsLunarNewYearTraffic({ onNavigate }) {
             <img
               alt="Lunar New Year"
               className="w-full h-full object-cover"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAouR_jYmBeLtJeHD0ObW6n9tambk2WtFOVYf60HRPXdKgO56w6obJxuHNuG12JMgcGwZB63czAD-klTj4MLe3PLN_1gRfDqSTWYEYVOmxvwPfF5qoyU-y_pb1mdNrxoEPV-b6ofySdRN-2zjMIL-GCedDhRmOIcUQm-CeUmu_assJVcb4FZQVGLY--4ONZxIif2ufJUeKgJixw-Os49YM76pIFJrBm_ShAKgcgN98rqk7iWSbTW1W_6XfxaHVSX2sConOgjJHB0ZI"
+                src="https://newsinfo.inquirer.net/files/2026/05/Binondo-fire-24May2026.jpg.avif"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
             <div className="absolute bottom-6 left-6 text-white/90 text-xs font-label uppercase tracking-widest backdrop-blur-md bg-black/20 px-4 py-2 rounded-full">
@@ -232,59 +200,41 @@ export default function NewsLunarNewYearTraffic({ onNavigate }) {
             </div>
           </aside>
 
-          <div className="lg:col-span-7 space-y-8 font-body text-lg leading-relaxed text-on-surface-variant">
-            <p className="first-letter:text-7xl first-letter:font-headline first-letter:font-black first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:leading-none">
-              As Manila prepares to welcome the Year of the Wood Dragon, the Binondo
-              district is set to implement its most comprehensive traffic management
-              plan in decades.
+          <div className="lg:col-span-7 space-y-6 font-body text-lg leading-relaxed text-on-surface-variant">
+            <p className="font-body">
+              Thick black smoke billows into the sky, visible from Quezon City, after a massive fire broke out at the Parola Compound near Gate 46 in Delpan, Binondo, Manila, on Saturday, May 23, 2026. The fast-moving blaze quickly escalated to Task Force Bravo as firefighters battled to contain the flames in the densely populated area.
             </p>
 
-            <h2 className="font-headline text-3xl font-black text-on-surface pt-4">
-              Primary Street Closures
-            </h2>
-            <p>
-              Beginning at 10:00 PM on February 8th, the entirety of{' '}
-              <strong>Ongpin Street</strong> will be closed to motorized traffic.
+            <p className="font-body">
+              MANILA, Philippines — The number of families affected by the blaze that ravaged a residential area in Binondo, Manila, over the weekend has reached more than 2,500, Mayor Francisco “Isko Moreno” Domagoso said Sunday.
             </p>
 
-            <div className="bg-surface-container rounded-xl p-8 my-10 relative overflow-hidden">
-              <div className="absolute top-0 right-0 opacity-5">
-                <span className="material-symbols-outlined text-9xl">
-                  format_quote
-                </span>
-              </div>
-              <blockquote className="relative z-10">
-                <p className="font-headline text-2xl text-primary italic">
-                  &quot;This year isn&apos;t just about traffic control; it&apos;s about
-                  reclaiming our streets for the soul of Chinatown.&quot;
-                </p>
-                <footer className="mt-6 flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-primary-container overflow-hidden">
-                    <img
-                      className="w-full h-full object-cover grayscale"
-                      alt="District commissioner"
-                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1syK64QRLEpeFv-ksVLtIHIcd6hpWIZ7t6dNiwKBB2qPDDxZ47o73xYmIMf2qF6_in10SU-Idm1fVnxKNZCgV6m32hLW5HJgMWXn9XxN0fkLAOJU0vflOIY74XG3oMDKTW910KeYVS-VQnh-AVQGISpfeh0c_fYSXuLQ5NxeEGuASoXOPiV8ImbqTxdOu5YxKC0gtIavU00UFRFGucZ9QP2uNEPj8h8Lp8OOuF-dn6rb9RiTJnHwRyOZkx2qdG-WPBgS5hnVZ4YU"
-                    />
-                  </div>
-                  <div>
-                    <cite className="not-italic font-bold">Hon. Ricardo Chua</cite>
-                    <p className="text-xs uppercase font-bold text-secondary">
-                      District Commissioner
-                    </p>
-                  </div>
-                </footer>
-              </blockquote>
-            </div>
+            <p className="font-body">
+              He gave the figure after inspecting the Parola Compound in Binondo, where the fire broke out, as well as the Delpan Evacuation Center, where displaced families are currently staying.
+            </p>
 
-            <div className="flex flex-wrap gap-4 pt-12">
-              <button
-                className="bg-secondary text-on-secondary px-8 py-4 rounded-md font-bold hover:opacity-90 transition-all flex items-center gap-3"
-                type="button"
-                onClick={() => onNavigate?.('map')}
-              >
-                <span className="material-symbols-outlined">download</span> Download
-                Rerouting Map
-              </button>
+            <blockquote className="bg-surface-container rounded-xl p-6 my-4">
+              “This is serious because it already involves around 3,000 families. Earlier, when I went there, it was already about 2,500, and many still have not been able to register their families in the family card,” Domagoso said in a chance interview with reporters during the inspection.
+            </blockquote>
+
+            <p className="font-body">
+              The mayor also said he had ordered the city engineering office to clear the debris left by the blaze. “Simultaneously, the Manila Social Welfare Department can register the families and, at the same time, we can house as many of them as we can,” he added.
+            </p>
+
+            <p className="font-body">
+              Domagoso has assured fire victims that the city government is ready to provide financial assistance to affected families as early as Monday afternoon to help them recover from the disaster.
+            </p>
+
+            <p className="font-body">
+              The fire in Parola Compound broke out on Saturday at around 3 p.m. and spread quickly through the densely packed residential area, reaching Task Force Charlie in a little over two hours, or at exactly 5:19 p.m. The blaze raged for more than 10 hours before it was finally extinguished at around 1:16 a.m. on Sunday.
+            </p>
+
+            <p className="mt-6 text-sm text-on-surface-variant">
+              <em>READ: <a href="https://newsinfo.inquirer.net/2212981/fire-hits-houses-in-tondo-manila-wednesday-night" target="_blank" rel="noreferrer" className="underline">Fire hits houses in Tondo, Manila Wednesday night</a></em>
+            </p>
+
+            <div className="mt-8 text-sm text-on-surface-variant">
+              Source: <a href="https://newsinfo.inquirer.net/2233735/over-2500-families-affected-by-binondo-fire-manila-mayor" target="_blank" rel="noreferrer" className="text-primary underline">INQUIRER.net — Binondo fire affects over 2,500 families</a>
             </div>
           </div>
         </article>

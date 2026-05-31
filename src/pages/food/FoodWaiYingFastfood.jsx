@@ -17,7 +17,7 @@ export default function FoodWaiYingFastfood({ onNavigate }) {
           <img
             alt="Wai Ying dim sum"
             className="w-full h-full object-cover"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq2Iqop9VM8A2qvTdCyKcRDnmPbmeHY8cbrC6GBCO_vuKN1ARKhevndFOD9mug983-QgfKunQUt-rjjMAm5l0i-Tci5ZiTOkKlG5DeYC34TEEY4JH4rR_4j1N2p050yRb53vPabqq4jTTJqUOEBCLwnEc2d1jIv65P4vg22zr3o3GryKu4gtbQNzG0xqvTpo8R91ENV3r5BdUOC69PHR3QSjQO1RtP2dxcxjsVe0iDvb15Wy7WvuKyRB3PrDsouSiZncVygjMguNk"
+            src="/images/food/waiying-dim-sum.jpg"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
           <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
@@ -81,7 +81,7 @@ export default function FoodWaiYingFastfood({ onNavigate }) {
               <img
                 alt="Interior of Wai Ying"
                 className="w-full h-full object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq2Iqop9VM8A2qvTdCyKcRDnmPbmeHY8cbrC6GBCO_vuKN1ARKhevndFOD9mug983-QgfKunQUt-rjjMAm5l0i-Tci5ZiTOkKlG5DeYC34TEEY4JH4rR_4j1N2p050yRb53vPabqq4jTTJqUOEBCLwnEc2d1jIv65P4vg22zr3o3GryKu4gtbQNzG0xqvTpo8R91ENV3r5BdUOC69PHR3QSjQO1RtP2dxcxjsVe0iDvb15Wy7WvuKyRB3PrDsouSiZncVygjMguNk"
+                src="/images/food/waiying-dim-sum.jpg"
               />
             </div>
             <div className="flex flex-col justify-center">
@@ -105,7 +105,7 @@ export default function FoodWaiYingFastfood({ onNavigate }) {
               <img
                 alt="Shrimp hakao"
                 className="w-full h-full object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq2Iqop9VM8A2qvTdCyKcRDnmPbmeHY8cbrC6GBCO_vuKN1ARKhevndFOD9mug983-QgfKunQUt-rjjMAm5l0i-Tci5ZiTOkKlG5DeYC34TEEY4JH4rR_4j1N2p050yRb53vPabqq4jTTJqUOEBCLwnEc2d1jIv65P4vg22zr3o3GryKu4gtbQNzG0xqvTpo8R91ENV3r5BdUOC69PHR3QSjQO1RtP2dxcxjsVe0iDvb15Wy7WvuKyRB3PrDsouSiZncVygjMguNk"
+                src="/images/food/waiying-dim-sum.jpg"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4">
@@ -172,7 +172,7 @@ export default function FoodWaiYingFastfood({ onNavigate }) {
                 <img
                   alt="Map preview"
                   className="w-full h-full object-cover opacity-60 grayscale"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR4mDzGrkRqkfWSlar-rVa_Tnhx2NjS2B1sGMfGpzUAaddiaNSH6GLnOQZYw2oVuUjgQX0CxCC0eSYdGrtSyexTVrdzwoYcqiHUb2V_sU3-Uc-ySdw3H4Th0PMLZgbiXLo6GuwmaZnUC360UYPEoMucppI3_Ivt4oIx3Pu_2kQllB2dYDhri-LK_J7dfbrMXaoPN0mKXFQ_h5XJn7X6zu0vdAwFTyz64Eb7EsVAFF1M41C602Jzdt6qgUdcifkstjch5kWzdpD29Y"
+                  src="https://source.unsplash.com/1200x800/?map,binondo"
                 />
               </div>
               <button

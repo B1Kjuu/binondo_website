@@ -19,7 +19,7 @@ export default function FoodPresidentGrandPalace({ onNavigate }) {
           <img
             alt="Traditional Cantonese banquet table"
             className="w-full h-full object-cover"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUE0jdi21Dob0RVFk6RQQ5kCTesyZ1NL_s5AdZT6Mwf1_blFck_ffvXOd2VDND9_TfepCWDDyQOoIvi1x6ta9U1VKFyj2u34v7V2JWqylYsyf62rx8SvysDvi8c3bi1tZqqr-GavucofJ96Zu_woMvwMy86FJ7bR_euAld4RBXC1KAtFg3iMjL6AjrSkGpbsbCjAp8Lw80x1EMpz9SiKQ6p7zAN33kyb8Y6O1fWbNYGeTUU1tsju1hp-83qVCkxF7VHfAT2NLSbg8"
+            src="/images/food/president-grand-palace.jpg"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
           <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
@@ -96,7 +96,7 @@ export default function FoodPresidentGrandPalace({ onNavigate }) {
               <img
                 alt="Banquet dishes"
                 className="w-full h-full object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUE0jdi21Dob0RVFk6RQQ5kCTesyZ1NL_s5AdZT6Mwf1_blFck_ffvXOd2VDND9_TfepCWDDyQOoIvi1x6ta9U1VKFyj2u34v7V2JWqylYsyf62rx8SvysDvi8c3bi1tZqqr-GavucofJ96Zu_woMvwMy86FJ7bR_euAld4RBXC1KAtFg3iMjL6AjrSkGpbsbCjAp8Lw80x1EMpz9SiKQ6p7zAN33kyb8Y6O1fWbNYGeTUU1tsju1hp-83qVCkxF7VHfAT2NLSbg8"
+                src="/images/food/president-grand-palace.jpg"
               />
             </div>
             <div className="flex flex-col justify-center">
@@ -265,10 +265,10 @@ export default function FoodPresidentGrandPalace({ onNavigate }) {
 
               <div className="relative h-[520px] rounded-2xl overflow-hidden">
                 <img
-                  className="absolute inset-0 w-full h-full object-cover"
-                  alt="Traditional Cantonese banquet table"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUE0jdi21Dob0RVFk6RQQ5kCTesyZ1NL_s5AdZT6Mwf1_blFck_ffvXOd2VDND9_TfepCWDDyQOoIvi1x6ta9U1VKFyj2u34v7V2JWqylYsyf62rx8SvysDvi8c3bi1tZqqr-GavucofJ96Zu_woMvwMy86FJ7bR_euAld4RBXC1KAtFg3iMjL6AjrSkGpbsbCjAp8Lw80x1EMpz9SiKQ6p7zAN33kyb8Y6O1fWbNYGeTUU1tsju1hp-83qVCkxF7VHfAT2NLSbg8"
-                />
+                    className="absolute inset-0 w-full h-full object-cover"
+                    alt="Traditional Cantonese banquet table"
+                    src="/images/food/president-grand-palace.jpg"
+                  />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="relative z-10 p-12 h-full flex flex-col justify-end">
                   <span className="bg-secondary-container text-on-secondary-container inline-flex w-fit px-4 py-2 rounded-full font-bold text-xs uppercase tracking-widest mb-6">

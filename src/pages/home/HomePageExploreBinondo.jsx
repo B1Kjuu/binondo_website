@@ -780,6 +780,7 @@ export default function HomePageExploreBinondo({
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     alt="Bahay Tsinoy museum"
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqs1l4hGwmP2T0k15sQ2xoqoSWSKAmkK3wqg6oXlOaQO3bV6w3cYQh3nQJdVd8qmxHh4vO4hHqK9wqV7Xf9v0lTn3o1eV6h1t0xVY1d9eHk9eM7_2Y0x5E3yE8M5H8g"
+                      src="/images/heritage/bahay-tsinoy.jpg"
                   />
                   <div className="absolute top-4 left-4">
                     <span className="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold uppercase">
@@ -815,6 +816,7 @@ export default function HomePageExploreBinondo({
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     alt="Plaza Calderon de la Barca"
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOVtkmwU7bWlJ5Lx9iyUKfZkYQmKc2GmXoZV0j8bi2wzY1mTnFf7Bl8jb5O5Q0oFShkJt1bVcgH1ABR3W4qJq7v0o5QxKZ_6J4cRwqi9_2n6t5QmA2O0I5dV4pGzpjJ8o-7fJf2u7xTvyK0f5K2RxgH7y0x9Z9X8Kc2e8Bt2m2mQEDbC-YxH_2U3dQ_MG1v5d4xtmTZg0Z0f_RR9bGgNf5xgIu1nYw4KQ0"
+                      src="/images/heritage/plaza-calderon-de-la-barca.jpg"
                   />
                   <div className="absolute top-4 left-4">
                     <span className="bg-primary text-white px-3 py-1 rounded-full text-xs font-bold uppercase">

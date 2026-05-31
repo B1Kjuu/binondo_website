@@ -15,7 +15,7 @@ export default function HeritageBahayTsinoy({ onNavigate }) {
         <img
           alt="Bahay Tsinoy museum"
           className="absolute inset-0 w-full h-full object-cover grayscale-[0.2]"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqs1l4hGwmP2T0k15sQ2xoqoSWSKAmkK3wqg6oXlOaQO3bV6w3cYQh3nQJdVd8qmxHh4vO4hHqK9wqV7Xf9v0lTn3o1eV6h1t0xVY1d9eHk9eM7_2Y0x5E3yE8M5H8g"
+          src="/images/heritage/bahay-tsinoy.jpg"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
         <div className="relative z-10 max-w-4xl mb-12">

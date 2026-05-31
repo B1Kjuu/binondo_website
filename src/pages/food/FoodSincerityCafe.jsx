@@ -17,7 +17,7 @@ export default function FoodSincerityCafe({ onNavigate }) {
           <img
             alt="Sincerity fried chicken"
             className="w-full h-full object-cover"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcRsm0BcLO3zpNqsa4KnhzVR40pGE7AEenWFuCew5-G8dlZv3rxBOwaWi1HcwLh04hyDu0XKeih9r7jzwuglczmoyiFHv5Ogl7pg2QmpSOgt8xBOTfqT7EYtiLPFeFpc4AQkra_K3vL021P43zqF11j5CmxCzSXKkHfUNOlmUuWAq5-ce2L0z3MRPKkFgYS9G3gmFMAbtdujroMIaSmxyPpU5cZJl6eLKmXDT0AZf9niqg81gROihCXFOXaPBnSwK0D5fdglnDRu8"
+            src="/images/food/sincerity-fried-chicken.jpg"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
           <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
@@ -79,7 +79,7 @@ export default function FoodSincerityCafe({ onNavigate }) {
               <img
                 alt="Sincerity kitchen"
                 className="w-full h-full object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcRsm0BcLO3zpNqsa4KnhzVR40pGE7AEenWFuCew5-G8dlZv3rxBOwaWi1HcwLh04hyDu0XKeih9r7jzwuglczmoyiFHv5Ogl7pg2QmpSOgt8xBOTfqT7EYtiLPFeFpc4AQkra_K3vL021P43zqF11j5CmxCzSXKkHfUNOlmUuWAq5-ce2L0z3MRPKkFgYS9G3gmFMAbtdujroMIaSmxyPpU5cZJl6eLKmXDT0AZf9niqg81gROihCXFOXaPBnSwK0D5fdglnDRu8"
+                src="/images/food/sincerity-fried-chicken.jpg"
               />
             </div>
             <div className="flex flex-col justify-center">
@@ -102,7 +102,7 @@ export default function FoodSincerityCafe({ onNavigate }) {
               <img
                 alt="Fried chicken platter"
                 className="w-full h-full object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcRsm0BcLO3zpNqsa4KnhzVR40pGE7AEenWFuCew5-G8dlZv3rxBOwaWi1HcwLh04hyDu0XKeih9r7jzwuglczmoyiFHv5Ogl7pg2QmpSOgt8xBOTfqT7EYtiLPFeFpc4AQkra_K3vL021P43zqF11j5CmxCzSXKkHfUNOlmUuWAq5-ce2L0z3MRPKkFgYS9G3gmFMAbtdujroMIaSmxyPpU5cZJl6eLKmXDT0AZf9niqg81gROihCXFOXaPBnSwK0D5fdglnDRu8"
+                src="/images/food/sincerity-fried-chicken.jpg"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4">
@@ -256,7 +256,7 @@ export default function FoodSincerityCafe({ onNavigate }) {
               <img
                 alt="Traditional fried chicken"
                 className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcRsm0BcLO3zpNqsa4KnhzVR40pGE7AEenWFuCew5-G8dlZv3rxBOwaWi1HcwLh04hyDu0XKeih9r7jzwuglczmoyiFHv5Ogl7pg2QmpSOgt8xBOTfqT7EYtiLPFeFpc4AQkra_K3vL021P43zqF11j5CmxCzSXKkHfUNOlmUuWAq5-ce2L0z3MRPKkFgYS9G3gmFMAbtdujroMIaSmxyPpU5cZJl6eLKmXDT0AZf9niqg81gROihCXFOXaPBnSwK0D5fdglnDRu8"
+                src="https://source.unsplash.com/1200x800/?fried-chicken,platter"
               />
             </div>
 

@@ -5,8 +5,16 @@ export default function HeritageLandmarks({ onNavigate }) {
     onNavigate?.('heritage-binondo-church')
   }
 
-  const openKuangKongTemple = () => {
-    onNavigate?.('heritage-kuang-kong-temple')
+  const openJonesBridge = () => {
+    onNavigate?.('heritage-jones-bridge')
+  }
+
+  const openOngpinStreet = () => {
+    onNavigate?.('heritage-ongpin-street')
+  }
+
+  const openSengGuanTemple = () => {
+    onNavigate?.('heritage-seng-guan-temple')
   }
 
   const openFirstUnitedBuilding = () => {
@@ -17,8 +25,12 @@ export default function HeritageLandmarks({ onNavigate }) {
     onNavigate?.('heritage-plaza-calderon-de-la-barca')
   }
 
-  const openBahayTsinoy = () => {
-    onNavigate?.('heritage-bahay-tsinoy')
+  const openEscoltaStreet = () => {
+    onNavigate?.('heritage-escolta-street')
+  }
+
+  const openReginaBuilding = () => {
+    onNavigate?.('heritage-regina-building')
   }
 
   const [activeFilter, setActiveFilter] = useState('all')
@@ -94,7 +106,7 @@ export default function HeritageLandmarks({ onNavigate }) {
                 <img
                   className="w-full h-full object-cover"
                   alt="Minor Basilica of St. Lorenzo Ruiz"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDI2msI2Qce1yPc0ezA0Da9Rgv31HXE8TRgfzxWAB5EtYLQGHViSd9HLjmNNs7Y2iHLWpIWL9ccSP_eaOEpZ53ONLvbKjDezIeMZtAiJdjciUh-5_yJoqAZyrHOyI4ZZuuAbXNwDcJVPgf4yNXFXPHtNOviHGHgoiG7QsNqMx3b7p9sa6pUzKS7m1yU8FwZbU7GedduBol8LsCXNarqR6vKee6J6CJlc7Gs7BvYDo-1-OoaTeM8h9NZ2GnlBFqX46zZYuCViJ17wZQ"
+                  src="/images/heritage/binondo-church.jpg"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent" />
               </div>
@@ -137,22 +149,22 @@ export default function HeritageLandmarks({ onNavigate }) {
                 <div className="col-span-4 aspect-square rounded-lg overflow-hidden bg-surface-container-low">
                   <img
                     className="w-full h-full object-cover"
-                    alt="Kuang Kong Temple"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6dyUqSd85PsnESoU2c29BYWOHPQ3ma0pRp7kOxBIkfPc_GU8x2B1hk_0RhVz-Wtt2rT95_Kod2AHkl-EXqftbREKdDRCUTr2sawsWjox8L36jvvFRHJlIu35Q2TWU7NA7pv21tpstnkE0OgMPJ5-3aKbuDNbGZ7D_bK6k1Bq5ktQSOByOB1BSvXAAtuvIcoK0P9oPQ3b5RE8Ig1Clk9aXvJSVaq4DCutcRJfNHx_NpSuuXv5ySVjpEnx_NAWdRhFdDYbpXxv2kxo"
+                    alt="Seng Guan Temple"
+                    src="/images/heritage/seng-guan-temple.jpg"
                   />
                 </div>
                 <div className="col-span-8 flex flex-col justify-center">
                   <h4 className="font-headline text-lg text-on-surface mb-1">
-                    Kuang Kong Temple
+                    Seng Guan Temple
                   </h4>
                   <p className="font-body text-xs text-on-surface-variant mb-3">
-                    Dedicated to the God of War and commerce, this hidden gem is
-                    a cornerstone of local business faith.
+                    A Buddhist temple marked by red pillars, dragon motifs, and
+                    a quiet spiritual atmosphere.
                   </p>
                   <button
                     type="button"
                     className="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-1"
-                    onClick={openKuangKongTemple}
+                    onClick={openSengGuanTemple}
                   >
                     Explore Profile{' '}
                     <span className="material-symbols-outlined text-sm">
@@ -168,22 +180,21 @@ export default function HeritageLandmarks({ onNavigate }) {
                 <div className="col-span-4 aspect-square rounded-lg overflow-hidden bg-surface-container-low">
                   <img
                     className="w-full h-full object-cover"
-                    alt="Bahay Tsinoy museum"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCk55y7sYiYmATmbNk8MOFSPCejfXcv9pJo4cXwAJDmsSwJveUp2TxlbgPFHs6r6hBYiFa38H3c3bmXmWoSg-tMtIl__ZjR3su4jjCMT9WWj9BSRfCeU4TY2nLV0e_1F5zbncm3ZXSZVeMlxl9Imj8iYEjUWmMK95sohdTdz4sXh-ag3C-8CwLxUWfMhRp6TuGSOXiVGPQ7lPpdHCVsUrA7yoZb3unTp7GFiZMnyIsYpOJibP5UuPcGqcgCfHRSKrqe-vdx-8bS2-E"
+                    alt="Jones Bridge"
+                    src="/images/heritage/jones-bridge.jpg"
                   />
                 </div>
                 <div className="col-span-8 flex flex-col justify-center">
                   <h4 className="font-headline text-lg text-on-surface mb-1">
-                    Bahay Tsinoy
+                    Jones Bridge
                   </h4>
                   <p className="font-body text-xs text-on-surface-variant mb-3">
-                    A curated record of the Chinese role in Philippine history
-                    and identity.
+                    A neoclassical span that links Binondo with central Manila.
                   </p>
                   <button
                     type="button"
                     className="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-1"
-                    onClick={openBahayTsinoy}
+                    onClick={openJonesBridge}
                   >
                     Explore Profile{' '}
                     <span className="material-symbols-outlined text-sm">
@@ -200,7 +211,7 @@ export default function HeritageLandmarks({ onNavigate }) {
                   <img
                     className="w-full h-full object-cover"
                     alt="First United Building facade"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGkMMGmZgDi6HucaZZv0NtKonbcNZm71slcD0mtIaZbTHf7a_73UMt1lwNc4DiTW9OEYSjFmQNSUBjRthmnClfNoR_MGCDHzHJAHgxagIEDnFoMBzjf3zCEN1HN2th-jGXyFwlc3TjX_2RkWWkBXRpGQpCdkUBkpSkdKGu_I8chrP3CgHtk7S3hC1ROzfkT5lkcB4SSNRNvXliL_ICjILecwT7Gsyau62g199WrRxw1opLxI4KLb2n4WosRnxqOQC3eBFED9kudgo"
+                    src="/images/heritage/first-united-building.jpg"
                   />
                 </div>
                 <div className="col-span-8 flex flex-col justify-center">
@@ -215,6 +226,99 @@ export default function HeritageLandmarks({ onNavigate }) {
                     type="button"
                     className="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-1"
                     onClick={openFirstUnitedBuilding}
+                  >
+                    Explore Profile{' '}
+                    <span className="material-symbols-outlined text-sm">
+                      chevron_right
+                    </span>
+                  </button>
+                </div>
+              </div>
+            ) : null}
+
+            {isTypeVisible('marker') ? (
+              <div className="grid grid-cols-12 gap-4">
+                <div className="col-span-4 aspect-square rounded-lg overflow-hidden bg-surface-container-low">
+                  <img
+                    className="w-full h-full object-cover"
+                    alt="Ongpin Street"
+                    src="/images/heritage/ongpin-arch.jpg"
+                  />
+                </div>
+                <div className="col-span-8 flex flex-col justify-center">
+                  <h4 className="font-headline text-lg text-on-surface mb-1">
+                    Ongpin Street
+                  </h4>
+                  <p className="font-body text-xs text-on-surface-variant mb-3">
+                    Binondo's commercial spine, lined with shop houses and the
+                    Chinatown arch.
+                  </p>
+                  <button
+                    type="button"
+                    className="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-1"
+                    onClick={openOngpinStreet}
+                  >
+                    Explore Profile{' '}
+                    <span className="material-symbols-outlined text-sm">
+                      chevron_right
+                    </span>
+                  </button>
+                </div>
+              </div>
+            ) : null}
+
+            {isTypeVisible('marker') ? (
+              <div className="grid grid-cols-12 gap-4">
+                <div className="col-span-4 aspect-square rounded-lg overflow-hidden bg-surface-container-low">
+                  <img
+                    className="w-full h-full object-cover"
+                    alt="Escolta Street"
+                    src="/images/heritage/escolta-street.jpg"
+                  />
+                </div>
+                <div className="col-span-8 flex flex-col justify-center">
+                  <h4 className="font-headline text-lg text-on-surface mb-1">
+                    Escolta Street
+                  </h4>
+                  <p className="font-body text-xs text-on-surface-variant mb-3">
+                    A revived heritage boulevard once known as Manila's premier
+                    commercial street.
+                  </p>
+                  <button
+                    type="button"
+                    className="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-1"
+                    onClick={openEscoltaStreet}
+                  >
+                    Explore Profile{' '}
+                    <span className="material-symbols-outlined text-sm">
+                      chevron_right
+                    </span>
+                  </button>
+                </div>
+              </div>
+            ) : null}
+
+            {isTypeVisible('marker') ? (
+              <div className="grid grid-cols-12 gap-4">
+                <div className="col-span-4 aspect-square rounded-lg overflow-hidden bg-surface-container-low">
+                  <img
+                    className="w-full h-full object-cover"
+                    alt="Regina Building"
+                    src="/images/heritage/regina-building.jpg"
+                  />
+                </div>
+                <div className="col-span-8 flex flex-col justify-center">
+                  <h4 className="font-headline text-lg text-on-surface mb-1">
+                    Regina Building
+                  </h4>
+                  <p className="font-body text-xs text-on-surface-variant mb-3">
+                    A Neoclassical Escolta landmark that anchors the district's
+                    architectural revival.
+                  </p>
+                  <button
+                    type="button"
+                    className="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-1"
+                    onClick={openReginaBuilding}
                   >
                     Explore Profile{' '}
                     <span className="material-symbols-outlined text-sm">
@@ -240,7 +344,7 @@ export default function HeritageLandmarks({ onNavigate }) {
             <img
               className="w-full rounded-xl grayscale contrast-125"
               alt="Black and white architectural shot of Regina Building"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbD8yuDgT0Zj1DV0AbNbl9dwQxCjQKRYU6Z6Ijw1-6uXe4SBJGTM8BW5N2r-R-AjmSEtLW1slFqWnrwS1hp3i-pljQrBqyYkt8mLl7P2WKoWENHPLNz2Sry889NEoqI44q-pPIRuhaHqvXY2etrauePmgvrGMQqEX8-vF6UKQ7AJfNfgy_4QMEjyXlbLpK2FhqLZ1AILGEXqm9NgrztX3f78XHvDypuy_Ga0ssOg4_1nQKt6HuXx3lbEGfoGIu1a2Gx_fnnni2jR0"
+              src="/images/heritage/regina-building.jpg"
             />
             <div className="absolute -bottom-4 -right-2 bg-secondary text-on-secondary px-4 py-2 font-headline italic text-sm shadow-xl">
               &quot;The Wall Street of the East&quot;
@@ -423,7 +527,7 @@ export default function HeritageLandmarks({ onNavigate }) {
                 <img
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   alt="Binondo Church facade at sunset"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCB450QkQvUykzah5SqPatVJkd8Ikq25eM3-EHb6bOaHaoJtyhpbjVEYGU0y94mbVSc5udT_LNgllb-64p8uxctX4oJjxJEzswf0olwRI00A6_4n0euA3XRuN9dGhmo51_2W_3JmpSfKFJcaq8dnbXL0Xf7H6ixOucRNVdGBIau7IOQMceOgd5OzjTKC49NlKnOdKMCQblx8h42qqVCj2OpudO370mZxiey1pbR51dtXLFtFPgPflhCgpvabkehjoU_vKfqvuYrCBM"
+                  src="/images/heritage/binondo-church.jpg"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent" />
                 <div className="absolute bottom-0 left-0 p-10 text-on-primary">
@@ -459,13 +563,13 @@ export default function HeritageLandmarks({ onNavigate }) {
             {isTypeVisible('temple') ? (
               <div
                 className="md:col-span-4 group cursor-pointer"
-                onClick={openKuangKongTemple}
+                onClick={openSengGuanTemple}
               >
               <div className="relative overflow-hidden rounded-xl h-[600px] bg-surface-container-low">
                 <img
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  alt="Ornate Chinese temple interior"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6dyUqSd85PsnESoU2c29BYWOHPQ3ma0pRp7kOxBIkfPc_GU8x2B1hk_0RhVz-Wtt2rT95_Kod2AHkl-EXqftbREKdDRCUTr2sawsWjox8L36jvvFRHJlIu35Q2TWU7NA7pv21tpstnkE0OgMPJ5-3aKbuDNbGZ7D_bK6k1Bq5ktQSOByOB1BSvXAAtuvIcoK0P9oPQ3b5RE8Ig1Clk9aXvJSVaq4DCutcRJfNHx_NpSuuXv5ySVjpEnx_NAWdRhFdDYbpXxv2kxo"
+                  alt="Seng Guan Temple"
+                  src="/images/heritage/seng-guan-temple.jpg"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 p-8 text-white">
@@ -473,11 +577,11 @@ export default function HeritageLandmarks({ onNavigate }) {
                     Temple
                   </span>
                   <h2 className="font-headline text-3xl font-bold mb-4">
-                    Kuang Kong Temple
+                    Seng Guan Temple
                   </h2>
                   <p className="text-white/70 text-sm mb-6">
-                    A hidden sanctuary dedicated to the God of War and Loyalty,
-                    favored by local merchants.
+                    A Buddhist temple marked by red pillars, dragon motifs, and
+                    a quiet spiritual atmosphere.
                   </p>
                   <button
                     className="w-full py-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg hover:bg-white/20 transition-all font-bold text-xs uppercase tracking-widest"
@@ -499,8 +603,8 @@ export default function HeritageLandmarks({ onNavigate }) {
                 <div>
                   <img
                     className="w-full h-48 object-cover rounded-lg mb-6 shadow-sm"
-                    alt="Escolta building facade"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGkMMGmZgDi6HucaZZv0NtKonbcNZm71slcD0mtIaZbTHf7a_73UMt1lwNc4DiTW9OEYSjFmQNSUBjRthmnClfNoR_MGCDHzHJAHgxagIEDnFoMBzjf3zCEN1HN2th-jGXyFwlc3TjX_2RkWWkBXRpGQpCdkUBkpSkdKGu_I8chrP3CgHtk7S3hC1ROzfkT5lkcB4SSNRNvXliL_ICjILecwT7Gsyau62g199WrRxw1opLxI4KLb2n4WosRnxqOQC3eBFED9kudgo"
+                    alt="First United Building facade"
+                    src="/images/heritage/first-united-building.jpg"
                   />
                   <span className="text-secondary font-bold text-xs uppercase tracking-tighter mb-2 block">
                     Historical Landmark
@@ -532,22 +636,22 @@ export default function HeritageLandmarks({ onNavigate }) {
                 <div>
                   <img
                     className="w-full h-48 object-cover rounded-lg mb-6 shadow-sm"
-                    alt="Bronze historical marker plaque"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjMymBKSwQCp-iJgx6BMDSGh-JU82R2WL83nM5KTjJkN4zLdnDCW2NLr2b7XsgdtggxgrbIbgi6KOkNu1GpWatfQCVRp2lh_wLfreZ224jdD_3cNa5pYrCr5JdoskahSfpLTU2MthgOtM4H04GhltGY0QfW52oM2nUURVnrHtbFTUirQBstBZNNFcKszO70cXUED_z8m2yd-JhJogFVqGFJJDPX2xNDOUBIELtAsd8PRqqDw_4UvL0AFNkp20GzQ-iZJ106qx54xE"
+                    alt="Plaza San Lorenzo Ruiz"
+                    src="/images/heritage/plaza-st-lorenzo-ruiz.jpg"
                   />
                   <span className="text-secondary font-bold text-xs uppercase tracking-tighter mb-2 block">
                     Marker
                   </span>
                   <h3 className="font-headline text-2xl font-bold text-primary mb-2">
-                    Plaza Calderon de la Barca
+                    Plaza San Lorenzo Ruiz
                   </h3>
                   <p className="text-on-surface-variant text-sm leading-relaxed">
-                    The historical epicenter of the district, surrounding the
-                    Minor Basilica.
+                    A calm civic square across from Binondo Church and a pause
+                    point in the heritage walk.
                   </p>
                 </div>
                 <div className="mt-8 flex justify-between items-center">
-                  <span className="text-xs text-outline font-bold">SAN LORENZO RUIZ</span>
+                  <span className="text-xs text-outline font-bold">PLAZA STOP</span>
                   <span className="material-symbols-outlined text-secondary">
                     arrow_forward
                   </span>
@@ -559,35 +663,134 @@ export default function HeritageLandmarks({ onNavigate }) {
             {isTypeVisible('museum') ? (
               <div
                 className="md:col-span-4 group cursor-pointer"
-                onClick={openBahayTsinoy}
+                onClick={openJonesBridge}
               >
               <div className="bg-surface-container p-6 rounded-xl h-full flex flex-col justify-between">
                 <div>
                   <img
                     className="w-full h-48 object-cover rounded-lg mb-6 shadow-sm"
-                    alt="Museum gallery interior"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCk55y7sYiYmATmbNk8MOFSPCejfXcv9pJo4cXwAJDmsSwJveUp2TxlbgPFHs6r6hBYiFa38H3c3bmXmWoSg-tMtIl__ZjR3su4jjCMT9WWj9BSRfCeU4TY2nLV0e_1F5zbncm3ZXSZVeMlxl9Imj8iYEjUWmMK95sohdTdz4sXh-ag3C-8CwLxUWfMhRp6TuGSOXiVGPQ7lPpdHCVsUrA7yoZb3unTp7GFiZMnyIsYpOJibP5UuPcGqcgCfHRSKrqe-vdx-8bS2-E"
+                    alt="Jones Bridge"
+                    src="/images/heritage/jones-bridge.jpg"
                   />
                   <span className="text-secondary font-bold text-xs uppercase tracking-tighter mb-2 block">
-                    Museum
+                    Bridge
                   </span>
                   <h3 className="font-headline text-2xl font-bold text-primary mb-2">
-                    Bahay Tsinoy
+                    Jones Bridge
                   </h3>
                   <p className="text-on-surface-variant text-sm leading-relaxed">
-                    Documentation of the Chinese role in Philippine history and
-                    identity.
+                    A neoclassical river crossing linking Binondo with central
+                    Manila.
                   </p>
                 </div>
                 <div className="mt-8 flex justify-between items-center">
                   <span className="text-xs text-outline font-bold">
-                    INTRAMUROS BORDER
+                    PASIG RIVER
                   </span>
                   <span className="material-symbols-outlined text-secondary">
                     arrow_forward
                   </span>
                 </div>
               </div>
+              </div>
+            ) : null}
+
+            {isTypeVisible('marker') ? (
+              <div
+                className="md:col-span-4 group cursor-pointer"
+                onClick={openOngpinStreet}
+              >
+                <div className="bg-surface-container p-6 rounded-xl h-full flex flex-col justify-between">
+                  <div>
+                    <img
+                      className="w-full h-48 object-cover rounded-lg mb-6 shadow-sm"
+                      alt="Ongpin Street"
+                      src="/images/heritage/ongpin-arch.jpg"
+                    />
+                    <span className="text-secondary font-bold text-xs uppercase tracking-tighter mb-2 block">
+                      Street
+                    </span>
+                    <h3 className="font-headline text-2xl font-bold text-primary mb-2">
+                      Ongpin Street
+                    </h3>
+                    <p className="text-on-surface-variant text-sm leading-relaxed">
+                      Binondo's commercial spine, framed by the Chinatown arch
+                      and long-running shop houses.
+                    </p>
+                  </div>
+                  <div className="mt-8 flex justify-between items-center">
+                    <span className="text-xs text-outline font-bold">BINONDO CORE</span>
+                    <span className="material-symbols-outlined text-secondary">
+                      arrow_forward
+                    </span>
+                  </div>
+                </div>
+              </div>
+            ) : null}
+
+            {isTypeVisible('marker') ? (
+              <div
+                className="md:col-span-4 group cursor-pointer"
+                onClick={openEscoltaStreet}
+              >
+                <div className="bg-surface-container p-6 rounded-xl h-full flex flex-col justify-between">
+                  <div>
+                    <img
+                      className="w-full h-48 object-cover rounded-lg mb-6 shadow-sm"
+                      alt="Escolta Street"
+                      src="/images/heritage/escolta-street.jpg"
+                    />
+                    <span className="text-secondary font-bold text-xs uppercase tracking-tighter mb-2 block">
+                      Heritage Street
+                    </span>
+                    <h3 className="font-headline text-2xl font-bold text-primary mb-2">
+                      Escolta Street
+                    </h3>
+                    <p className="text-on-surface-variant text-sm leading-relaxed">
+                      A revived commercial boulevard once known as Manila's
+                      premier shopping district.
+                    </p>
+                  </div>
+                  <div className="mt-8 flex justify-between items-center">
+                    <span className="text-xs text-outline font-bold">ESCOLTA</span>
+                    <span className="material-symbols-outlined text-secondary">
+                      arrow_forward
+                    </span>
+                  </div>
+                </div>
+              </div>
+            ) : null}
+
+            {isTypeVisible('marker') ? (
+              <div
+                className="md:col-span-4 group cursor-pointer"
+                onClick={openReginaBuilding}
+              >
+                <div className="bg-surface-container p-6 rounded-xl h-full flex flex-col justify-between">
+                  <div>
+                    <img
+                      className="w-full h-48 object-cover rounded-lg mb-6 shadow-sm"
+                      alt="Regina Building"
+                      src="/images/heritage/regina-building.jpg"
+                    />
+                    <span className="text-secondary font-bold text-xs uppercase tracking-tighter mb-2 block">
+                      Landmark
+                    </span>
+                    <h3 className="font-headline text-2xl font-bold text-primary mb-2">
+                      Regina Building
+                    </h3>
+                    <p className="text-on-surface-variant text-sm leading-relaxed">
+                      A Neoclassical Escolta building that helped define the
+                      district's commercial skyline.
+                    </p>
+                  </div>
+                  <div className="mt-8 flex justify-between items-center">
+                    <span className="text-xs text-outline font-bold">ESCOLTA ST.</span>
+                    <span className="material-symbols-outlined text-secondary">
+                      arrow_forward
+                    </span>
+                  </div>
+                </div>
               </div>
             ) : null}
           </div>
@@ -601,24 +804,24 @@ export default function HeritageLandmarks({ onNavigate }) {
                   <img
                     className="w-full h-full object-cover"
                     alt="Ornate Chinese altar"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3lqif5fsI_CfIkRkzgmaWW9VsuS-fOm3xoogGxHP2SU8B6NwSi_aA5fbCyD4x3Vih1VpQBe_yeGviz800Dvm4aJm-oLuvBbkW7lqs-MxCL5ykyBSdrSjB5BazwzDoDf4gUhR3bGfhrkvOz_l9-9RfpPRRCYzq_Dox4kTsWHZV4yH0VCLf_eA54u85okmuRiHpB-Qc0PWjgoqjM0wtYM63EOQjAGMFASjecSP24IJBC45xY6E-AVEUzztJzaEvTGOsXcONjAZ20es"
+                    src="/images/heritage/regina-building.jpg"
                   />
                 </div>
                 <div className="grid grid-cols-3 gap-4">
                   <img
                     className="aspect-square object-cover rounded-lg"
                     alt="Roof tiles and dragon sculptures"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiIKxcet5seXNDWto6MNPI8HvqIXB2fSRpfoSS_okVlfELRUKai6Z2V9m4HTosAFAn9o1ZwDYajiJA5czQXvmX44-XYZCpOIQyt9GCNkBYRawWEgCoZ_wMlcUCd2kSv6P7xs0rSJnGo3rL92OBIljexyywzmorcCdpPJnFKDsAnwbZrkyEETeW7-ThBcaOwakGqf4RggfrGMIKy8AHnHBolzEaUUUp0JiMLT6EIdpukQtNTL0DTd7cq-IOaUZNywaSnF3R5mVTJ4Y"
+                    src="/images/heritage/first-united-building.jpg"
                   />
                   <img
                     className="aspect-square object-cover rounded-lg"
                     alt="Manila street scene with jeepneys"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiZM-bXfVk4_ZgU-py8eVT6vzJybB7GeLDV8smojiuF6itYc4fRp1DZXbjxVuoMP8aWj8aPnDyg3hz7AMRFyYHSt5G4mM5_KpHXjTeuMv_ny4F0GDlAY4w9QxUlOtI6i2SxT8n44qtmOKQ9xH6hBaPJgfvnwQqHBSj4-85WPGldU9scEs4G3kuRMhzd5D6eU9mTli777ORPz8vSHSRJrPE6YU_oJe9bRN07uCd0-OryNrxn-eeEfpp1JBMZpaezaYRWThv5M7umd0"
+                    src="/images/heritage/escolta-street.jpg"
                   />
                   <img
                     className="aspect-square object-cover rounded-lg"
                     alt="Glowing red lanterns at night"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuA88DQo_hLZg24YFzg6HoxFPFDG1CnUJu7Bxoccf8KAbSy5gPHjPrFC_wD0TH9BpFxCfPPgMwNMYvNGUuvPuCjnW-V7l7yWqbSQlMQXHopMskrxCUfzQsn_NcqlXed1FyoGz1AQ2rAUDlEujcUL7OpXzrODqorE2UvlXoqc5nJRIDI6m8aPFK9FCJMuRg4-k0U4th_V8ksoCl87O4eoj_3F6KnisKx-H_gNshI2T36_-MjxOOzpsthEPoBTogOqmGhvRyov8IoSrHM"
+                    src="/images/heritage/jones-bridge.jpg"
                   />
                 </div>
               </div>

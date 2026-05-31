@@ -17,7 +17,7 @@ export default function FoodQuikSnack({ onNavigate }) {
           <img
             alt="Quik Snack street food"
             className="w-full h-full object-cover"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoRMSq3zWfEzaMNwk_klG4KTJIaS9p4zFGheHtjEz50GWeiUDgcbrK3uEseBq8LJ30Ug7YqAa3Hs4hiBCP1TI3sjICVqZ-XuWhZg6jb6R5hhjc5yLjoNxOlpTmhJAd-inDErxGFX__tiLsl7MczhqZyqfsOqGNrn9EdoamccqgiZnYjZXvomVNEYelceneKbpUnKXw9lEPsSBg8Y3iXpcV7GWIKHTy6RJ7O1clHvDW2ftPOypxzbH9XeCx_9DKIXH4d4dt4MmssEg"
+                src="/images/food/quik-snack-street-food.jpg"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
           <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
@@ -79,7 +79,7 @@ export default function FoodQuikSnack({ onNavigate }) {
               <img
                 alt="Carvajal street food"
                 className="w-full h-full object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1jNRFdloJ4bHYGEe2ySaeqNYLL1xJKIHZ8e5l2gxAScceOw6BWIiXzWGzOd-Wgy8dxquXSFJTxIYggytg_8Yxq0gzl6dlCSZJFoVz8fpvZQt-lXR12vtqw856eItOekh4BjyjItvccf2npyoepsz3YpKjAnTmqctsRtjHQMpQCYtUeHJ5-MxXc6zg_Cd-dNaivx9eaWG7-Suhl2Jn7rU2mmALYINigRtTknUa3JWPnzamC1CvRJDK1EAPIXKFFaPWyEUsD6xJ_YE"
+                  src="/images/food/quik-snack-street-food.jpg"
               />
             </div>
             <div className="flex flex-col justify-center">
@@ -103,7 +103,7 @@ export default function FoodQuikSnack({ onNavigate }) {
               <img
                 alt="Indonesian tauhu"
                 className="w-full h-full object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1jNRFdloJ4bHYGEe2ySaeqNYLL1xJKIHZ8e5l2gxAScceOw6BWIiXzWGzOd-Wgy8dxquXSFJTxIYggytg_8Yxq0gzl6dlCSZJFoVz8fpvZQt-lXR12vtqw856eItOekh4BjyjItvccf2npyoepsz3YpKjAnTmqctsRtjHQMpQCYtUeHJ5-MxXc6zg_Cd-dNaivx9eaWG7-Suhl2Jn7rU2mmALYINigRtTknUa3JWPnzamC1CvRJDK1EAPIXKFFaPWyEUsD6xJ_YE"
+                src="/images/food/quik-snack-street-food.jpg"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4">
@@ -261,7 +261,7 @@ export default function FoodQuikSnack({ onNavigate }) {
               <img
                 alt="Outdoor noodle stall in Binondo"
                 className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoRMSq3zWfEzaMNwk_klG4KTJIaS9p4zFGheHtjEz50GWeiUDgcbrK3uEseBq8LJ30Ug7YqAa3Hs4hiBCP1TI3sjICVqZ-XuWhZg6jb6R5hhjc5yLjoNxOlpTmhJAd-inDErxGFX__tiLsl7MczhqZyqfsOqGNrn9EdoamccqgiZnYjZXvomVNEYelceneKbpUnKXw9lEPsSBg8Y3iXpcV7GWIKHTy6RJ7O1clHvDW2ftPOypxzbH9XeCx_9DKIXH4d4dt4MmssEg"
+                src="/images/food/quik-snack-street-food.svg"
               />
             </div>
 

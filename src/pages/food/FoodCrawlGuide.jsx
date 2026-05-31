@@ -23,6 +23,9 @@ export default function FoodCrawlGuide({ onNavigate }) {
     matches('quintin-paredes', 'street-food'),
     matches('ongpin', 'pastries-hopia'),
     matches('sabino-padilla', 'fine-dining'),
+    matches('quintin-paredes', 'street-food'),
+    matches('ongpin', 'pastries-hopia'),
+    matches('sabino-padilla', 'fine-dining'),
   ].some(Boolean)
 
   const openWaiYingProfile = () => {
@@ -45,6 +48,53 @@ export default function FoodCrawlGuide({ onNavigate }) {
     onNavigate?.('food-president-grand-palace')
   }
 
+  const extraStops = [
+    {
+      page: 'food-dong-bei-dumplings',
+      street: 'quintin-paredes',
+      category: 'dim-sum',
+      badge: 'Legendary Spot',
+      title: 'Dong Bei Dumplings',
+      image: '/images/food/dongbei-dumplings.jpg',
+    },
+    {
+      page: 'food-tasty-dumplings',
+      street: 'quintin-paredes',
+      category: 'street-food',
+      badge: 'Street Favorite',
+      title: 'Tasty Dumplings',
+      image: '/images/food/tasty-dumplings.jpg',
+    },
+    {
+      page: 'food-polland-fresh-lumpia',
+      street: 'quintin-paredes',
+      category: 'street-food',
+      badge: 'Fresh Lumpia',
+      title: 'Polland Fresh Lumpia',
+      image: '/images/food/polland-fresh-lumpia.jpg',
+    },
+    {
+      page: 'food-fried-shanghai-siopao',
+      street: 'ongpin',
+      category: 'pastries-hopia',
+      badge: 'Specialty Bun',
+      title: 'Fried Shanghai Siopao',
+      image: '/images/food/fried-shanghai-siopao.jpg',
+    },
+    {
+      page: 'food-1919-grand-cafe',
+      street: 'sabino-padilla',
+      category: 'fine-dining',
+      badge: 'Coffee',
+      title: '1919 Grand Cafe',
+      image: '/images/food/1919-grand-cafe.jpg',
+    },
+  ]
+
+  const visibleExtraStops = extraStops.filter((item) =>
+    matches(item.street, item.category)
+  )
+
   const chipClass = (isActive) =>
     isActive
       ? 'px-5 py-2 rounded-full bg-secondary-container text-on-secondary-container font-bold text-sm shadow-sm'
@@ -66,7 +116,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
             <img
               className="w-full h-full object-cover"
               alt="Atmospheric street view of Binondo Manila at dusk"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ5QIKmfkWTsPwPK9vU-JJJa8OO0ULfWridK4LKzPM0uHd0kllV3tzbyjzbfUO0XddyXaC4ti12skJrwKLlXF3e5GdWdrNGYw7AbUW6SEpT16BiG_sMLIa-_q-8oAcjR9fvKvhKbrT33SpGURkj9gHoTO8T_2cEkXVe_TN6WaxngKs2lTbgAmZHXfGiCIUHNj6iTuP-QYEDAm0nezz96uqfekRX7EdR7gCM5GGsY5mcdV4H9VlRlN1gwfSrJHyLMcpcjsoxxTOZ5E"
+              src="/images/food/waiying-dim-sum.jpg"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
@@ -167,7 +217,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
                 <img
                   className="w-full h-full object-cover"
                   alt="Steaming dim sum and shrimp dumplings"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuC860uVLU3ShbvtJhNyDSbkSDQOQ8Rj2x6QZ9B5aAhXbaZ442mKNQGvfeoT7pegn8hppR9P8yw6EO2a1Cdm1MgbBm9VdCBfrEBjEIppSrw-fOLxsx9EWEc_02h-eKZli5wyqJ45UBLQ88sAMNvcdW3LFcizj_vnFMTYz-BmV7Aa_zhdshx3Qx74EjXCDAh3-j96ZUJ0g9J2WlGbrjO7e5qv5hmxIceZzIoDH5s_jPjK8ZCrDIqHbSDRStQngOv2SoUy6nVyPjU6sRY"
+                  src="/images/food/waiying-dim-sum.jpg"
                 />
                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-1">
                   <span
@@ -237,7 +287,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
                 <img
                   className="w-full h-full object-cover"
                   alt="Traditional noodle and street food"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1jNRFdloJ4bHYGEe2ySaeqNYLL1xJKIHZ8e5l2gxAScceOw6BWIiXzWGzOd-Wgy8dxquXSFJTxIYggytg_8Yxq0gzl6dlCSZJFoVz8fpvZQt-lXR12vtqw856eItOekh4BjyjItvccf2npyoepsz3YpKjAnTmqctsRtjHQMpQCYtUeHJ5-MxXc6zg_Cd-dNaivx9eaWG7-Suhl2Jn7rU2mmALYINigRtTknUa3JWPnzamC1CvRJDK1EAPIXKFFaPWyEUsD6xJ_YE"
+                  src="/images/food/quik-snack-street-food.jpg"
                 />
                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-1">
                   <span
@@ -307,7 +357,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
                 <img
                   className="w-full h-full object-cover"
                   alt="Stack of hopia pastries"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8ua5S5w6KMMWTxBLfHQ-KsXQIeeFFbe6MyAJ5S-VNoPVosU88DFtJDz0nHwuFsr3HXjIt2T5K_boTjwFrOeYz6I0RbAkuUeAacech6r435EebLzcR4lDJz33G0jb7uLZZ9XZrX8UMuPG0OddTV7iGEdylTB3YzcYwDRvGX4oohaKEHVrTTUkRTRyvwRR8i2gVeaeQ9jmGyig9-zWwKVeeyekukWLgXREVAyw7yuCDA43ynpeLATJeotI5sp3bm2jyLY-jsD5rXZA"
+                  src="/images/food/engbeetin-hopia.jpg"
                 />
                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-1">
                   <span
@@ -506,6 +556,72 @@ export default function FoodCrawlGuide({ onNavigate }) {
             </div>
           )}
 
+          {visibleExtraStops.length > 0 && (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {visibleExtraStops.map((item) => (
+                <article
+                  key={item.page}
+                  className="bg-surface-container-low rounded-xl overflow-hidden group transition-all duration-500 hover:shadow-2xl cursor-pointer"
+                  onClick={() => onNavigate?.(item.page)}
+                >
+                  <div className="relative h-64 overflow-hidden">
+                    <img
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      alt={item.title}
+                      src={item.image}
+                    />
+                    <div className="absolute top-4 left-4">
+                      <span className="bg-secondary-container text-on-secondary-container text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
+                        {item.badge}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="p-8">
+                    <div className="flex justify-between items-start mb-2">
+                      <h3 className="font-headline text-2xl font-bold text-primary">
+                        {item.title}
+                      </h3>
+                      <div className="flex items-center gap-1 text-secondary">
+                        <span
+                          className="material-symbols-outlined text-sm"
+                          style={{ fontVariationSettings: "'FILL' 1" }}
+                        >
+                          star
+                        </span>
+                        <span className="font-bold text-sm">4.6</span>
+                      </div>
+                    </div>
+                    <p className="text-xs font-bold text-on-surface-variant mb-4 flex items-center gap-1">
+                      <span className="material-symbols-outlined text-sm">payments</span>{' '}
+                      $$ •{' '}
+                      <span className="material-symbols-outlined text-sm">location_on</span>{' '}
+                      Sample Address
+                    </p>
+                    <p className="text-on-surface/80 text-sm mb-6 leading-relaxed">
+                      Short description for {item.title} — incorporated into the unified crawl.
+                    </p>
+                    <div className="flex gap-4 items-center">
+                      <button
+                        className="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest group/link"
+                        type="button"
+                        onClick={(event) => {
+                          event.stopPropagation()
+                          onNavigate?.(item.page)
+                        }}
+                      >
+                        View Profile
+                        <span className="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">
+                          arrow_forward
+                        </span>
+                      </button>
+                      <div className="h-px flex-grow bg-outline-variant/30" />
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          )}
+
           <div className="bg-secondary-container/30 p-8 rounded-xl relative overflow-hidden">
             <div className="absolute -right-4 -top-4 opacity-10">
               <span className="material-symbols-outlined text-9xl">info</span>
@@ -644,7 +760,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
                 <img
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   alt="Steaming xiao long bao"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1VTJx-ZJyJNpZcezx85pHgnV6WfR5wIBRZjEdW2NZNIW6R5M5LgFdExuOfSW20VMl1F_hTZSE_tu9tEd0gxdR01XF-iKCnAH3phKQ5QZbKP6GsZmlUE5-cjNJHqQzSNlv4K_POhe5OgKInW1ziSjR8AFfuHe0RQbsOZyY1uTBRu9zlEEOa9R7OTSjJGu-Vzy0vxWPnh988zE1OnvBebh77xJ7fYdR-AhStBLoumqFmTnkEFEwQBG6bA3IOcP90llNoJYXnbtXGgY"
+                  src="/images/food/waiying-dim-sum.jpg"
                 />
                 <div className="absolute top-4 left-4">
                   <span className="bg-secondary-container text-on-secondary-container text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
@@ -709,6 +825,72 @@ export default function FoodCrawlGuide({ onNavigate }) {
               </article>
             )}
 
+            {visibleExtraStops.length > 0 && (
+              <>
+                {visibleExtraStops.map((item) => (
+                  <article
+                    key={item.page}
+                    className="bg-surface-container-low rounded-xl overflow-hidden group transition-all duration-500 hover:shadow-2xl cursor-pointer"
+                    onClick={() => onNavigate?.(item.page)}
+                  >
+                    <div className="relative h-64 overflow-hidden">
+                      <img
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        alt={item.title}
+                        src={item.image}
+                      />
+                      <div className="absolute top-4 left-4">
+                        <span className="bg-secondary-container text-on-secondary-container text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
+                          {item.badge}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="p-8">
+                      <div className="flex justify-between items-start mb-2">
+                        <h3 className="font-headline text-2xl font-bold text-primary">
+                          {item.title}
+                        </h3>
+                        <div className="flex items-center gap-1 text-secondary">
+                          <span
+                            className="material-symbols-outlined text-sm"
+                            style={{ fontVariationSettings: "'FILL' 1" }}
+                          >
+                            star
+                          </span>
+                          <span className="font-bold text-sm">4.6</span>
+                        </div>
+                      </div>
+                      <p className="text-xs font-bold text-on-surface-variant mb-4 flex items-center gap-1">
+                        <span className="material-symbols-outlined text-sm">payments</span>{' '}
+                        $$ •{' '}
+                        <span className="material-symbols-outlined text-sm">location_on</span>{' '}
+                        Sample Address
+                      </p>
+                      <p className="text-on-surface/80 text-sm mb-6 leading-relaxed">
+                        Short description for {item.title} — incorporated into the unified crawl.
+                      </p>
+                      <div className="flex gap-4 items-center">
+                        <button
+                          className="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest group/link"
+                          type="button"
+                          onClick={(event) => {
+                            event.stopPropagation()
+                            onNavigate?.(item.page)
+                          }}
+                        >
+                          View Profile
+                          <span className="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">
+                            arrow_forward
+                          </span>
+                        </button>
+                        <div className="h-px flex-grow bg-outline-variant/30" />
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </>
+            )}
+
             {matches('quintin-paredes', 'street-food') && (
               <article
                 className="bg-surface-container-low rounded-xl overflow-hidden group transition-all duration-500 hover:shadow-2xl cursor-pointer"
@@ -718,7 +900,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
                 <img
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   alt="Outdoor noodle stall in Binondo"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoRMSq3zWfEzaMNwk_klG4KTJIaS9p4zFGheHtjEz50GWeiUDgcbrK3uEseBq8LJ30Ug7YqAa3Hs4hiBCP1TI3sjICVqZ-XuWhZg6jb6R5hhjc5yLjoNxOlpTmhJAd-inDErxGFX__tiLsl7MczhqZyqfsOqGNrn9EdoamccqgiZnYjZXvomVNEYelceneKbpUnKXw9lEPsSBg8Y3iXpcV7GWIKHTy6RJ7O1clHvDW2ftPOypxzbH9XeCx_9DKIXH4d4dt4MmssEg"
+                  src="/images/food/quik-snack-street-food.jpg"
                 />
                 <div className="absolute top-4 left-4">
                   <span className="bg-primary text-on-primary text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
@@ -796,7 +978,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
                 <img
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   alt="Stack of hopia pastries"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8ua5S5w6KMMWTxBLfHQ-KsXQIeeFFbe6MyAJ5S-VNoPVosU88DFtJDz0nHwuFsr3HXjIt2T5K_boTjwFrOeYz6I0RbAkuUeAacech6r435EebLzcR4lDJz33G0jb7uLZZ9XZrX8UMuPG0OddTV7iGEdylTB3YzcYwDRvGX4oohaKEHVrTTUkRTRyvwRR8i2gVeaeQ9jmGyig9-zWwKVeeyekukWLgXREVAyw7yuCDA43ynpeLATJeotI5sp3bm2jyLY-jsD5rXZA"
+                  src="/images/food/engbeetin-hopia.jpg"
                 />
               </div>
               <div className="p-8">
@@ -868,7 +1050,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
                 <img
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   alt="Traditional Cantonese banquet table"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUE0jdi21Dob0RVFk6RQQ5kCTesyZ1NL_s5AdZT6Mwf1_blFck_ffvXOd2VDND9_TfepCWDDyQOoIvi1x6ta9U1VKFyj2u34v7V2JWqylYsyf62rx8SvysDvi8c3bi1tZqqr-GavucofJ96Zu_woMvwMy86FJ7bR_euAld4RBXC1KAtFg3iMjL6AjrSkGpbsbCjAp8Lw80x1EMpz9SiKQ6p7zAN33kyb8Y6O1fWbNYGeTUU1tsju1hp-83qVCkxF7VHfAT2NLSbg8"
+                  src="/images/food/president-grand-palace.jpg"
                 />
               </div>
               <div className="p-8">
@@ -942,7 +1124,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
                 <img
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   alt="Traditional fried chicken"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcRsm0BcLO3zpNqsa4KnhzVR40pGE7AEenWFuCew5-G8dlZv3rxBOwaWi1HcwLh04hyDu0XKeih9r7jzwuglczmoyiFHv5Ogl7pg2QmpSOgt8xBOTfqT7EYtiLPFeFpc4AQkra_K3vL021P43zqF11j5CmxCzSXKkHfUNOlmUuWAq5-ce2L0z3MRPKkFgYS9G3gmFMAbtdujroMIaSmxyPpU5cZJl6eLKmXDT0AZf9niqg81gROihCXFOXaPBnSwK0D5fdglnDRu8"
+                  src="/images/food/sincerity-fried-chicken.jpg"
                 />
               </div>
               <div className="p-8">
@@ -1006,6 +1188,8 @@ export default function FoodCrawlGuide({ onNavigate }) {
               </article>
             )}
           </div>
+
+          
 
           {!hasMatches && (
             <div className="mt-10 bg-surface-container-low rounded-xl p-8 text-on-surface-variant">
