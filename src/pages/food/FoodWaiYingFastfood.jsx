@@ -17,7 +17,7 @@ export default function FoodWaiYingFastfood({ onNavigate }) {
           <img
             alt="Wai Ying dim sum"
             className="w-full h-full object-cover"
-            src="/images/food/waiying.jpg"
+            src="/images/food/waiying-dim-sum.jpg"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
           <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
@@ -81,7 +81,7 @@ export default function FoodWaiYingFastfood({ onNavigate }) {
               <img
                 alt="Interior of Wai Ying"
                 className="w-full h-full object-cover"
-                src="/images/food/waiying.jpg"
+                src="/images/food/waiying-dim-sum.jpg"
               />
             </div>
             <div className="flex flex-col justify-center">
@@ -105,7 +105,7 @@ export default function FoodWaiYingFastfood({ onNavigate }) {
               <img
                 alt="Shrimp hakao"
                 className="w-full h-full object-cover"
-                src="/images/food/waiying.jpg"
+                src="/images/food/waiying-dim-sum.jpg"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4">
@@ -309,7 +309,7 @@ export default function FoodWaiYingFastfood({ onNavigate }) {
               <img
                 alt="Steaming baskets of dim sum"
                 className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700"
-                src="/images/food/waiying.jpg"
+                src="/images/food/waiying-dim-sum.jpg"
               />
             </div>
 
