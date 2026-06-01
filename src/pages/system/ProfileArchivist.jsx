@@ -383,31 +383,12 @@ export default function ProfileArchivist({ onNavigate }) {
                     Heritage Guardian
                   </span>
                   <h2 className="text-5xl font-black text-primary leading-tight">
-                    Master Julian Cheng
+                    {user?.displayName || 'Digital Archivist'}
                   </h2>
-                  <p className="text-on-surface/70 font-body max-w-lg">
-                    Dedicated to preserving the culinary and architectural secrets
-                    of Binondo since 2012.
-                  </p>
                 </div>
 
                 <div className="flex gap-12 pb-2">
-                  <div className="text-center">
-                    <p className="text-3xl font-headline font-black text-secondary">
-                      42
-                    </p>
-                    <p className="text-[10px] uppercase tracking-tighter text-on-surface/50 font-bold">
-                      Landmarks Visited
-                    </p>
-                  </div>
-                  <div className="text-center border-l border-outline-variant/30 pl-12">
-                    <p className="text-3xl font-headline font-black text-secondary">
-                      128
-                    </p>
-                    <p className="text-[10px] uppercase tracking-tighter text-on-surface/50 font-bold">
-                      Contributions
-                    </p>
-                  </div>
+                  {/* Placeholder for dynamic stats */}
                 </div>
               </div>
             </header>
