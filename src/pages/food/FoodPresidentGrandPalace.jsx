@@ -19,7 +19,7 @@ export default function FoodPresidentGrandPalace({ onNavigate }) {
           <img
             alt="Traditional Cantonese banquet table"
             className="w-full h-full object-cover"
-            src="/images/food/president-grand-palace.jpg"
+            src="/images/food/president.jpg"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
           <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
@@ -96,7 +96,7 @@ export default function FoodPresidentGrandPalace({ onNavigate }) {
               <img
                 alt="Banquet dishes"
                 className="w-full h-full object-cover"
-                src="/images/food/president-grand-palace.jpg"
+                src="/images/food/president.jpg"
               />
             </div>
             <div className="flex flex-col justify-center">
@@ -119,7 +119,7 @@ export default function FoodPresidentGrandPalace({ onNavigate }) {
               <img
                 alt="Cantonese banquet spread"
                 className="w-full h-full object-cover"
-                src="/images/food/president-grand-palace.jpg"
+                src="/images/food/president.jpg"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4">
@@ -267,7 +267,7 @@ export default function FoodPresidentGrandPalace({ onNavigate }) {
                 <img
                     className="absolute inset-0 w-full h-full object-cover"
                     alt="Traditional Cantonese banquet table"
-                    src="/images/food/president-grand-palace.jpg"
+                    src="/images/food/president.jpg"
                   />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="relative z-10 p-12 h-full flex flex-col justify-end">
@@ -370,7 +370,7 @@ export default function FoodPresidentGrandPalace({ onNavigate }) {
                     <img
                       className="w-full h-[320px] object-cover"
                       alt="Cantonese banquet spread"
-                      src="/images/food/president-grand-palace.jpg"
+                      src="/images/food/president.jpg"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                     <div className="absolute bottom-6 left-6 right-6">
