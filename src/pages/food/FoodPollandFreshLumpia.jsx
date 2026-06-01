@@ -10,8 +10,8 @@ export default function FoodPollandFreshLumpia({ onNavigate }) {
       heroImage="/images/food/polland-fresh-lumpia.jpg"
       heroAlt="Fresh lumpia from Polland"
       rating={4.4}
-      priceLabel="$"
-      location="Benavidez Street"
+      priceLabel="₱1–₱500"
+      location="209 Escolta St."
       storyTitle="A Lighter Crawl Stop"
       storyText="Polland earns its place as an optional detour for people who want a fresher, lighter bite before continuing the route."
       signatureTitle="Fresh Lumpia"

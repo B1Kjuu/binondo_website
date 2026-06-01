@@ -10,8 +10,8 @@ export default function FoodLordStows({ onNavigate }) {
       heroImage="/images/food/lord-stows.jpg"
       heroAlt="Lord Stow's egg tarts"
       rating={4.5}
-      priceLabel="$"
-      location="Ongpin St., Binondo"
+      priceLabel="₱1–500"
+      location="Imperial Sky Garden Condo Corporation, Ongpin St"
       storyTitle="Sweet Finish"
       storyText="A beloved kiosk for custardy Portuguese egg tarts — perfect for gifting or a quick sweet bite."
       signatureTitle="Portuguese Egg Tart"

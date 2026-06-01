@@ -92,6 +92,25 @@ export const SEARCH_ITEMS = [
     match: ['eng bee tin', 'engbeetin', 'hopia', 'ube', 'ongpin'],
   },
   {
+    page: 'food-mei-sum',
+    label: 'Mei Sum Tea House',
+    group: 'Food Crawl',
+    match: ['mei sum', 'mei-sum', 'mei sum tea house', 'meisum', 'dim sum', 'yum cha'],
+  },
+  {
+    page: 'food-chef-panda-dimsum-house',
+    label: 'Chef Panda Dimsum House',
+    group: 'Food Crawl',
+    match: [
+      'chef panda',
+      'chef panda dimsum house',
+      'chef panda dimsum',
+      'foodchefpandadimsumhouse',
+      'reina regente',
+      'xiao long bao',
+    ],
+  },
+  {
     page: 'food-quik-snack',
     label: 'Quik Snack',
     group: 'Food Crawl',

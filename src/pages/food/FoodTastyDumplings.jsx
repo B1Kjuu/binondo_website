@@ -10,8 +10,8 @@ export default function FoodTastyDumplings({ onNavigate }) {
       heroImage="/images/food/tasty-dumplings.jpg"
       heroAlt="Tasty Dumplings street food"
       rating={4.5}
-      priceLabel="$"
-      location="Binondo core"
+      priceLabel="₱1–500"
+      location="Norberto Ty St."
       storyTitle="Street-side Comfort"
       storyText="This stop is all about quick comfort: a little salty, a little savory, and built for people walking the crawl one block at a time."
       signatureTitle="Fried Dumplings and Soy Milk"

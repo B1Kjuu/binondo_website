@@ -146,7 +146,7 @@ export default function FoodSincerityCafe({ onNavigate }) {
                 <div>
                   <p className="font-bold text-sm">Address</p>
                   <p className="text-sm text-on-surface-variant">
-                    497 E.T. Yuchengco St, Binondo, Manila
+                    519 Quintin Paredes St.
                   </p>
                 </div>
               </div>
@@ -406,7 +406,7 @@ export default function FoodSincerityCafe({ onNavigate }) {
 
             <div className="space-y-6">
               {[
-                ['location_on', 'Address', '497 E.T. Yuchengco St, Binondo, Manila'],
+                ['location_on', 'Address', '519 Quintin Paredes St.'],
                 ['restaurant', 'Signature', 'Fried Chicken'],
                 ['payments', 'Price Range', '$$'],
               ].map(([icon, title, detail]) => (

@@ -25,6 +25,8 @@ import FoodMasuki from './pages/food/FoodMasuki.jsx'
 import FoodMinNanDiYiWei from './pages/food/FoodMinNanDiYiWei.jsx'
 import FoodTohoPanciteria from './pages/food/FoodTohoPanciteria.jsx'
 import FoodYingYingTeaHouse from './pages/food/FoodYingYingTeaHouse.jsx'
+import FoodMeiSumTeaHouse from './pages/food/FoodMeiSumTeaHouse.jsx'
+import FoodChefPandaDimsumHouse from './pages/food/FoodChefPandaDimsumHouse.jsx'
 import HeritageBahayTsinoy from './pages/heritage/HeritageBahayTsinoy.jsx'
 import HeritageBinondoChurch from './pages/heritage/HeritageBinondoChurch.jsx'
 import HeritageEscoltaStreet from './pages/heritage/HeritageEscoltaStreet.jsx'
@@ -156,6 +158,10 @@ function App() {
         return FoodTohoPanciteria
       case 'food-ying-ying':
         return FoodYingYingTeaHouse
+      case 'food-mei-sum':
+        return FoodMeiSumTeaHouse
+      case 'food-chef-panda-dimsum-house':
+        return FoodChefPandaDimsumHouse
       case 'food-quik-snack':
         return FoodQuikSnack
       case 'food-sincerity-cafe':

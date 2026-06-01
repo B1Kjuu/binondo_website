@@ -486,7 +486,7 @@ export default function FoodWaiYingFastfood({ onNavigate }) {
               {[
                 ['schedule', 'Operation Hours', '07:00 AM — 02:00 AM'],
                 ['location_on', 'Address', '810 Benavidez St, Binondo, Manila'],
-                ['payments', 'Price Range', '₱250 — ₱500 per person'],
+                ['payments', 'Price Range', '₱500–1,000 per person'],
               ].map(([icon, title, detail]) => (
                 <div className="flex gap-4" key={title}>
                   <span className="material-symbols-outlined text-secondary">

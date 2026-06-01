@@ -56,14 +56,18 @@ export default function FoodCrawlGuide({ onNavigate }) {
       badge: 'Legendary Spot',
       title: 'Dong Bei Dumplings',
       image: '/images/food/dongbei-dumplings.jpg',
+      address: '642 Yuchengco St.',
+      price: '₱1–500',
     },
     {
       page: 'food-tasty-dumplings',
       street: 'quintin-paredes',
       category: 'street-food',
-      badge: 'Street Favorite',
       title: 'Tasty Dumplings',
-      image: '/images/food/tasty-dumplings.jpg',
+      badge: 'Street Favorite',
+      image: '/images/food/chef-panda-dimsum-house.jpg',
+      address: 'Norberto Ty St.',
+      price: '₱1–500',
     },
     {
       page: 'food-polland-fresh-lumpia',
@@ -72,14 +76,38 @@ export default function FoodCrawlGuide({ onNavigate }) {
       badge: 'Fresh Lumpia',
       title: 'Polland Fresh Lumpia',
       image: '/images/food/polland-fresh-lumpia.jpg',
+      address: '209 Escolta St.',
+      price: '₱1–500',
     },
     {
       page: 'food-fried-shanghai-siopao',
       street: 'ongpin',
       category: 'pastries-hopia',
       badge: 'Specialty Bun',
-      title: 'Fried Shanghai Siopao',
+      title: 'Shanghai Fried Siopao',
       image: '/images/food/fried-shanghai-siopao.jpg',
+      address: '828 Ongpin St.',
+      price: '₱1–500',
+    },
+    {
+      page: 'food-mei-sum',
+      street: 'ongpin',
+      category: 'dim-sum',
+      badge: 'Cantonese Tea House',
+      title: 'Mei Sum Tea House',
+      image: '/images/food/mei-sum-dim-sum.jpg',
+      address: '965 Ongpin St.',
+      price: '₱1–500',
+    },
+    {
+      page: 'food-chef-panda-dimsum-house',
+      street: 'ongpin',
+      category: 'dim-sum',
+      badge: 'Cantonese Tea House',
+      title: 'Chef Panda Dimsum House',
+      image: '/images/food/chef-panda-dimsum-house.jpg',
+      address: '703, Regina Garden II, Reina Regente St',
+      price: '₱1–500',
     },
     {
       page: 'food-1919-grand-cafe',
@@ -88,6 +116,8 @@ export default function FoodCrawlGuide({ onNavigate }) {
       badge: 'Coffee',
       title: '1919 Grand Cafe',
       image: '/images/food/1919-grand-cafe.jpg',
+      address: '117 Juan Luna St',
+      price: '₱500-1000',
     },
     {
       page: 'food-apologue',
@@ -96,6 +126,8 @@ export default function FoodCrawlGuide({ onNavigate }) {
       badge: 'Cafe',
       title: 'Apologue Coffee & Pastry',
       image: '/images/food/binondo-food-crawl.jpg',
+      address: '934 Benavidez St',
+      price: '₱1-500',
     },
     {
       page: 'food-cafe-mezzanine',
@@ -104,6 +136,8 @@ export default function FoodCrawlGuide({ onNavigate }) {
       badge: 'Comfort Food',
       title: 'Cafe Mezzanine',
       image: '/images/food/binondo-food-crawl.jpg',
+      address: '650 Ongpin St',
+      price: '₱1–500',
     },
     {
       page: 'food-chuan-kee',
@@ -112,6 +146,8 @@ export default function FoodCrawlGuide({ onNavigate }) {
       badge: 'Local Fastfood',
       title: 'Chuan Kee',
       image: '/images/food/binondo-food-crawl.jpg',
+      address: '650 Ongpin St',
+      price: '₱1–500',
     },
     {
       page: 'food-lonely-owl',
@@ -120,6 +156,8 @@ export default function FoodCrawlGuide({ onNavigate }) {
       badge: 'Dessert',
       title: 'Lonely Owl',
       image: '/images/food/binondo-food-crawl.jpg',
+      address: 'Lucky Chinatown Mall, Lachambre St',
+      price: '₱1–200',
     },
     {
       page: 'food-lord-stows',
@@ -128,6 +166,8 @@ export default function FoodCrawlGuide({ onNavigate }) {
       badge: 'Bakery',
       title: "Lord Stow's Bakery",
       image: '/images/food/lord-stows.jpg',
+      address: 'Imperial Sky Garden Condo\nCorporation, Ongpin St',
+      price: '₱1–500',
     },
     {
       page: 'food-masuki',
@@ -136,6 +176,8 @@ export default function FoodCrawlGuide({ onNavigate }) {
       badge: 'Noodle House',
       title: 'Masuki',
       image: '/images/food/binondo-food-crawl.jpg',
+      address: '931 Benavidez St',
+      price: '₱1–500',
     },
     {
       page: 'food-min-nan-di-yi-wei',
@@ -144,6 +186,8 @@ export default function FoodCrawlGuide({ onNavigate }) {
       badge: 'Specialty',
       title: 'Min Nan Di Yi Wei',
       image: '/images/food/binondo-food-crawl.jpg',
+      address: '832 Benavidez St.',
+      price: '₱1–500',
     },
     {
       page: 'food-toho-panciteria',
@@ -152,6 +196,8 @@ export default function FoodCrawlGuide({ onNavigate }) {
       badge: 'Historic',
       title: 'Toho Panciteria Antigua',
       image: '/images/food/binondo-food-crawl.jpg',
+      address: '422 Tomas Pinpin St.',
+      price: '₱1–500',
     },
     {
       page: 'food-ying-ying',
@@ -160,6 +206,8 @@ export default function FoodCrawlGuide({ onNavigate }) {
       badge: 'Tea House',
       title: 'Ying Ying Tea House',
       image: '/images/food/binondo-food-crawl.jpg',
+      address: '233-235 Yuchengco St.',
+      price: '₱1–500',
     },
   ]
 
@@ -665,9 +713,9 @@ export default function FoodCrawlGuide({ onNavigate }) {
                     </div>
                     <p className="text-xs font-bold text-on-surface-variant mb-4 flex items-center gap-1">
                       <span className="material-symbols-outlined text-sm">payments</span>{' '}
-                      $$ •{' '}
+                      ${item.price}
                       <span className="material-symbols-outlined text-sm">location_on</span>{' '}
-                      Sample Address
+                        {item.address}
                     </p>
                     <p className="text-on-surface/80 text-sm mb-6 leading-relaxed">
                       Short description for {item.title} — incorporated into the unified crawl.
@@ -859,7 +907,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
                   <span className="material-symbols-outlined text-sm">
                     payments
                   </span>{' '}
-                  $$ •{' '}
+                  ₱500–1,000
                   <span className="material-symbols-outlined text-sm">
                     location_on
                   </span>{' '}
@@ -934,9 +982,9 @@ export default function FoodCrawlGuide({ onNavigate }) {
                       </div>
                       <p className="text-xs font-bold text-on-surface-variant mb-4 flex items-center gap-1">
                         <span className="material-symbols-outlined text-sm">payments</span>{' '}
-                        $$ •{' '}
-                        <span className="material-symbols-outlined text-sm">location_on</span>{' '}
-                        Sample Address
+                        {item.price}
+                      <span className="material-symbols-outlined text-sm">location_on</span>{' '}
+                        {item.address}
                       </p>
                       <p className="text-on-surface/80 text-sm mb-6 leading-relaxed">
                         Short description for {item.title} — incorporated into the unified crawl.
@@ -999,11 +1047,11 @@ export default function FoodCrawlGuide({ onNavigate }) {
                   <span className="material-symbols-outlined text-sm">
                     payments
                   </span>{' '}
-                  $ •{' '}
+                  ₱200–400
                   <span className="material-symbols-outlined text-sm">
                     location_on
                   </span>{' '}
-                  Carvajal St.
+                  637 Carvajal St
                 </p>
                 <p className="text-on-surface/80 text-sm mb-6 leading-relaxed">
                   Tucked in a narrow alley, their{' '}
@@ -1072,7 +1120,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
                   <span className="material-symbols-outlined text-sm">
                     payments
                   </span>{' '}
-                  $$ •{' '}
+                  ₱1–500
                   <span className="material-symbols-outlined text-sm">
                     location_on
                   </span>{' '}
@@ -1144,11 +1192,11 @@ export default function FoodCrawlGuide({ onNavigate }) {
                   <span className="material-symbols-outlined text-sm">
                     payments
                   </span>{' '}
-                  $$$ •{' '}
+                  ₱1–500
                   <span className="material-symbols-outlined text-sm">
                     location_on
                   </span>{' '}
-                  497 E.T. Yuchengco St.
+                  519 Quintin Paredes St.
                 </p>
                 <p className="text-on-surface/80 text-sm mb-6 leading-relaxed">
                   Traditional Cantonese banquet dining—best shared family-style
@@ -1218,11 +1266,11 @@ export default function FoodCrawlGuide({ onNavigate }) {
                   <span className="material-symbols-outlined text-sm">
                     payments
                   </span>{' '}
-                  $$ •{' '}
+                  ₱1–500 •{' '}
                   <span className="material-symbols-outlined text-sm">
                     location_on
                   </span>{' '}
-                  497 E.T. Yuchengco St.
+                  519 Quintin Paredes St.
                 </p>
                 <p className="text-on-surface/80 text-sm mb-6 leading-relaxed">
                   Their signature{' '}

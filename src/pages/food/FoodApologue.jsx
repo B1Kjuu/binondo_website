@@ -10,8 +10,8 @@ export default function FoodApologue({ onNavigate }) {
       heroImage="/images/food/binondo-food-crawl.jpg"
       heroAlt="Apologue interior and pastries"
       rating={4.6}
-      priceLabel="$$"
-      location="Benavidez St., Binondo"
+      priceLabel="₱1-500"
+      location="934 Benavidez St"
       storyTitle="Third-wave Cafe in Binondo"
       storyText="A welcome modern stop on the crawl; cozy interiors and excellent tiramisu make this a great rest point between heritage spots."
       signatureTitle="Binondo Latte"
