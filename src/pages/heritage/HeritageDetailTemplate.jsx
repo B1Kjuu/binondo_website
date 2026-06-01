@@ -18,6 +18,7 @@ export default function HeritageDetailTemplate({
   nearbyTitle = 'Nearby Treasures',
   nearbySpots = [],
 }) {
+  const mapQuery = encodeURIComponent(`${mapLabel ?? 'Binondo'} Binondo Manila`)
   return (
     <main className="pt-28 pb-20">
       <div className="px-8 lg:px-16 max-w-screen-2xl mx-auto mb-6">
@@ -108,13 +109,15 @@ export default function HeritageDetailTemplate({
             </div>
 
             <div className="rounded-xl overflow-hidden mb-6 h-64 relative bg-surface-container-highest">
-              <img
-                className="w-full h-full object-cover opacity-50 grayscale"
-                alt={mapLabel}
-                src={mapImage}
+              <iframe
+                title={mapLabel ?? 'Map'}
+                className="w-full h-full border-0"
+                src={`https://www.google.com/maps?q=${mapQuery}&z=16&output=embed`}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
               />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="bg-primary text-white px-6 py-3 rounded-full flex items-center gap-2 shadow-xl">
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className="bg-primary text-white px-6 py-3 rounded-full flex items-center gap-2 shadow-xl opacity-90">
                   <span className="material-symbols-outlined">map</span>
                   <span className="font-bold">{mapLabel}</span>
                 </div>

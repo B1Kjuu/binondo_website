@@ -10,24 +10,21 @@ export default function HeritageGuidelines() {
       description:
         'Respect the silence of the temples. Photography is permitted in courtyards but strictly restricted during active rituals. Tripods require a heritage pass.',
       tags: ['Religious', 'Media Policy'],
-      image:
-        'https://lh3.googleusercontent.com/aida-public/AB6AXuBEIuq5QacBAHFrmimtgiNgzo6mqoRvSN-WsiP_jO6_eUIPsIUmG_y182JDFHmEwyrvjzuNSDZKg4EVaFGczL8_hfIVc_XNopGPkiGj_ZyuDaqkG1YAxaSJxBDMoaHQaYqgVH6xEAjowBISJIeELLJzP7PLi7eaDSbil57_wm56Gms6dsQnxCmmMiLXuVL-DzQMvVtDHDR0oWgnUKRxslyI9sPRVjOKJnShXQejj7tcgrSciSXtZe_eFHof1VwU1xfwI-FpjAdm7YM',
+      image: '/images/heritage/seng-guan-temple.jpg',
     },
     {
       title: 'Waste Management',
       description:
         "We operate a strict 'Zero-Trace' policy. All food waste from street stalls must be disposed of in the color-coded 'Brass Bins' located at street corners.",
       tags: ['Ecological', 'Community'],
-      image:
-        'https://lh3.googleusercontent.com/aida-public/AB6AXuBGQaS_Ez5BbgaNGly8WMBcyPdg5uI1_otQwXKoe2-T5BH30Cc0yWj_dUeB6yRln-3LOxxWQfbWCAorRK7XCsOyMWNVNHZv2jrS-WPvrZMzMM79TtiAl1AEt4KuBsZTL37DJzVhGULN0qHaSdF67j7KO8CN8FEerv7Mr0qJLQXS0im5DT4_KaCRAP6BvVgLoId1r3gD4k7qC-tWf71pVnDDKIfc-sQiDoP6EUyWxexMnpBVuT-G1xwNP9h2ZCzmTd_RHZenhIO-dwQ',
+      image: '/images/heritage/escolta-street.jpg',
     },
     {
       title: 'Historical Sites & Conduct',
       description:
         'Preserve the patina of time. Graffiti, even of a digital nature via augmented reality overlays, must be approved by the Digital Concierge board.',
       tags: ['Preservation', 'Legal'],
-      image:
-        'https://lh3.googleusercontent.com/aida-public/AB6AXuBTPVIGFFhIHRtc-UQBJiCVqBcEHoVa3IiFHLfjzPQF7Xn2Qudusb6GrALa--nCmWZYFQnd0eoT09JdPPzLZ-WEnTe8VJn3YiYgBYXIrOM1Pb-snNVIUrJkaxsNsIhXkkTuEI6KCM-Njx9CsftjZtwgf7QnieCazftO_2U7A1kKSo_52uaFmwUSK04ZR-Ny0IRuP0TwPqXXJpF-epHINb6ccKzrI3hE-7gdIHIMB1cahIy6qlOsP-bp5dseHrqFu0zPTXXeQJJmP98',
+      image: '/images/heritage/first-united-building.jpg',
     },
   ]
 
@@ -175,7 +172,7 @@ export default function HeritageGuidelines() {
               <img
                 className="w-full h-full object-cover rounded-full grayscale hover:grayscale-0 transition-all duration-700"
                 alt="Traditional temple roof"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrrHBhTDdqWBngwbAnOJpsn39J_Pw_c0jes8BM8bYQRzJTsDZaw1H_Syd26vNBxZK0Ek_91xeELfYa8KQUKApiGvhtB6wVZcaCJ9B0jTatcOx_035Sl1X0HHwe0WT-IKjMvrTmrxDxubi81KB_U_gMBLKAodm3ITTUmtZDJisIfwiWw37AaabPsa_oTPGcGLPkdyYQP4zbawDf8-DypJo8dFKTgB_tft75-FS1RZrPnVQjLi1HbiKJDqy-Lj_0-XnXPSxCylJjqr4"
+                src="/images/heritage/seng-guan-temple.jpg"
               />
             </div>
           </div>
@@ -239,7 +236,7 @@ export default function HeritageGuidelines() {
                 <img
                   className="rounded-xl object-cover h-full shadow-sm"
                   alt="Narrow alley street scene"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX9LHzabTfV2Utp45YEBbxeOPEoLEP9jpXd9HdF8_nKH2cG14YXR6G-DYnC6k6mDGy-rJInS779hOmfcC48S1R7j25sjbhyxSHPw3JDftO7zo31drbkjI7jrMpjRre8epECJxrBxIiyDxPNTkMiGGsM5c7Mft8FIw_FsBUupX63W5dgLkZd1PSx9eVb0TX3wDGb5Izhn6b3V46RlbZku5dWqHbYAg466UOt0_6lJ9hvnz1eGyB-d4zyI26l_3ihZFP7QVauGmX1mE"
+                  src="/images/heritage/escolta-street.jpg"
                 />
               </div>
             </section>

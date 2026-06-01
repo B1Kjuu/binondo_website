@@ -89,6 +89,78 @@ export default function FoodCrawlGuide({ onNavigate }) {
       title: '1919 Grand Cafe',
       image: '/images/food/1919-grand-cafe.jpg',
     },
+    {
+      page: 'food-apologue',
+      street: 'benavidez',
+      category: 'cafe',
+      badge: 'Cafe',
+      title: 'Apologue Coffee & Pastry',
+      image: '/images/food/binondo-food-crawl.jpg',
+    },
+    {
+      page: 'food-cafe-mezzanine',
+      street: 'ongpin',
+      category: 'chinese-filipino',
+      badge: 'Comfort Food',
+      title: 'Cafe Mezzanine',
+      image: '/images/food/binondo-food-crawl.jpg',
+    },
+    {
+      page: 'food-chuan-kee',
+      street: 'ongpin',
+      category: 'fastfood',
+      badge: 'Local Fastfood',
+      title: 'Chuan Kee',
+      image: '/images/food/binondo-food-crawl.jpg',
+    },
+    {
+      page: 'food-lonely-owl',
+      street: 'lucky-chinatown',
+      category: 'dessert',
+      badge: 'Dessert',
+      title: 'Lonely Owl',
+      image: '/images/food/binondo-food-crawl.jpg',
+    },
+    {
+      page: 'food-lord-stows',
+      street: 'ongpin',
+      category: 'bakery',
+      badge: 'Bakery',
+      title: "Lord Stow's Bakery",
+      image: '/images/food/lord-stows.jpg',
+    },
+    {
+      page: 'food-masuki',
+      street: 'benavidez',
+      category: 'noodle-houses',
+      badge: 'Noodle House',
+      title: 'Masuki',
+      image: '/images/food/binondo-food-crawl.jpg',
+    },
+    {
+      page: 'food-min-nan-di-yi-wei',
+      street: 'benavidez',
+      category: 'street-food',
+      badge: 'Specialty',
+      title: 'Min Nan Di Yi Wei',
+      image: '/images/food/binondo-food-crawl.jpg',
+    },
+    {
+      page: 'food-toho-panciteria',
+      street: 'tomas-pinpin',
+      category: 'panciteria',
+      badge: 'Historic',
+      title: 'Toho Panciteria Antigua',
+      image: '/images/food/binondo-food-crawl.jpg',
+    },
+    {
+      page: 'food-ying-ying',
+      street: 'yuchengco',
+      category: 'tea-house',
+      badge: 'Tea House',
+      title: 'Ying Ying Tea House',
+      image: '/images/food/binondo-food-crawl.jpg',
+    },
   ]
 
   const visibleExtraStops = extraStops.filter((item) =>
@@ -426,7 +498,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
                 <img
                   className="w-full h-full object-cover"
                   alt="Traditional Cantonese banquet table"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUE0jdi21Dob0RVFk6RQQ5kCTesyZ1NL_s5AdZT6Mwf1_blFck_ffvXOd2VDND9_TfepCWDDyQOoIvi1x6ta9U1VKFyj2u34v7V2JWqylYsyf62rx8SvysDvi8c3bi1tZqqr-GavucofJ96Zu_woMvwMy86FJ7bR_euAld4RBXC1KAtFg3iMjL6AjrSkGpbsbCjAp8Lw80x1EMpz9SiKQ6p7zAN33kyb8Y6O1fWbNYGeTUU1tsju1hp-83qVCkxF7VHfAT2NLSbg8"
+                    src="/images/food/1919-grand-cafe.jpg"
                 />
                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-1">
                   <span
@@ -495,7 +567,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
                 <img
                   className="w-full h-full object-cover"
                   alt="Traditional fried chicken"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcRsm0BcLO3zpNqsa4KnhzVR40pGE7AEenWFuCew5-G8dlZv3rxBOwaWi1HcwLh04hyDu0XKeih9r7jzwuglczmoyiFHv5Ogl7pg2QmpSOgt8xBOTfqT7EYtiLPFeFpc4AQkra_K3vL021P43zqF11j5CmxCzSXKkHfUNOlmUuWAq5-ce2L0z3MRPKkFgYS9G3gmFMAbtdujroMIaSmxyPpU5cZJl6eLKmXDT0AZf9niqg81gROihCXFOXaPBnSwK0D5fdglnDRu8"
+                  src="/images/food/sincerity.jpg"
                 />
                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-1">
                   <span
@@ -1263,7 +1335,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
                   className="w-full h-full object-cover"
                   alt="Stylized map of Binondo district"
                   data-location="Manila, Philippines"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9laZt31KDEcGkD-vNKHrvDfnNwjYC8vsDVSYQlxzw4PeQu-Db4ZYmO9ohI7dIHqIV_uXyzoq0Xk4DA-N29WEmWWPu_yfTuJDAfgGtMWj3-1USlAP9W7chmfAvC8gcfToPxEPQaqsjAOpcmYHq0mWK-oh2lJgpGL8BcoGIeuzkp6NFde675RVUAqniPvzBQzpkE0W2p2fvXEszhlnjENaSFvMy_pZheFJLVlBbPrjCtVCC2myLsuyIB7-zD1dKWrYrakz_n6x7stE"
+                  src="/images/heritage/escolta-street.jpg"
                 />
               </div>
               <p className="text-[10px] text-center font-bold uppercase tracking-widest text-on-surface-variant">

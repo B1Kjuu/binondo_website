@@ -132,7 +132,7 @@ export default function FoodWaiYingFastfood({ onNavigate }) {
               <img
                 alt="Roast duck"
                 className="w-full h-full object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq2Iqop9VM8A2qvTdCyKcRDnmPbmeHY8cbrC6GBCO_vuKN1ARKhevndFOD9mug983-QgfKunQUt-rjjMAm5l0i-Tci5ZiTOkKlG5DeYC34TEEY4JH4rR_4j1N2p050yRb53vPabqq4jTTJqUOEBCLwnEc2d1jIv65P4vg22zr3o3GryKu4gtbQNzG0xqvTpo8R91ENV3r5BdUOC69PHR3QSjQO1RtP2dxcxjsVe0iDvb15Wy7WvuKyRB3PrDsouSiZncVygjMguNk"
+                  src="/images/food/sincerity.jpg"
               />
             </div>
           </div>
@@ -169,10 +169,12 @@ export default function FoodWaiYingFastfood({ onNavigate }) {
             </div>
             <div className="mt-8">
               <div className="w-full h-32 rounded-2xl overflow-hidden bg-surface-container">
-                <img
-                  alt="Map preview"
-                  className="w-full h-full object-cover opacity-60 grayscale"
-                  src="https://source.unsplash.com/1200x800/?map,binondo"
+                <iframe
+                  title="Wai Ying map"
+                  className="w-full h-full border-0"
+                  src={`https://www.google.com/maps?q=${encodeURIComponent('Wai Ying Fastfood Binondo Manila')}&z=17&output=embed`}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
                 />
               </div>
               <button
@@ -307,7 +309,7 @@ export default function FoodWaiYingFastfood({ onNavigate }) {
               <img
                 alt="Steaming baskets of dim sum"
                 className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq2Iqop9VM8A2qvTdCyKcRDnmPbmeHY8cbrC6GBCO_vuKN1ARKhevndFOD9mug983-QgfKunQUt-rjjMAm5l0i-Tci5ZiTOkKlG5DeYC34TEEY4JH4rR_4j1N2p050yRb53vPabqq4jTTJqUOEBCLwnEc2d1jIv65P4vg22zr3o3GryKu4gtbQNzG0xqvTpo8R91ENV3r5BdUOC69PHR3QSjQO1RtP2dxcxjsVe0iDvb15Wy7WvuKyRB3PrDsouSiZncVygjMguNk"
+                src="/images/food/waiying-dim-sum.jpg"
               />
             </div>
 
@@ -556,7 +558,7 @@ export default function FoodWaiYingFastfood({ onNavigate }) {
             <img
               alt="Map"
               className="w-full h-full object-cover"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR4mDzGrkRqkfWSlar-rVa_Tnhx2NjS2B1sGMfGpzUAaddiaNSH6GLnOQZYw2oVuUjgQX0CxCC0eSYdGrtSyexTVrdzwoYcqiHUb2V_sU3-Uc-ySdw3H4Th0PMLZgbiXLo6GuwmaZnUC360UYPEoMucppI3_Ivt4oIx3Pu_2kQllB2dYDhri-LK_J7dfbrMXaoPN0mKXFQ_h5XJn7X6zu0vdAwFTyz64Eb7EsVAFF1M41C602Jzdt6qgUdcifkstjch5kWzdpD29Y"
+              src="/images/heritage/escolta-street.jpg"
             />
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-6 h-6 bg-primary rounded-full animate-pulse border-4 border-white" />

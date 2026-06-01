@@ -16,6 +16,15 @@ import FoodQuikSnack from './pages/food/FoodQuikSnack.jsx'
 import FoodPresidentGrandPalace from './pages/food/FoodPresidentGrandPalace.jsx'
 import FoodSincerityCafe from './pages/food/FoodSincerityCafe.jsx'
 import FoodWaiYingFastfood from './pages/food/FoodWaiYingFastfood.jsx'
+import FoodApologue from './pages/food/FoodApologue.jsx'
+import FoodCafeMezzanine from './pages/food/FoodCafeMezzanine.jsx'
+import FoodChuanKee from './pages/food/FoodChuanKee.jsx'
+import FoodLonelyOwl from './pages/food/FoodLonelyOwl.jsx'
+import FoodLordStows from './pages/food/FoodLordStows.jsx'
+import FoodMasuki from './pages/food/FoodMasuki.jsx'
+import FoodMinNanDiYiWei from './pages/food/FoodMinNanDiYiWei.jsx'
+import FoodTohoPanciteria from './pages/food/FoodTohoPanciteria.jsx'
+import FoodYingYingTeaHouse from './pages/food/FoodYingYingTeaHouse.jsx'
 import HeritageBahayTsinoy from './pages/heritage/HeritageBahayTsinoy.jsx'
 import HeritageBinondoChurch from './pages/heritage/HeritageBinondoChurch.jsx'
 import HeritageEscoltaStreet from './pages/heritage/HeritageEscoltaStreet.jsx'
@@ -34,6 +43,7 @@ import NewsLunarNewYearTraffic from './pages/news/NewsLunarNewYearTraffic.jsx'
 import NewsArchive from './pages/news/NewsArchive.jsx'
 import NewsLunarNewYear2024 from './pages/news/NewsLunarNewYear2024.jsx'
 import PlaceholderPage from './pages/system/PlaceholderPage.jsx'
+import MapPage from './pages/map/MapPage.jsx'
 import ProfileArchivist from './pages/system/ProfileArchivist.jsx'
 import DistrictContacts from './pages/footer/DistrictContacts.jsx'
 import EmergencyServices from './pages/footer/EmergencyServices.jsx'
@@ -41,9 +51,11 @@ import HeritageGuidelines from './pages/footer/HeritageGuidelines.jsx'
 import PrivacyPolicy from './pages/footer/PrivacyPolicy.jsx'
 import TravelLogisticsPage from './pages/logistics/TravelLogisticsPage.jsx'
 import SignupPage from './pages/system/SignupPage.jsx'
+import { BINONDO_CENTER } from './utils/locations.js'
 
 function App() {
   const [activePage, setActivePage] = useState('home')
+  const [mapTarget, setMapTarget] = useState(BINONDO_CENTER)
   const [searchQuery, setSearchQuery] = useState('')
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false)
@@ -81,10 +93,14 @@ function App() {
   const isSectionActive = (section) =>
     activePage === section || activePage.startsWith(`${section}-`)
 
-  const navigateToPage = (nextPage) => {
+  const navigateToPage = (nextPage, nextMapTarget) => {
     if (nextPage === 'profile' && !isLoggedIn) {
       setActivePage('login')
       return
+    }
+
+    if (nextPage === 'map') {
+      setMapTarget(nextMapTarget ?? BINONDO_CENTER)
     }
 
     setActivePage(nextPage)
@@ -110,6 +126,12 @@ function App() {
         return FoodWaiYingFastfood
       case 'food-president-grand-palace':
         return FoodPresidentGrandPalace
+      case 'food-apologue':
+        return FoodApologue
+      case 'food-cafe-mezzanine':
+        return FoodCafeMezzanine
+      case 'food-chuan-kee':
+        return FoodChuanKee
       case 'food-dong-bei-dumplings':
         return FoodDongBeiDumplings
       case 'food-tasty-dumplings':
@@ -122,6 +144,18 @@ function App() {
         return Food1919GrandCafe
       case 'food-eng-bee-tin':
         return FoodEngBeeTin
+      case 'food-lonely-owl':
+        return FoodLonelyOwl
+      case 'food-lord-stows':
+        return FoodLordStows
+      case 'food-masuki':
+        return FoodMasuki
+      case 'food-min-nan-di-yi-wei':
+        return FoodMinNanDiYiWei
+      case 'food-toho-panciteria':
+        return FoodTohoPanciteria
+      case 'food-ying-ying':
+        return FoodYingYingTeaHouse
       case 'food-quik-snack':
         return FoodQuikSnack
       case 'food-sincerity-cafe':
@@ -161,6 +195,7 @@ function App() {
       case 'profile':
         return ProfileArchivist
       case 'map':
+        return MapPage
       case 'rate':
       case 'archive':
       case 'contributions':
@@ -415,6 +450,7 @@ function App() {
       <Page
         onNavigate={navigateToPage}
         activePage={activePage}
+        mapTarget={mapTarget}
         isLoggedIn={isLoggedIn}
         searchQuery={searchQuery}
         onSearchQueryChange={setSearchQuery}

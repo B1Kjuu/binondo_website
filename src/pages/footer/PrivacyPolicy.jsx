@@ -142,7 +142,7 @@ export default function PrivacyPolicy() {
               <img
                 className="w-full h-full object-cover"
                 alt="Temple roof"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfiUvC2RtFOUlqPG4GdhfrF4dGYv_G8JUQ2dkUEcNrDwqbBiJDBAmr75zN46ABRjlhwso_Fs63Z2i0EwgRLSAFZSFYOKiu1Nxe9Tqsd_yDxAkBSusUP-MLaRMFsbtcHxfRPnXgUvtYqWEk67ehy07czJGzGkt22kzZcWFJzqidTiEyUVa-k_Q57pr3lMJHhr-olQMe56HrtgRcc--d14QFhJUoTiFRLz6-ZHV7ZQrPHWK-QsBre93Ag3mPLpyKbgX_9GL2vzUcm8E"
+                src="/images/heritage/seng-guan-temple.jpg"
               />
             </div>
 
@@ -200,14 +200,14 @@ export default function PrivacyPolicy() {
                 <img
                   className="w-full h-full object-cover"
                   alt="Aged parchment calligraphy"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkfExYAPB5fIBuHEmTR75wvis6uvFX_RLYg9a0r3P25iUNlhgxizL4vL4G3LAo94Hu2QV68Hj_6kCGwiBpGCTRuDO1BfjImcH0Ne4SDJk_OsGMDdOP33Qu7nAV0xzLDidLniTz1xkrZUCc63e1NgkaVfb6ahCgKvjdVtGLED8mi_uo6mxN72rgDhvvIME_A0dLV-Y7HHAIehgjrtx1sZBzdq3dgJK1k_0POhoLnSy4gWWvaGYEPd9e22wUebIbM7eZvQ_bZVN9Z1I"
+                  src="/images/heritage/regina-building.jpg"
                 />
               </div>
               <div className="h-64 rounded-xl overflow-hidden mt-8">
                 <img
                   className="w-full h-full object-cover"
                   alt="Binondo street at sunset"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9pG5aAk-briEBWsZXETDZfzCXrcXfjLnzBTlf9l6Qp28Vk8prU4DukrtP5T4EpYerJCijw8TQn50UjP1wfPnogbQW8jCa6Vc_gIy_M7GmfC5QwJRJ_sWp_ZkbWDF6wC-59_5hQWivRBg5u3VmJlVhsq9xW0TV-RWRFbKoQuQj32xre55l6LchibddIHfldCNz2ZMZaYncK9SpcGHFb-lJtrpcyruOhdKajt-VcrDAZRQk3ZmIkOcRYGUu6sz0IKjiAR8LPG8qNcs"
+                  src="/images/heritage/ongpin-arch.jpg"
                 />
               </div>
             </div>

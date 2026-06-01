@@ -1,3 +1,5 @@
+import { MAP_LOCATIONS } from '../../utils/locations.js'
+
 export default function CommunityHub({ onNavigate }) {
   return (
     <main className="pt-16 md:pt-24 pb-24 md:pb-12">
@@ -72,7 +74,7 @@ export default function CommunityHub({ onNavigate }) {
                 <img
                   alt="Lunar New Year lanterns"
                   className="w-full h-full object-cover"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIW1vi_x633z04HJfF4LRuw3OHegc-gm8GEcJF8ay7buLtsBvzEC-mD69mQbZR757zuEHwd8cezuET4cTYRSuywcQBfWwiV7lZxZ3VgRfZOgAB45iE3lpLUlKox52-DyCF4SlffnbOb5pPrB333M8mSUWhBfFg7zfWyeK70Xb_Avt8WNj0SQXbrHsXN980qZp1zVY8RG2Q2B9M-fUbyJppFS1LF6_W10QSMtThGi2DryR0R1JnfnVOyu2deRqLpJJZwGEU5w8BGDI"
+                  src="/images/heritage/binondo-church.jpg"
                 />
                 <div className="absolute top-3 left-3 bg-secondary-container text-on-secondary-container px-2 py-1 rounded-full font-label text-[10px] font-bold uppercase">
                   Event
@@ -98,7 +100,7 @@ export default function CommunityHub({ onNavigate }) {
                 <img
                   alt="Medical consult"
                   className="w-full h-full object-cover"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPfQcE2Pu_r83uUlwb_wnWrUk-YzG--3nzS9MG25eSvHWcCI3hzagHAkCFI04Vtpu11gdwb-ip50rFvzwcNw0g_5-io83-ojvkWpzb36AZAzFlHgwJr1QHp_dt4cjuQMGcidEqaA2ZWMjn8ettdMpPSJqVlE4zkmo0BBcIryyZ8KsKf6m6hp9bIhf2aiVbsVM2sHZ3fXRHZuGoVFK3UUECcnPNvE_7Fm7S8vFIcEIP6jf8VKsXgLIfbKC3K463aNpNllJPbuuwIY8"
+                  src="/images/heritage/escolta-street.jpg"
                 />
                 <div className="absolute top-3 left-3 bg-secondary-container text-on-secondary-container px-2 py-1 rounded-full font-label text-[10px] font-bold uppercase">
                   Health
@@ -123,7 +125,7 @@ export default function CommunityHub({ onNavigate }) {
                 <img
                   alt="Road construction"
                   className="w-full h-full object-cover"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLav3kZFSeany27DsPWICWya8nN27K20rC3uxi5m_a4sNWI3VirqJms3qHbJ5sGYzLIDl7_XqODWy36FfmsvveJy09j08rYWHyK_bQfa9zlX8puJkCicyhEqmTfsNe0eU3M_4MsCBoViq_fGyJOFwPi0n6u4Ondp_BVVmf3DiGoaLub7eeVLf2WJwYhxWzgWz8DiXsesuVNJk9TdsKfgKeRtJYyrZBMuxtnj4wmerd33q1few__KaLR2dLJznwNxoGs8YQJ213_J0"
+                  src="/images/heritage/escolta-street.jpg"
                 />
                 <div className="absolute top-3 left-3 bg-secondary-container text-on-secondary-container px-2 py-1 rounded-full font-label text-[10px] font-bold uppercase">
                   Notice
@@ -192,10 +194,12 @@ export default function CommunityHub({ onNavigate }) {
             </div>
 
             <div className="col-span-2 relative h-48 rounded-xl overflow-hidden group shadow-lg">
-              <img
-                alt="District Map"
-                className="w-full h-full object-cover brightness-50 group-active:scale-105 transition-transform duration-500"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwQPH_uXcr4cmXHg-o3FVJnJtdPBG7ES3-XAPeZNGbkekOvFh6g6--t8QXizpcc1HAPFp2eos852KKRIGaRn-tEGushaJxTsO06w9v_aq9lV3QbcP_h1CkYxE5p72w_Li-yU0RGqy6PsBO5vEgUtZgssYiTpaYEZ2fLay6EY2V8t-SrRGQQarQStiqg5tTrczLJ8PEaTyUbGT_1lkBQ2ERmmIg96w15sG7U1h87BteAhrm5GCdSvJmeF78OKPfAo6PpAMalZz0P1c"
+              <iframe
+                title="District map"
+                className="w-full h-full border-0"
+                src={`https://www.google.com/maps?q=${MAP_LOCATIONS.community.lat},${MAP_LOCATIONS.community.lng}&z=16&output=embed`}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
               />
               <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 space-y-3">
                 <span className="material-symbols-outlined text-secondary-container text-4xl">
@@ -206,7 +210,7 @@ export default function CommunityHub({ onNavigate }) {
                 </h3>
                 <button
                   type="button"
-                  onClick={() => onNavigate?.('map')}
+                  onClick={() => onNavigate?.('map', MAP_LOCATIONS.community)}
                   className="bg-secondary text-on-secondary px-6 py-2 rounded-full font-label text-xs font-extrabold uppercase tracking-widest shadow-xl active:scale-95 transition-transform"
                 >
                   Launch Map
@@ -230,7 +234,7 @@ export default function CommunityHub({ onNavigate }) {
                 <img
                   alt="Hon. Ricardo Sy"
                   className="w-full h-full object-cover"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlYd4BG1URDYSqZkpYp2CS8TN2Jm-fMF3cAPk9t4KYtki2Puylv_WDpej4GdgnTWof3F1FjiEM67-_n7NZ6NlQqRH7wCG7uI9BHeuWWRezKFzpyMBbm7_0ICirXSrUPtpsmYmQM2wOVlSTvIFD_XB_DWxPtKCFuXYoFBbURNeOgomgKZTiPwRNxNUWRXjYadvGnK0OJFP5j8UH7ISZ6MTGU_3kHe9Ofe5ym_hTC0GIHRW6J8VrAWENPVBJQUl9Pwssz0vLBpVNwFQ"
+                  src="/images/contacts/default-person.svg"
                 />
               </div>
               <div className="flex-grow">
@@ -256,7 +260,7 @@ export default function CommunityHub({ onNavigate }) {
                 <img
                   alt="Coun. Maria Go"
                   className="w-full h-full object-cover"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQovMKpfWO7ALB3msi7u4FyxATj_GzEk-V-h8H-yk00eRDBwgZZIVofU0MjwRpNI1ZKzBrhf6h8JrE0yxoSFp7So_Xe76xThyfI_uVyUvj9MjxIOPhWSwDuXA7xi2YWBENfzQxohAA0IakR30HDev6dEMz7IIh5W3qceJHw9Ce4XEQS0ei06GAO8iaqPDFmRio_GAUh_aaxOoGXuStZ9PQJz0VGJR650LSI4-bQC_ie7r4M2km0eIQ3x1SDyNyxdqSTZ0OgRKZpxY"
+                  src="/images/contacts/default-person.svg"
                 />
               </div>
               <div className="flex-grow">
@@ -303,7 +307,7 @@ export default function CommunityHub({ onNavigate }) {
                 <img
                   className="object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-700"
                   alt="Vintage illustration of early Binondo streets"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwtvCRWDP_n8t64wRUJ7_HdEV-Z-v12o4Z3B8z6tcQOTlPMlnawYxksx5AIO63_WosvFuuJgzUNM0nuuamL4sej8UaJj4kXRgVSTPDizUbahkjm6IxipEL6rtrSQ1V_LvOw3X0oKHMXBhfOBYF3jsKAGKQVQAwY543-2URiK46NFaB9TlDrzx9-iAaQDrx6ItvIAZDzU0O37CAZwN4nvQUn727O1tAcwlAQQeprfvmW-xuvtBIms-XjPap9rxxY7uSHcmeigLcaK8"
+                  src="/images/heritage/binondo-church.jpg"
                 />
               </div>
             </section>
@@ -471,7 +475,7 @@ export default function CommunityHub({ onNavigate }) {
                       className="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-1000"
                       alt="Stylized map of Binondo"
                       data-location="Manila Binondo"
-                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiopfOD1Bm-cCzCTazLbAHWjYv1AfO8-P7GsMGAscgGjLXQpLAl3DvJ9zMdsZxk_o9uxTQ3vKzkiH_uyj8BI-D-mpSEk4RuptFZE870b2gmj3s42wg6VQYAfr0WNdRfRb-LBzC0owIc7I7fG8oohn4jn7UxSO5t2vjEKf2cdXas44Nb-J4MzMWzQOUz2drfmQgpaeGiIbPkHcccGJqCls-g3gDmoZis2Tpj1stKl7CUDCsPxdsfqU8JVHiaIg_3kEHpHDaW7lq_74"
+                      src="/images/heritage/escolta-street.jpg"
                     />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <button
@@ -682,23 +686,19 @@ export default function CommunityHub({ onNavigate }) {
               </div>
 
               <div className="opacity-10 pointer-events-none">
+                <img
+                  className="w-full h-full object-cover"
+                  alt="Lunar New Year lanterns"
+                  src="/images/community/lunar-new-year.jpg"
+                />
                 <svg
-                  width="100%"
-                  height="100"
+                  className="absolute inset-0 w-full h-full"
                   viewBox="0 0 100 100"
-                  fill="none"
+                  preserveAspectRatio="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M0 50Q25 0 50 50T100 50"
-                    stroke="#610008"
-                    strokeWidth="2"
-                  />
-                  <path
-                    d="M0 70Q25 20 50 70T100 70"
-                    stroke="#610008"
-                    strokeWidth="2"
-                  />
+                  <path d="M0 50Q25 0 50 50T100 50" stroke="#610008" strokeWidth="2" />
+                  <path d="M0 70Q25 20 50 70T100 70" stroke="#610008" strokeWidth="2" />
                 </svg>
               </div>
             </div>

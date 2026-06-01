@@ -7,8 +7,7 @@ const OFFICIALS = [
     designation: 'Barangay Captain, Brgy 291',
     category: 'captains',
     quote: '“Serving Barangay 291 for 12 years.”',
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuAR4XaLLKXjb9nA_Cupnfj5GXvb-fLc3Zzx1dj_IdaMb3SB7FZLAnaQ5OFSn9XsYAyGnpfaDqq5c27iu1PjrGGxALlopAwNGnqpo8cHN2EKAjdqqs3HYQxcZk4pLXrh5Z3Durb1JbTNpZz6ZeW2JpuAxm9RbP7WiD84c7gS-_W0UxJS-HhpyRF9iXbdJkvFOn8ja3Fti3gGln_SnzIm32LwyjuEOljl9H_4QfeHTRgZ368vzgUXpI5IBlSSd2cjhyGPeUYS1NLhEhQ',
+    image: '/images/contacts/default-person.svg',
     email: 'concierge@binondo.heritage',
     phone: '+63282410000',
   },
@@ -18,8 +17,7 @@ const OFFICIALS = [
     designation: 'District Councilor',
     category: 'councilors',
     quote: '“Dedicated to district economic growth.”',
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuATumIP8_Ch_-0fJq88l689EAuPiGV5c40JPgQD_X8FyJqSMvoV7VEl7XcALUu4K2mhpZY79mN88rdx2E0KJsDTWVKIO20lpZOtp-vNFYuXqEnIb6kwhIvNsKRBnESqCQwgfZ82XcHCZ5AhhM2-mUbXUfNPptE5K2DNGVDjhO15JCQxtuPicOt2ZCGb1zMpZZcrO_zgvt-HVGOlitwEj98lHY6CZOZaBDTmP7_JLjLKdqnmH4pItnzyUKFEBJvbWVpEo4JeGTTxfcM',
+    image: '/images/contacts/default-person.svg',
     email: 'concierge@binondo.heritage',
     phone: '+63282410000',
   },
@@ -29,8 +27,7 @@ const OFFICIALS = [
     designation: 'Head of Cultural Heritage',
     category: 'staff',
     quote: '“Heritage preservation is our legacy.”',
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuC0dnCqMSj6hzEes29rugTFk20XBalQvCaqWhh6fVCzK4ySIJLIVtoT4M9ITowkB3mbZKIZtE3LmMgoVdd-KSg4G38cZsefyo5jKSTLTYj2YUDlqF4wiZTqzSeEeMEBNW61uJd6n0tJBn2d8RVJEI_CyACw2Cnc2wilsR2zueu1gcriOayQDmKG4lkjtfPa9OPg6Z3VlA6IcjiBwMLWFuKyvmgws5g5BaCjU1i52XDwc4R4H6DSmg2YU0-UkU6og6cCT37vcGjX3yg',
+    image: '/images/contacts/default-person.svg',
     email: 'concierge@binondo.heritage',
     phone: '+63282410000',
   },
@@ -40,8 +37,7 @@ const OFFICIALS = [
     designation: 'Barangay Captain, Brgy 292',
     category: 'captains',
     quote: '“Ensuring district safety and order.”',
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuC1eLAwtgauUtPoyiwhoQZoYD6d-FsO_iWkPauBZIwcmp0Gat4S42tkAgXVSnGDtYeF2fFMLrFgjGsmB9-nefdAmrCtHZm4USAPwalLkuCeG-rIPnLtHE5IwZxOdj-gkaIJ2ejsao59A9spClZeEAvXDmTw_UjXiErDn-KbpjWbhMk6upy30QwEJ7xXHxj415ABWrUbHxKg4DvQQAYcYK1nIlJ1pZlwIc29FSAixuXN7dv58ARq07CZtNG4-jhuG89DKx2eRXKOcPU',
+    image: '/images/contacts/default-person.svg',
     email: 'concierge@binondo.heritage',
     phone: '+63282410000',
   },
@@ -51,8 +47,7 @@ const OFFICIALS = [
     designation: 'Social Services Coordinator',
     category: 'staff',
     quote: '“Active in community social welfare.”',
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuAkioAYRjTek1CJ_dif2IFk3lGC8kxA9uZXkbwgsKJWWWe_rD18UkBUJrQC1ERgHCP-HioD_xz6xpBLBo1-rKqBmPVFmYVTBlWVgV43tiDAOkahT4_toZdZbmWEUOciBfbfzXmkRALmKW8G7rb6nRLMAViRGkhofPSIWTB_fbGZzZ0kZOObywpUuhw9cwHIx48DGsn2HNRyMYxgETiy36VhbfZDE-rL9Y91_MUX4bpxUjvS4-F-YVfpL9z7D5IpanI6LX3BWl5dJr0',
+    image: '/images/contacts/default-person.svg',
     email: 'concierge@binondo.heritage',
     phone: '+63282410000',
   },
@@ -74,8 +69,7 @@ export default function DistrictContacts({ onNavigate }) {
         label: 'District Representative',
         name: 'Hon. Roberto C. Lim',
         designation: 'First District Council Member',
-        image:
-          'https://lh3.googleusercontent.com/aida-public/AB6AXuBJuRhwpC8b5mUnvtlshUO_tP6nmyQyk-VeVpiWuud-Z1enhy-iAaYiVW6-G7N7Dq06XQ5vNCslo87mxnOzye96eehUAm6bOFMqXxp-1Kfc_gR5IEG5aoBJjtkOlQ-8SiBpNZlr-xcaSiP3OJGblDsj64bMgMko-q4j26Ci_UyWRYbZO6yJfUuhBWoZgnJNI4-CSpl1fMsZ_Hxijg3uulo6c794TyMVysK9t6tDNzB-doIGxJxaOPdNR7I2LpdCUAfN1I0yfr3tkFs',
+        image: '/images/contacts/default-person.svg',
         email: 'rep.lim@manila.gov.ph',
         phone: '+63285270001',
       },
@@ -84,8 +78,7 @@ export default function DistrictContacts({ onNavigate }) {
         label: 'Vice Chairperson',
         name: 'Hon. Elena V. Tan',
         designation: 'Public Works & Heritage Conservation',
-        image:
-          'https://lh3.googleusercontent.com/aida-public/AB6AXuDUVY6QxkPITok0EowQTTgQwCajLow-uDj9fyUmcbNdcC4GTtqRv-x8nWVJSKr7aOMO15IVoGBrI8_aZBFVXsDh7p8Zh_rwf6Qclyi-BQOXGgC91zi0ocBCuzgXh0vC7Cvr2IntT_HqrbWGzJabw01sMsVYKkkfdnITo-oic-wiOVQIDb7O2RpxFe7dB8mpzIcraOkOAVVJZfV0KjnoW8R3ZZbNxWBt-gxGCeeCxKe3F5P6TlJaKQydyDPgu0GH3Sj6Ke5YVhs5fdc',
+        image: '/images/contacts/default-person.svg',
         email: 'concierge@binondo.heritage',
         phone: '+63282410000',
       },
@@ -94,8 +87,7 @@ export default function DistrictContacts({ onNavigate }) {
         label: 'City Liaison',
         name: 'Hon. Antonio K. Sy',
         designation: 'Tourism & Cultural Affairs',
-        image:
-          'https://lh3.googleusercontent.com/aida-public/AB6AXuD2fT_8t4asUp5CLmQ5Uyr_a6XhEg1vA_JMJahqJYQP7Y9qIf-YxljedHuzItg1-nAA5uo1O5WDt5X5pAQtxeyGwogPGRJPqW7r6T9FW1MvWD6hTN9qCnhm47f1m0mcpYSEcYttSp_-2a71Z7F4wpia8s7GeUEZZ_brkVt3pYrhamtAte2BhxUakhbzyWH_JVohBb4nzO421K0frHTQwrV5AXKDzu-rfoFyOz1-4miL609w0FyYemsMep0DEydBwksCEaV2D_qjdQs',
+        image: '/images/contacts/default-person.svg',
         email: 'concierge@binondo.heritage',
         phone: '+63282410000',
       },
@@ -262,7 +254,7 @@ export default function DistrictContacts({ onNavigate }) {
                   <img
                     alt="District Representative"
                     className="object-cover w-full h-full"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9o5iK7bTpOBGZK_aW4IJJuG0VM74C6mR0saFPC6vLox7KKzISosEL0WfLbE-JBZKlZcZMUh6kY0ja6QvqjpfYioUEPycaebnJClJvbJYdZp9oOE9u37dN-XeHYVO2MH9EJU2lj0Ctq6vFl-RlSA4GDOL5ysfMCi9jBpGGr2dCvM3rGtb0tiGT1lSbBQTST58a-EDRrsWRykTy3UJZeK-HQxDoFSOmWH2FGb7HrvbEOIlaJ423y2r_IDikEw4J2aodzLHWdASwib8"
+                    src="/images/contacts/default-person.svg"
                   />
                 </div>
                 <div className="w-full md:w-2/3">

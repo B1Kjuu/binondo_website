@@ -15,7 +15,7 @@ export default function HeritageFirstUnitedBuilding({ onNavigate }) {
         <img
           alt="First United Building facade"
           className="absolute inset-0 w-full h-full object-cover grayscale-[0.2]"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGkMMGmZgDi6HucaZZv0NtKonbcNZm71slcD0mtIaZbTHf7a_73UMt1lwNc4DiTW9OEYSjFmQNSUBjRthmnClfNoR_MGCDHzHJAHgxagIEDnFoMBzjf3zCEN1HN2th-jGXyFwlc3TjX_2RkWWkBXRpGQpCdkUBkpSkdKGu_I8chrP3CgHtk7S3hC1ROzfkT5lkcB4SSNRNvXliL_ICjILecwT7Gsyau62g199WrRxw1opLxI4KLb2n4WosRnxqOQC3eBFED9kudgo"
+          src="/images/heritage/first-united-building.jpg"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
         <div className="relative z-10 max-w-4xl mb-12">
@@ -121,7 +121,7 @@ export default function HeritageFirstUnitedBuilding({ onNavigate }) {
               <img
                 className="w-full h-full object-cover opacity-50 grayscale"
                 alt="Map preview"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj5VLZp3VmQmcYUpTQ8TPY1Bb-TgGitGF9B2z4ncWriZXg_OoAPhODCh7nsAcQO4m0y9P9R_kfyWaLzZNb74tm_WyxNMCXYwhFnGVYdLOyJTYkT4SVtKn3XG1R5a6QKr9bHVhPheW-et5KdMDCBgqPao4C9QiVVjviqru-YBYvfhTo5MMT9NQqbtmb5y_ODw5DIpTB3e27HHi_qDte5HR71GPLpm7_5ulB-a2uWnCBKOShlhgbSnrDleSzpR4xbG3XWG1vCZnlXaw"
+                src="/images/heritage/first-united-building.jpg"
               />
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="bg-primary text-white px-6 py-3 rounded-full flex items-center gap-2 shadow-xl">

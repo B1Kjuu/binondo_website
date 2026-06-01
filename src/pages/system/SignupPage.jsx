@@ -30,7 +30,7 @@ export default function SignupPage({ onNavigate, onSignup }) {
               <img
                 alt="Vintage photograph of Binondo street life"
                 className="object-cover w-full h-full brightness-75 grayscale-[0.3]"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF3opJqbC9BY9iLswr6Xneu9d059hE_DluZA73j0TMivBjQWcFs4WPNwToRbcwG0JJFpspdBav6zvDYDCguqVwLBM8lolY2F7hYe-_JLlyU-0QgPVUgyxJoJdkH-MLb1TNZ_jCkBUM6kpw2pfk0g_i8KiWytmypFOtsMi4TNAQU-PaYn3TZy-F714CUDYzm8LsCD6R_GAuqPAIk5und8DlnzhNuX7dcCCmALfIvW6_dPGhvw4Ui_RIPpYxriVPUiV36ke0BiO_I5Q"
+                src="/images/heritage/binondo-church.jpg"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
             </div>
@@ -146,7 +146,7 @@ export default function SignupPage({ onNavigate, onSignup }) {
             <img
               className="w-full h-full object-cover"
               alt="Vintage-filtered photograph of Binondo streets"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe5WCOuFmo1-0COSS9jHa61TA7pFW4UQO3Kje46CVQVMw7C1pcjW9Ia3yooyD08ysvicc1tzIU8rzRhwdEo3JcR6sHQbpDg19p4fplPLfoGa5EqOPLSOBUqzNRjmJmRfTvsHfqsefJGgTI7_IN7T-lh3HD4KZE7QtePGt1Pd-1vphXrQZVU_ZA4nVBcy7PBynvjJwTwjfjqAZLf8iJncalhmLxkP2bYA0V9aTdcZrzoItKHsOcqWUVCPyl6SRZlgCJc5ZTc0JdkBI"
+              src="/images/heritage/binondo-church.jpg"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-background/20 mix-blend-multiply" />
             <div className="absolute inset-0 bg-on-background/10" />

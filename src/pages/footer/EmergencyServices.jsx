@@ -1,3 +1,5 @@
+import { MAP_LOCATIONS } from '../../utils/locations.js'
+
 export default function EmergencyServices() {
   return (
     <>
@@ -99,10 +101,12 @@ export default function EmergencyServices() {
             </span>
           </div>
           <div className="relative rounded-xl overflow-hidden shadow-lg h-56 bg-surface-container-highest">
-            <img
-              alt="Simplified map showing nearest emergency stations in Binondo"
-              className="w-full h-full object-cover"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuSTedoNyqJEs5CN5zt64Kz_16Hr0s7ColeV8Mw1YBMozsXvhQ-Wkki1U0HIKcB29vnENKVjjeCx1wjpyDbvodvc2R3VrWuzr6_QKWDWIH30DtDbWL7lsJG72Tk-i5Y7Jk2U3PaTwZlsyIOhDiVf4zZQsRu4X9OXF7Jo9m9hPUMNjOmNWff7U0-0VJdZLXeYrfV0Do9EdPKmCDz0WfGlBuD6-OF8phRMzMjFgsVmIt5zY2q4ds4tSoWTTKji5fpAQp0vkFzgl4v3c"
+            <iframe
+              title="Emergency services map"
+              className="w-full h-full border-0"
+              src={`https://www.google.com/maps?q=${MAP_LOCATIONS.preciousBloodStation.lat},${MAP_LOCATIONS.preciousBloodStation.lng}&z=16&output=embed`}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
             />
             <div className="absolute bottom-4 left-4 right-4 bg-background/90 backdrop-blur-md p-4 rounded-lg flex items-center gap-3">
               <span className="material-symbols-outlined text-secondary">distance</span>
@@ -316,10 +320,12 @@ export default function EmergencyServices() {
                 </p>
               </div>
               <div className="flex-grow min-h-[400px] relative">
-                <img
-                  className="w-full h-full object-cover"
-                  alt="Stylized map of Binondo"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsvkgZB2W9XJLcQ44bXI0WfD5mT9bu_fMXSpJf_QVHA_VopNrORPG-iu72jtJjDgxKTIL93vVTDtMeA3qMRRik9CTxGyWG6cyWCXWJzoNYuC3U63ENlWOUFmYFTdV_ZU5LbtfIiaY-9xUnZhgQWX83gVeGqXaEeRomAJfJSsVjx0W3Av1hWlfy4ADk0-qFmJ_oYVPntQ-0eWuUzSMqmIIaW4xwqI4aZq7tErRKZUZOKTBrMtHfMyxV-ea6kRO2Mfwf0PhahZ7AywQ"
+                <iframe
+                  title="Binondo emergency map"
+                  className="w-full h-full border-0"
+                  src={`https://www.google.com/maps?q=${MAP_LOCATIONS.districtSafety.lat},${MAP_LOCATIONS.districtSafety.lng}&z=16&output=embed`}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
                 />
                 <div className="absolute bottom-4 left-4 right-4 bg-surface/90 backdrop-blur-md p-4 rounded-lg shadow-xl">
                   <div className="space-y-3">

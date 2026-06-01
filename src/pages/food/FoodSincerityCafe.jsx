@@ -256,7 +256,7 @@ export default function FoodSincerityCafe({ onNavigate }) {
               <img
                 alt="Traditional fried chicken"
                 className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700"
-                src="https://source.unsplash.com/1200x800/?fried-chicken,platter"
+                src="/images/food/sincerity-fried-chicken.jpg"
               />
             </div>
 

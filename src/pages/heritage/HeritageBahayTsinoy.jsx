@@ -122,7 +122,7 @@ export default function HeritageBahayTsinoy({ onNavigate }) {
               <img
                 className="w-full h-full object-cover opacity-50 grayscale"
                 alt="Map preview"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj5VLZp3VmQmcYUpTQ8TPY1Bb-TgGitGF9B2z4ncWriZXg_OoAPhODCh7nsAcQO4m0y9P9R_kfyWaLzZNb74tm_WyxNMCXYwhFnGVYdLOyJTYkT4SVtKn3XG1R5a6QKr9bHVhPheW-et5KdMDCBgqPao4C9QiVVjviqru-YBYvfhTo5MMT9NQqbtmb5y_ODw5DIpTB3e27HHi_qDte5HR71GPLpm7_5ulB-a2uWnCBKOShlhgbSnrDleSzpR4xbG3XWG1vCZnlXaw"
+                src="/images/heritage/bahay-tsinoy.jpg"
               />
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="bg-primary text-white px-6 py-3 rounded-full flex items-center gap-2 shadow-xl">

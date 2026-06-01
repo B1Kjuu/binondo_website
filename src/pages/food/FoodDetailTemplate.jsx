@@ -20,6 +20,7 @@ export default function FoodDetailTemplate({
   reviewText,
   reviewRating = 5,
 }) {
+  const mapQuery = encodeURIComponent(`${title} ${location ?? 'Binondo Manila'}`)
   const goBack = () => onNavigate?.('food')
   const goToMap = () => onNavigate?.('map')
   const goToRate = () => onNavigate?.('rate')
@@ -127,6 +128,17 @@ export default function FoodDetailTemplate({
                 <span className="material-symbols-outlined text-sm">grade</span>
                 Rate
               </button>
+            </div>
+            <div className="mt-6 rounded-2xl overflow-hidden bg-surface-container">
+              <div className="w-full h-40">
+                <iframe
+                  title={`${title} map preview`}
+                  className="w-full h-full border-0"
+                  src={`https://www.google.com/maps?q=${mapQuery}&z=17&output=embed`}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
             </div>
           </aside>
         </section>

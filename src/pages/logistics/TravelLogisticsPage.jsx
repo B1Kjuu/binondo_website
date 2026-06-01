@@ -1,5 +1,7 @@
+import { MAP_LOCATIONS } from '../../utils/locations.js'
+
 export default function TravelLogisticsPage({ onNavigate }) {
-  const goToMap = () => onNavigate?.('map')
+  const goToMap = () => onNavigate?.('map', MAP_LOCATIONS.carriedoStation)
 
   return (
     <main className="pt-24 bg-background text-on-surface">
@@ -109,7 +111,7 @@ export default function TravelLogisticsPage({ onNavigate }) {
                   <img
                     className="w-full h-full object-cover"
                     alt="Modern parking structure"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcDwHA_pmcZb9ZQ3yTAIS-DQx4vzHoU5WFHDI9sFRvcHYhc0FX0AfEyOusHKfJvfBPfj8BLkkRcdXkm97OuJ90SyrYPY-S0YzWWyn5r06P_uvqPRKbPIKgKUupb6G1dyMszNMfgljBey1-ptLgeCxxcCBYI9sQ2FTHIXOAspVfMd9IqeTat7XiBmtttA7fSuojLoDdOnrFBSBhPjmO2_IaBpVfyPN7IZ6mGdgJro_wpLZPjafV7tUGq4wFoCEP1aOPK1b1wTIW4lQ"
+                    src="/images/heritage/first-united-building.jpg"
                   />
                 </div>
                 <div className="p-4 flex flex-col justify-center flex-1">
@@ -135,7 +137,7 @@ export default function TravelLogisticsPage({ onNavigate }) {
                   <img
                     className="w-full h-full object-cover"
                     alt="Street-side parking"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnbDGkmwrIxAARbD3tDCeUzZMFFvdEoGYfVsLomJ5dLYWtkcGgrA-sKM4AkhnqIF-tWx5zB1XzcvGEfisqNYr6mHiPzgdYujxnJ-G80vTeIro5MPKamCh7kO9Kgh9Ini0-5T6T5sktZWMOfIqkzv1vOWLsLS4nHduOBNopbK-SVPff2t6bR4_S6UcMftumWOkh9I7cYbyCr0FGx1XTKF1_4dGtkMHt6dBMlCuA0HwKMPWlAFtmgCXTcEZ2sgnnO8-QpRnqE6Y2M6U"
+                    src="/images/heritage/escolta-street.jpg"
                   />
                 </div>
                 <div className="p-4 flex flex-col justify-center flex-1">
@@ -273,7 +275,7 @@ export default function TravelLogisticsPage({ onNavigate }) {
               <img
                 alt="Heritage archway"
                 className="w-full h-full object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8BgCrK8Oevtfbq5TlxQxqMKlDg25wr8awSe4lrald4YmIFSgrmggnq502k2B1zAvTALSqZ7w3OFgC9dqy05cjPTljFMf1g7yXmJOHvUxTysrjjgVc1wYtgICwI1X6E3QXo0Pdoh_yz4UNYPuQNRiRnrs4KsePabmiNRMFEdnqUFGG68ZMtqnt4KJFqdikJTvMr4lgE3JIUytYYlVn7eZ2szDg7uZpmb6R8U1oYgIK9Lxod2Myr5oESBNaNVBYXyEBL2nVvIIfMXs"
+                src="/images/heritage/ongpin-arch.jpg"
               />
             </div>
 
@@ -380,7 +382,7 @@ export default function TravelLogisticsPage({ onNavigate }) {
                     { icon: 'verified', text: 'Premium Secure', color: 'text-secondary' },
                     { icon: null, text: 'Open 24h', color: 'text-primary' },
                   ],
-                  img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDk_GnSH2msZC3FFS4TF3u1jrBG6HLTzhbgeor77T_dH5kNR_sz9fh5S87oCEdeVndsMjijevlHRr-gJfhkdg5qvaWoL26ztVuSScS7tqdOg_QIG4pJ3ErC0gyKQe7y-uscb-vODJvNGBMzGcnp0RIxc1LsowFqAf5Jkb74D0DKiEb8d4WvweQY5xbOvsJx2lu39yea6dFy6Bjhlm3bzqXDmOTE2HzuyObbz7dxLkej53p_XgD8Ck5xZaKI6iwl8011PGVOSRBhxOY',
+                  img: '/images/heritage/escolta-street.jpg',
                 }, {
                   name: 'Escolta On-Street',
                   desc: 'Limited heritage zone slots for short-term visits. Best for quick stops near historic bank buildings.',
@@ -388,7 +390,7 @@ export default function TravelLogisticsPage({ onNavigate }) {
                     { icon: 'history', text: 'Heritage Zone', color: 'text-secondary' },
                     { icon: null, text: 'Limited Space', color: 'text-error' },
                   ],
-                  img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDbUaTF8WcDaYZ0DwgY3G2kDIOcFWB08gxoeB9N3dOjsILsxyM62LB2EgPMXrGm5If4qRCrSbm0p63R8q8168kP-xmcV3ViDzIoawoRT-biNTInfakZr17um0sswz_VRw36_XW3papSXgVbvZ53pqNIIkV3fezsbpxOj-_biwKIy1MizLeOJTtzx_plsR3pMYOOk2KP_u9cSLUfaOLERWmMSf0-9u-Pphfy-BUg7-0Qg5BlSMrttlVZ5npeILbNZFwbkmGYNYY9U5s',
+                  img: '/images/heritage/binondo-church.jpg',
                 }].map((item) => (
                   <div key={item.name} className="group flex gap-6 items-start">
                     <div className="w-32 h-32 flex-shrink-0 rounded-lg overflow-hidden shadow-[0_24px_32px_-4px_rgba(28,28,24,0.06)] bg-surface-container">
@@ -425,10 +427,12 @@ export default function TravelLogisticsPage({ onNavigate }) {
             </div>
 
             <div className="relative bg-surface-container h-[600px] rounded-2xl overflow-hidden shadow-[0_24px_32px_-4px_rgba(28,28,24,0.06)]">
-              <img
-                alt="Map placeholder"
-                className="w-full h-full object-cover opacity-80"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcoSRHAlsJaB-jjmTOzjaqmUAsByhyYl2k1ILbRL1TvRrjZ0rgCBVcv8sjVAX3LUj2qpSF8vnMjN83t7g6a1fPrJR-5n-BBYZNGLmvqGeyUwqgCynPKBsS3b6c_7eUg6mWkS3KO-IwF7t3MD7-IOsfBDNno8QVLQphsVuZCv92OBv4D7lgEzc8gdrTeZY6nvw7LkPtHYoRRkkrkM-I9ckdcx7ikUSgt_rgGcoGrLT84Rmjs0ReVDK2p5jKMW6iRmXVoJPTtbLntIA"
+              <iframe
+                title="Carriedo transport map"
+                className="w-full h-full border-0"
+                src={`https://www.google.com/maps?q=${MAP_LOCATIONS.carriedoStation.lat},${MAP_LOCATIONS.carriedoStation.lng}&z=16&output=embed`}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent" />
               <div className="absolute bottom-8 left-8 right-8 bg-surface/95 backdrop-blur-md p-6 rounded-lg border-l-4 border-secondary shadow-xl">

@@ -15,7 +15,7 @@ export default function HeritageBinondoChurch({ onNavigate }) {
         <img
           alt="Binondo Church Facade"
           className="absolute inset-0 w-full h-full object-cover grayscale-[0.2]"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHG5G4cIPSEYz6MdUHAKaaVaFcog8OmkDl0DucaGuOJWnQjKA_QEI3QL2YzxL2VBIa1HDo56H9wU1yOWYeno_WkgIgmD5450SEUOua30r-PZlxBWAXTqp3sjWughc4ODOpIaY1T6Xo7oguCn7k7FkS-JqNTp9l648yNxZxq3GyJhjSQMGjuLsiaJVoLsu7T5tJYngDcYYmxMugzeG-arBNkLGTcxRegIbpMxD4INMOGjcu9vUJOSrCRJYOt59z_zxuiwk0j2rqNGI"
+          src="/images/heritage/binondo-church.jpg"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
         <div className="relative z-10 max-w-4xl mb-12">
@@ -126,7 +126,7 @@ export default function HeritageBinondoChurch({ onNavigate }) {
               <img
                 className="w-full h-full object-cover opacity-50 grayscale"
                 alt="Map preview"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj5VLZp3VmQmcYUpTQ8TPY1Bb-TgGitGF9B2z4ncWriZXg_OoAPhODCh7nsAcQO4m0y9P9R_kfyWaLzZNb74tm_WyxNMCXYwhFnGVYdLOyJTYkT4SVtKn3XG1R5a6QKr9bHVhPheW-et5KdMDCBgqPao4C9QiVVjviqru-YBYvfhTo5MMT9NQqbtmb5y_ODw5DIpTB3e27HHi_qDte5HR71GPLpm7_5ulB-a2uWnCBKOShlhgbSnrDleSzpR4xbG3XWG1vCZnlXaw"
+                src="/images/heritage/binondo-church.jpg"
               />
               <div className="absolute inset-0 flex items-center justify-center">
                 <button
@@ -160,7 +160,7 @@ export default function HeritageBinondoChurch({ onNavigate }) {
               <img
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 alt="Ongpin Gold District"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD25VQm9ZhGw2T_hMNeZX4wYpx1eVrwDGhtTKVhlcX7TEBXPBiQFyExNjqattzh7StI74gGz7D0oYHo1AIYe-gIEXtqxRk0kZ5RbC1a7zBpkNPhbvw3eVoC0xzfvyjZdeANW9mFhGPvmZuj8f9KRSYEIXYssQTnwC-PVIYfJexfk29uF_akmgZddXqX8R1T8RAxSZoN5O-HkG4mRAgWnNxOt868nKmxKrzdk3Va0Ti7MdC5QSPEImKKeaWf_dOcqTyyncMUbZEbVf0"
+                src="/images/heritage/ongpin-arch.jpg"
               />
             </div>
             <p className="text-xs font-bold text-secondary uppercase tracking-widest mb-1">
@@ -176,7 +176,7 @@ export default function HeritageBinondoChurch({ onNavigate }) {
               <img
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 alt="Wai Ying Fastfood"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtF4x9P8tf3paPvFZGrdpb6OjVn1g3Qybnu6na-tQMBbDj0Run_lijbE2kn9TvDldOGbi-5jrtnAerlbhS0FWVt49nMIuQilMjALcPesCGTzkd8hjRfFM2h7-cUO8FLRj0DY4538hY5woiDsnVuBxjBg6k1VmlJBFBKylqZZJiEq7CDIsVRL3-q3Vyt1w0drUrQYaKo51xBSDyDkP9e0ifB5lv-PU4-VaJZjKIIWZ1ui63w68mLiFPNUgPysDVYkGyVa0XNE0oNTM"
+                src="/images/food/waiying-dim-sum.jpg"
               />
             </div>
             <p className="text-xs font-bold text-secondary uppercase tracking-widest mb-1">
@@ -192,7 +192,7 @@ export default function HeritageBinondoChurch({ onNavigate }) {
               <img
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 alt="William A. Jones Bridge"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdpF1svKETNNP21HIaMJk92ZgO4oSsXOlcWCIvguQyRG09LAUS2asR8LPBM0xWVtvp_9zAWcLK2J_SjxAMINbhX4nBFitNWiMlGYA3r8dDn9vG1HomOHJ-heTKVq_R3qupDutzHcQNMJiU0UsQkVx0VwhTQOPj5zikei5_rCEvsA2kfSDTO7HP6Dz-tWAYD_1R0OMNFvvFZPmV90u0Je5VLItynPJgEq_-WKMqMjQfXdYSfKPeKupZh5xQysmvWOL4ECe0dvvzC64"
+                src="/images/heritage/jones-bridge.jpg"
               />
             </div>
             <p className="text-xs font-bold text-secondary uppercase tracking-widest mb-1">

@@ -175,7 +175,7 @@ export default function HomePageExploreBinondo({
               <img
                 className="w-full h-full object-cover"
                 alt="Steaming dumplings and traditional Filipino-Chinese street food"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAahkLPz1YWE-mgDf5E3Wo3oga-vGPG8QDeRvRAchxPUzz4BnOtTVQ8kIZKB6g-qp6QaoBJZ1J3lgcF7NNBIpt7jSh-at7ZZEsQ9gkIu8syJobho274HE7cWghiU6pQf66RPSXzi30V5r2i9Ap4hRYktdqqVo-u-WbxujyMPbjwidNavNG5mVMVS9ATB7JjZAI0HHuhJTlMOXA8d6WxNq4xfzpSMNjQcKXrc7M7OArVq7fVZ_gpP1IXDa3geAQ1fNMEvuFHWy424nI"
+                src="/images/food/binondo-food-crawl.jpg"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-transparent flex items-center px-8">
                 <div className="max-w-[160px]">
@@ -198,7 +198,7 @@ export default function HomePageExploreBinondo({
                 <img
                   className="w-full h-full object-cover"
                   alt="Baroque architecture of an old church facade"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAORU7Tz2vIalNLHeuz1-qWdNGYJIpxm0TAxn2IM2hdO8wdnjBeJqgvVgO2VRk_obO9vZyYS9_0teD8jglE6WfUOgL3vlyfFeJuSF0I5FE72MbJWQJ1tUViI2tHYQAKvcKM8kwCcD7k423N_5gPOuk6DDrACyNsGVnOoyIzcE_GMwWMLk7bCy1OQXuBZA0L1Oftx8Jg-lzMMvdarOgoGoNq2HQ3vDJrpzp1GNjUQ29l59LRPe5pRV6NHOmNhKr5KSplCAE5TWl3cOQ"
+                  src="/images/heritage/binondo-church.jpg"
                 />
                 <div className="absolute inset-0 bg-black/40 flex flex-col justify-end p-5">
                   <h4 className="text-white font-headline font-bold text-lg">
@@ -257,7 +257,7 @@ export default function HomePageExploreBinondo({
               <img
                 className="w-full h-40 object-cover"
                 alt="Wai Ying Fastfood exterior"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvhUy6Rv0Wmc4R8-aVhccUlBudPKamwQIO7NfmpgGkBFf_dU5izmO63qyZJpc4jH8SO3YjXwx8jFOrXUBA8NNXFHgD3dBP9o0pxCCzkD1Y0-nxICi8sbLmEMLWWxc2wNhkXEahCiSpii2i0rBZZKMyk52vL-Xihfo3mWkiYtynTf-RrgBmd65xgiNrjjMOL83c6ruXVDPsG64VLFafpOqOi3evRFMsDp8_gQ-aJYbSHlDo1gptCMZVaXOd6rrx9xff9d_oNa9ZGZ8"
+                src="/images/food/waiying-dim-sum.jpg"
               />
               <div className="p-4 space-y-3">
                 <span className="inline-block px-2 py-0.5 bg-secondary/10 text-secondary text-[9px] font-bold uppercase tracking-widest rounded">
@@ -280,7 +280,7 @@ export default function HomePageExploreBinondo({
               <img
                 className="w-full h-40 object-cover"
                 alt="Binondo Church altar"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgUNs66xvqWAjcXSvCPVIRUYKvfM6oSeLeRgN3RPZyc-H76v5mKen890PsP0dPnlfM2GopmTADhWI8-KtnWrKrWkv_34zAaBkeHXylkE9eirZze3MDQdXhvw2Phox7BTrNYzJOX5oXiinFEi_EVl7jUunA30jqvHc77WQJ0nmR71wX7_o-cVOLmIFhI57amWsyUyUNJ0kJYrXTM41_GuLKpud2YfIt1MPS1OhULHkhqZRrb4JdBik1CihY07l8BqJGivYwEW_OkmY"
+                    src="/images/heritage/binondo-church.jpg"
               />
               <div className="p-4 space-y-3">
                 <span className="inline-block px-2 py-0.5 bg-secondary/10 text-secondary text-[9px] font-bold uppercase tracking-widest rounded">
@@ -303,7 +303,7 @@ export default function HomePageExploreBinondo({
               <img
                 className="w-full h-40 object-cover"
                 alt="Traditional Chinese banquet dining"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnaeMgG5NRBUE6DQAxlkN6OPNRwP1A-P3_1ycXI8vIN4RIpPw44NIL2mvFsQds36Z6We40hqmSK8cx6bVKmjymZ9sOk4K3cpCzEH4zCPvjEpjdwUaWsYcDMjMy_8DRVLdUyqVxin8tboU8kTh8lExfBdtK2RVgDNv69LkSqe7Kdync7TZCWh5GJZVg900Tnu-vuwb8Iyf0dAcgWABkrUv-Vfwx0Tbt9ADPMi0ppux7fJbaxeb7RkilYww3N-Wx9T8oh7-x5DCSS0Y"
+                    src="/images/food/president-grand-palace.jpg"
               />
               <div className="p-4 space-y-3">
                 <span className="inline-block px-2 py-0.5 bg-secondary/10 text-secondary text-[9px] font-bold uppercase tracking-widest rounded">
@@ -480,7 +480,7 @@ export default function HomePageExploreBinondo({
                 <img
                   className="w-full h-full object-cover"
                   alt="Steaming dim sum in bamboo baskets"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4rkPc30ntr-WmCBSVcfV3TdRAPIWpfA5VwELyaGA0rtfmsJlDvTnFKuPzJ94XEsyBxh_ZvZpIctX_7-5lS8HtYrewufdtiCejjl_GZoa1qXx4hRqE7LEKCsp6YkgY2DPsQnHdjJcQjkh5Ffi4tGxv51fODgUWtvGkvs1GfDcrbA3WwOZxqo2VOkDJg-8vbsp1PvIjYN1HZ3eSgOCcQLNeW9C5TwUCd5UwTDWVJBWIKLWu0NMFeJf4gKg5K6F89OzdV2-Q_6J76Ag"
+                    src="/images/food/binondo-food-crawl.jpg"
                 />
               </div>
               <div className="relative p-10 h-full flex flex-col justify-end">
@@ -601,7 +601,7 @@ export default function HomePageExploreBinondo({
                   <img
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     alt="Bustling dim sum teahouse"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBX7SoxGUKSR9hQfa7_7NKJNPSb6QPpxcFo85QvVD8bfDePPnnwbUr1syYEl4v0BA1Nlsm8_9vTabe94LrtRnG4XCVmlQqE7r-dScu8aFA7CY-Lh_BwdTT2XgpiUBgs1e6qEK_UFDF-tuVOawg5TjSgN-lFuGXUu6mGw1R2coZwOEFIaUa5Xjn6XijKAKgiyL77USI72LmWs8yvfIrsCJAX1nxfynMFagnaUkixdiq9UBJrvl2QY0_F9GhstDlR1B-wHdDSJ03d-LI"
+                    src="/images/food/waiying-dim-sum.jpg"
                   />
                   <div className="absolute top-4 left-4">
                     <span className="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold uppercase">
@@ -637,7 +637,7 @@ export default function HomePageExploreBinondo({
                   <img
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     alt="Binondo Church facade"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6vOFvj67wnpTDyZzeVROZurdxsagJzdYJXW2eV0FRuplC3qgRYe91-PJfagsbuaMFFYCcEkqfv6fX2FJF6IpUHY01k_W5FuPz5UU2tTc6xF0ooeKDmoHCMTDjfnIgScNRVvTXyr7wpAZIjLKhwUFdbkb20cJrpub8OiMMP6W77FBl-SfAm9X46yZXt2XkzXYeaWdLImK1X4Fa05glSiuM2bnQBoKfMDIN8Ib-M_r7T63vJZ71s-My_WsJBiG1TpzSq7hJjQV1ow4"
+                    src="/images/heritage/binondo-church.jpg"
                   />
                   <div className="absolute top-4 left-4">
                     <span className="bg-primary text-white px-3 py-1 rounded-full text-xs font-bold uppercase">
@@ -673,7 +673,7 @@ export default function HomePageExploreBinondo({
                   <img
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     alt="Traditional Chinese banquet table"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUE0jdi21Dob0RVFk6RQQ5kCTesyZ1NL_s5AdZT6Mwf1_blFck_ffvXOd2VDND9_TfepCWDDyQOoIvi1x6ta9U1VKFyj2u34v7V2JWqylYsyf62rx8SvysDvi8c3bi1tZqqr-GavucofJ96Zu_woMvwMy86FJ7bR_euAld4RBXC1KAtFg3iMjL6AjrSkGpbsbCjAp8Lw80x1EMpz9SiKQ6p7zAN33kyb8Y6O1fWbNYGeTUU1tsju1hp-83qVCkxF7VHfAT2NLSbg8"
+                    src="/images/food/president-grand-palace.jpg"
                   />
                   <div className="absolute top-4 left-4">
                     <span className="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold uppercase">
@@ -709,7 +709,7 @@ export default function HomePageExploreBinondo({
                   <img
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     alt="Kuang Kong Temple interior"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6dyUqSd85PsnESoU2c29BYWOHPQ3ma0pRp7kOxBIkfPc_GU8x2B1hk_0RhVz-Wtt2rT95_Kod2AHkl-EXqftbREKdDRCUTr2sawsWjox8L36jvvFRHJlIu35Q2TWU7NA7pv21tpstnkE0OgMPJ5-3aKbuDNbGZ7D_bK6k1Bq5ktQSOByOB1BSvXAAtuvIcoK0P9oPQ3b5RE8Ig1Clk9aXvJSVaq4DCutcRJfNHx_NpSuuXv5ySVjpEnx_NAWdRhFdDYbpXxv2kxo"
+                    src="/images/heritage/seng-guan-temple.jpg"
                   />
                   <div className="absolute top-4 left-4">
                     <span className="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold uppercase">
@@ -744,7 +744,7 @@ export default function HomePageExploreBinondo({
                   <img
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     alt="First United Building facade"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGkMMGmZgDi6HucaZZv0NtKonbcNZm71slcD0mtIaZbTHf7a_73UMt1lwNc4DiTW9OEYSjFmQNSUBjRthmnClfNoR_MGCDHzHJAHgxagIEDnFoMBzjf3zCEN1HN2th-jGXyFwlc3TjX_2RkWWkBXRpGQpCdkUBkpSkdKGu_I8chrP3CgHtk7S3hC1ROzfkT5lkcB4SSNRNvXliL_ICjILecwT7Gsyau62g199WrRxw1opLxI4KLb2n4WosRnxqOQC3eBFED9kudgo"
+                    src="/images/heritage/first-united-building.jpg"
                   />
                   <div className="absolute top-4 left-4">
                     <span className="bg-primary text-white px-3 py-1 rounded-full text-xs font-bold uppercase">
@@ -779,8 +779,7 @@ export default function HomePageExploreBinondo({
                   <img
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     alt="Bahay Tsinoy museum"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqs1l4hGwmP2T0k15sQ2xoqoSWSKAmkK3wqg6oXlOaQO3bV6w3cYQh3nQJdVd8qmxHh4vO4hHqK9wqV7Xf9v0lTn3o1eV6h1t0xVY1d9eHk9eM7_2Y0x5E3yE8M5H8g"
-                      src="/images/heritage/bahay-tsinoy.jpg"
+                    src="/images/heritage/bahay-tsinoy.jpg"
                   />
                   <div className="absolute top-4 left-4">
                     <span className="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold uppercase">
@@ -815,8 +814,7 @@ export default function HomePageExploreBinondo({
                   <img
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     alt="Plaza Calderon de la Barca"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOVtkmwU7bWlJ5Lx9iyUKfZkYQmKc2GmXoZV0j8bi2wzY1mTnFf7Bl8jb5O5Q0oFShkJt1bVcgH1ABR3W4qJq7v0o5QxKZ_6J4cRwqi9_2n6t5QmA2O0I5dV4pGzpjJ8o-7fJf2u7xTvyK0f5K2RxgH7y0x9Z9X8Kc2e8Bt2m2mQEDbC-YxH_2U3dQ_MG1v5d4xtmTZg0Z0f_RR9bGgNf5xgIu1nYw4KQ0"
-                      src="/images/heritage/plaza-calderon-de-la-barca.jpg"
+                    src="/images/heritage/plaza-calderon-de-la-barca.jpg"
                   />
                   <div className="absolute top-4 left-4">
                     <span className="bg-primary text-white px-3 py-1 rounded-full text-xs font-bold uppercase">

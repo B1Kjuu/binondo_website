@@ -1,3 +1,5 @@
+import { MAP_LOCATIONS } from '../../utils/locations.js'
+
 export default function ProfileArchivist({ onNavigate }) {
   return (
     <main className="pt-24 pb-12 bg-background">
@@ -332,14 +334,25 @@ export default function ProfileArchivist({ onNavigate }) {
               </button>
             </nav>
 
-            <button
-              type="button"
-              className="mt-2 bg-secondary text-on-secondary py-3 rounded-lg font-bold flex items-center justify-center gap-2 active:scale-95 transition-transform"
-              onClick={() => onNavigate?.('community')}
-            >
-              <span className="material-symbols-outlined text-sm">map</span>
-              View Map
-            </button>
+            <div className="mt-2 rounded-2xl overflow-hidden border border-outline-variant/20 shadow-md">
+              <div className="h-40 bg-surface-container">
+                <iframe
+                  title="Binondo overview map"
+                  className="w-full h-full border-0"
+                  src={`https://www.google.com/maps?q=${MAP_LOCATIONS.profileView.lat},${MAP_LOCATIONS.profileView.lng}&z=16&output=embed`}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
+              <button
+                type="button"
+                className="w-full bg-secondary text-on-secondary py-3 font-bold flex items-center justify-center gap-2 active:scale-95 transition-transform"
+                onClick={() => onNavigate?.('map', MAP_LOCATIONS.profileView)}
+              >
+                <span className="material-symbols-outlined text-sm">map</span>
+                View Map
+              </button>
+            </div>
           </aside>
 
           <section className="flex-1 min-w-0">
