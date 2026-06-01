@@ -150,6 +150,16 @@ export default function FoodCrawlGuide({ onNavigate }) {
       price: '₱1–500',
     },
     {
+      page: 'food-big-bowl-noodles',
+      street: 'ongpin',
+      category: 'noodle-houses',
+      badge: 'Noodle House',
+      title: 'Big Bowl Noodles',
+      image: '/images/food/big-bowl-beef-noodles.jpg',
+      address: '517 Yuchengco St.',
+      price: '₱1–500',
+    },
+    {
       page: 'food-lonely-owl',
       street: 'lucky-chinatown',
       category: 'dessert',
