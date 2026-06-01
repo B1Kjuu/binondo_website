@@ -183,6 +183,12 @@ export const SEARCH_ITEMS = [
     match: ['bahay tsinoy', 'museum', 'bahay-tsinoy', 'cultural museum'],
   },
   {
+    page: 'food-big-bowl-noodles',
+    label: 'Big Bowl Noodles',
+    group: 'Food',
+    match: ['big bowl noodles', 'bigbowl', 'beef noodle soup', 'wanton noodles', 'yang chow', 'noodle house', 'noodles'],
+  },
+  {
     page: 'news',
     label: 'News & Updates',
     group: 'News',
