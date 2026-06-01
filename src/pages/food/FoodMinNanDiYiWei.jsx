@@ -7,7 +7,7 @@ export default function FoodMinNanDiYiWei({ onNavigate }) {
       badge="Cold Cuts"
       title="Min Nan Di Yi Wei"
       subtitle="Specialty in oyster panada and Chinese cold cuts — a unique Binondo snack."
-      heroImage="/images/food/binondo-food-crawl.jpg"
+      heroImage="/images/food/minnan.jpg"
       heroAlt="Oyster panada"
       rating={4.1}
       priceLabel="$"
@@ -16,7 +16,7 @@ export default function FoodMinNanDiYiWei({ onNavigate }) {
       storyText="Known for oyster panada and flavorful cold cuts — a great savory snack during the crawl."
       signatureTitle="Oyster Panada"
       signatureText="A plump oyster-filled empanada with chive notes."
-      signatureImage="/images/food/binondo-food-crawl.jpg"
+      signatureImage="/images/food/minnan.jpg"
       signatureAlt="Oyster panada"
       detailItems={[
         { icon: 'schedule', label: 'Hours', value: '8AM - 10PM' },

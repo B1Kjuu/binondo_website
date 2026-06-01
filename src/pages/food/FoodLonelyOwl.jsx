@@ -7,7 +7,7 @@ export default function FoodLonelyOwl({ onNavigate }) {
       badge="Dessert"
       title="Lonely Owl Hongkong Exquisite Dessert"
       subtitle="Hong Kong–style desserts and teas, popular for fruit teas and sago-based drinks."
-      heroImage="/images/food/binondo-food-crawl.jpg"
+      heroImage="/images/food/lonelyowl.jpg"
       heroAlt="Lonely Owl desserts"
       rating={4.4}
       priceLabel="$$"
@@ -16,7 +16,7 @@ export default function FoodLonelyOwl({ onNavigate }) {
       storyText="A contemporary dessert brand serving creative fruit teas and Hong Kong-style treats — a cooling stop during the crawl."
       signatureTitle="Dragon Lemon Tea"
       signatureText="Refreshing and fruity — a signature beverage offering."
-      signatureImage="/images/food/binondo-food-crawl.jpg"
+      signatureImage="/images/food/lonelyowl.jpg"
       signatureAlt="Lonely Owl fruit tea"
       detailItems={[
         { icon: 'schedule', label: 'Hours', value: '10AM - 10PM' },

@@ -7,7 +7,7 @@ export default function FoodTohoPanciteria({ onNavigate }) {
       badge="Panciteria"
       title="Toho Panciteria Antigua"
       subtitle="One of the oldest panciterias, serving historic Filipino-Chinese dishes since 1888."
-      heroImage="/images/food/binondo-food-crawl.jpg"
+      heroImage="/images/food/toho.jpg"
       heroAlt="Toho Panciteria interior and dishes"
       rating={4.6}
       priceLabel="$$"
@@ -16,7 +16,7 @@ export default function FoodTohoPanciteria({ onNavigate }) {
       storyText="Historic panciteria known for asado, Toho chicken, and well-preserved recipes dating back generations."
       signatureTitle="Toho Chicken"
       signatureText="Classic rotisserie-style chicken often served with rice and special sauce."
-      signatureImage="/images/food/binondo-food-crawl.jpg"
+      signatureImage="/images/food/toho.jpg"
       signatureAlt="Toho chicken and asado"
       detailItems={[
         { icon: 'schedule', label: 'Hours', value: '9AM - 8PM' },

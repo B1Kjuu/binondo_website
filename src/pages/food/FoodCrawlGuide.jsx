@@ -62,7 +62,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
       street: 'quintin-paredes',
       category: 'street-food',
       badge: 'Street Favorite',
-      title: 'Tasty Dumplings',
+      image: '/images/food/minnan.jpg',
       image: '/images/food/tasty-dumplings.jpg',
     },
     {
@@ -95,7 +95,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
       category: 'cafe',
       badge: 'Cafe',
       title: 'Apologue Coffee & Pastry',
-      image: '/images/food/binondo-food-crawl.jpg',
+      image: '/images/food/masuki.jpg',
     },
     {
       page: 'food-cafe-mezzanine',
@@ -103,7 +103,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
       category: 'chinese-filipino',
       badge: 'Comfort Food',
       title: 'Cafe Mezzanine',
-      image: '/images/food/binondo-food-crawl.jpg',
+      image: '/images/food/cafemezzanine.jpg',
     },
     {
       page: 'food-chuan-kee',
@@ -111,7 +111,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
       category: 'fastfood',
       badge: 'Local Fastfood',
       title: 'Chuan Kee',
-      image: '/images/food/binondo-food-crawl.jpg',
+      image: '/images/food/chuankee.jpg',
     },
     {
       page: 'food-lonely-owl',
@@ -119,7 +119,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
       category: 'dessert',
       badge: 'Dessert',
       title: 'Lonely Owl',
-      image: '/images/food/binondo-food-crawl.jpg',
+      image: '/images/food/lonelyowl.jpg',
     },
     {
       page: 'food-lord-stows',
@@ -135,7 +135,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
       category: 'noodle-houses',
       badge: 'Noodle House',
       title: 'Masuki',
-      image: '/images/food/binondo-food-crawl.jpg',
+      image: '/images/food/toho.jpg',
     },
     {
       page: 'food-min-nan-di-yi-wei',
@@ -143,7 +143,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
       category: 'street-food',
       badge: 'Specialty',
       title: 'Min Nan Di Yi Wei',
-      image: '/images/food/binondo-food-crawl.jpg',
+      image: '/images/food/yingying.jpg',
     },
     {
       page: 'food-toho-panciteria',

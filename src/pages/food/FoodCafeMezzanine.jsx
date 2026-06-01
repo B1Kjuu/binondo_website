@@ -7,7 +7,7 @@ export default function FoodCafeMezzanine({ onNavigate }) {
       badge="Chinese-Filipino"
       title="Cafe Mezzanine"
       subtitle="Comfort Chinese-Filipino dishes served in a mezzanine above Chuan Kee."
-      heroImage="/images/food/binondo-food-crawl.jpg"
+      heroImage="/images/food/cafemezzanine.jpg"
       heroAlt="Cafe Mezzanine interior"
       rating={4.3}
       priceLabel="$$"
@@ -16,7 +16,7 @@ export default function FoodCafeMezzanine({ onNavigate }) {
       storyText="Cafe Mezzanine supports a local volunteer fire brigade and offers classic dishes in an airconditioned setting."
       signatureTitle="Kiampong"
       signatureText="A savory glutinous rice dish, hearty and comforting — a crowd favorite."
-      signatureImage="/images/food/binondo-food-crawl.jpg"
+      signatureImage="/images/food/cafemezzanine.jpg"
       signatureAlt="Kiampong and other dishes"
       detailItems={[
         { icon: 'schedule', label: 'Hours', value: '7:30AM - 10PM' },

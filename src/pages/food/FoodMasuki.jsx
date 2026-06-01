@@ -7,7 +7,7 @@ export default function FoodMasuki({ onNavigate }) {
       badge="Noodle House"
       title="Masuki"
       subtitle="Heritage mami house known for comforting noodle soups and siopao."
-      heroImage="/images/food/binondo-food-crawl.jpg"
+      heroImage="/images/food/masuki.jpg"
       heroAlt="Masuki mami bowl"
       rating={4.2}
       priceLabel="$"
@@ -16,7 +16,7 @@ export default function FoodMasuki({ onNavigate }) {
       storyText="A classic mami spot that evokes nostalgia — perfect for a warm, satisfying bowl."
       signatureTitle="Mami"
       signatureText="Hearty noodle soup best paired with siopao and siomai."
-      signatureImage="/images/food/binondo-food-crawl.jpg"
+      signatureImage="/images/food/masuki.jpg"
       signatureAlt="Bowl of mami"
       detailItems={[
         { icon: 'schedule', label: 'Hours', value: '7AM - 10PM' },

@@ -176,7 +176,7 @@ export default function HeritageBinondoChurch({ onNavigate }) {
               <img
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 alt="Wai Ying Fastfood"
-                src="/images/food/waiying-dim-sum.jpg"
+                src="/images/food/waiying.jpg"
               />
             </div>
             <p className="text-xs font-bold text-secondary uppercase tracking-widest mb-1">

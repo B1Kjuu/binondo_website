@@ -9,7 +9,7 @@ New-Item -ItemType Directory -Force -Path "public/images/heritage" | Out-Null
 
 Write-Host "Downloading food images..."
 Invoke-WebRequest -Uri "https://loremflickr.com/1200/800/fried-chicken" -OutFile "public/images/food/sincerity-fried-chicken.jpg"
-Invoke-WebRequest -Uri "https://loremflickr.com/1200/800/dim-sum" -OutFile "public/images/food/waiying-dim-sum.jpg"
+Invoke-WebRequest -Uri "https://loremflickr.com/1200/800/dim-sum" -OutFile "public/images/food/waiying.jpg"
 Invoke-WebRequest -Uri "https://loremflickr.com/1200/800/street-food,stall" -OutFile "public/images/food/quik-snack-street-food.jpg"
 Invoke-WebRequest -Uri "https://loremflickr.com/1200/800/pastry,hopia" -OutFile "public/images/food/engbeetin-hopia.jpg"
 Invoke-WebRequest -Uri "https://loremflickr.com/1200/800/chinese-banquet" -OutFile "public/images/food/president-grand-palace.jpg"
