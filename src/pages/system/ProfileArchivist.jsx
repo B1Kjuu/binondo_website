@@ -9,7 +9,7 @@ export default function ProfileArchivist({ onNavigate }) {
           <div className="relative">
             <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-surface-container-highest shadow-xl">
               <img
-                alt="Master Julian Cheng"
+                alt="Cong. Joel Chua"
                 className="w-full h-full object-cover"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWRXjGT13NtS-BdbQjfYQ9tQEgBx3JYFQcSTDHJNzkpWjPTFJH6kTzVgmA_EzwKJsEyH9ukrt9Kga2xGiBtyTgjmNWgJ83KehK9u6QWYPuQmtD4FlwOzBUxW9UtvaKiVJ22b-9O_5LHH0NXFQhCkqK22vpybWwcJ-KYvFQeQmjvKDH0TO4kOaP7Bufi5swTv3dUJerSbxLYW7GIgd6f6zb6KpQWlxztpLXK6gf-VZs3uuksisK0oaBFn5o1Tml_itrZnS_OMv0ysY"
               />
@@ -26,7 +26,7 @@ export default function ProfileArchivist({ onNavigate }) {
 
           <div className="flex-1">
             <h2 className="font-headline text-2xl text-primary leading-tight">
-              Master Julian Cheng
+              Cong. Joel Chua
             </h2>
             <p className="text-secondary font-medium text-xs uppercase tracking-widest mt-1">
               Digital Archivist
@@ -285,7 +285,7 @@ export default function ProfileArchivist({ onNavigate }) {
                 />
               </div>
               <div>
-                <p className="text-on-surface font-bold text-sm">Master Julian Cheng</p>
+                <p className="text-on-surface font-bold text-sm">Cong. Joel Chua</p>
                 <p className="text-secondary text-xs italic">
                   Level 4 Heritage Guardian
                 </p>

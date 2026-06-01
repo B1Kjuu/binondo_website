@@ -3,7 +3,7 @@ import { useMemo, useState } from 'react'
 const OFFICIALS = [
   {
     id: 'tan',
-    name: 'Hon. Elena V. Tan',
+    name: 'Perfecto G. Villaruel',
     designation: 'Barangay Captain, Brgy 291',
     category: 'captains',
     quote: '“Serving Barangay 291 for 12 years.”',
@@ -13,7 +13,7 @@ const OFFICIALS = [
   },
   {
     id: 'sy',
-    name: 'Hon. Antonio K. Sy',
+    name: 'Johanna Maureen "Apple" Nieto-Rodriguez',
     designation: 'District Councilor',
     category: 'councilors',
     quote: '“Dedicated to district economic growth.”',
@@ -67,7 +67,7 @@ export default function DistrictContacts({ onNavigate }) {
       {
         id: 'lim',
         label: 'District Representative',
-        name: 'Hon. Roberto C. Lim',
+        name: 'Cong. Jose Chua',
         designation: 'First District Council Member',
         image: '/images/contacts/default-person.svg',
         email: 'rep.lim@manila.gov.ph',
