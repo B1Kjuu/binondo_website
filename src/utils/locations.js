@@ -1,5 +1,5 @@
 export const BINONDO_CENTER = {
-  label: 'Binondo Heritage Core',
+  label: 'Explore Binondo Core',
   lat: 14.6008,
   lng: 120.9742,
 }

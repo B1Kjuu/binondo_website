@@ -1,4 +1,4 @@
-# Binondo Heritage Digital Concierge
+# Explore Binondo Digital Concierge
 
 A Vite + React + Tailwind website for exploring Binondo’s heritage landmarks, food crawl spots, community hub, news, and footer resources (district contacts, emergency services, guidelines, and privacy policy).
 

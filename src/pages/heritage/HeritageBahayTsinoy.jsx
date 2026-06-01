@@ -102,7 +102,7 @@ export default function HeritageBahayTsinoy({ onNavigate }) {
                 </span>
                 <div>
                   <p className="font-bold">Intramuros Area</p>
-                  <p className="text-sm">Near Binondo heritage routes</p>
+                  <p className="text-sm">Near Explore Binondo routes</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">

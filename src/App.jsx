@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import { useAuth } from './context/AuthContext'
 
 import SearchSuggestionsDropdown from './components/SearchSuggestionsDropdown.jsx'
 import { useSearchAutosuggest } from './hooks/useSearchAutosuggest.js'
@@ -57,8 +58,10 @@ function App() {
   const [activePage, setActivePage] = useState('home')
   const [mapTarget, setMapTarget] = useState(BINONDO_CENTER)
   const [searchQuery, setSearchQuery] = useState('')
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false)
+
+  // Get authentication state from Firebase
+  const { user, loading: authLoading } = useAuth()
 
   const isLoginPage = activePage === 'login' || activePage === 'signup'
 
@@ -94,7 +97,7 @@ function App() {
     activePage === section || activePage.startsWith(`${section}-`)
 
   const navigateToPage = (nextPage, nextMapTarget) => {
-    if (nextPage === 'profile' && !isLoggedIn) {
+    if (nextPage === 'profile' && !user) {
       setActivePage('login')
       return
     }
@@ -241,7 +244,7 @@ function App() {
               }}
             >
               <span className="md:hidden">Binondo</span>
-              <span className="hidden md:inline">Binondo Heritage</span>
+              <span className="hidden md:inline">Explore Binondo</span>
             </button>
           </div>
 
@@ -353,7 +356,7 @@ function App() {
               type="button"
               className="text-primary active:scale-95 transition-transform"
               aria-label="Account"
-              onClick={() => setActivePage(isLoggedIn ? 'profile' : 'login')}
+              onClick={() => setActivePage(user ? 'profile' : 'login')}
             >
               <span
                 className="material-symbols-outlined text-3xl"
@@ -429,7 +432,7 @@ function App() {
                   type="button"
                   onClick={() => {
                     setIsMobileNavOpen(false)
-                    setActivePage(isLoggedIn ? 'profile' : 'login')
+                    setActivePage(user ? 'profile' : 'login')
                   }}
                   className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left transition-colors ${
                     activePage === 'profile' || activePage === 'login'
@@ -451,14 +454,9 @@ function App() {
         onNavigate={navigateToPage}
         activePage={activePage}
         mapTarget={mapTarget}
-        isLoggedIn={isLoggedIn}
         searchQuery={searchQuery}
         onSearchQueryChange={setSearchQuery}
         onSearchSubmit={handleSearchSubmit}
-        onLogin={() => {
-          setIsLoggedIn(true)
-          setActivePage('profile')
-        }}
       />
 
       {isLoginPage ? null : (
@@ -593,7 +591,7 @@ function App() {
 
           <button
             type="button"
-            onClick={() => setActivePage(isLoggedIn ? 'profile' : 'login')}
+            onClick={() => setActivePage(user ? 'profile' : 'login')}
             className={`flex flex-col items-center justify-center rounded-xl px-4 py-1.5 hover:opacity-80 active:scale-90 transition-transform duration-150 ${
               activePage === 'profile' || activePage === 'login'
                 ? 'bg-gradient-to-tr from-primary to-primary-container text-white'

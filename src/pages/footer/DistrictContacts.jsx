@@ -392,7 +392,7 @@ export default function DistrictContacts({ onNavigate }) {
                     District Rapid Response
                   </h3>
                   <p className="text-white/80 text-sm font-body mb-8 flex-grow">
-                    Direct line for emergency services within the Binondo heritage district.
+                    Direct line for emergency services within the Explore Binondo district.
                   </p>
                   <div className="flex flex-col gap-3">
                     <a
