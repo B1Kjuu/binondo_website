@@ -18,16 +18,6 @@ export default function FoodCrawlGuide({ onNavigate }) {
     return streetOk && categoryOk
   }
 
-  const hasMatches = [
-    matches('quintin-paredes', 'dim-sum'),
-    matches('quintin-paredes', 'street-food'),
-    matches('ongpin', 'pastries-hopia'),
-    matches('sabino-padilla', 'fine-dining'),
-    matches('quintin-paredes', 'street-food'),
-    matches('ongpin', 'pastries-hopia'),
-    matches('sabino-padilla', 'fine-dining'),
-  ].some(Boolean)
-
   const openWaiYingProfile = () => {
     onNavigate?.('food-wai-ying')
   }
@@ -51,7 +41,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
   const extraStops = [
     {
       page: 'food-dong-bei-dumplings',
-      street: 'quintin-paredes',
+      street: 'yuchengco',
       category: 'dim-sum',
       badge: 'Legendary Spot',
       title: 'Dong Bei Dumplings',
@@ -61,7 +51,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
     },
     {
       page: 'food-tasty-dumplings',
-      street: 'quintin-paredes',
+      street: 'norberto-ty',
       category: 'street-food',
       title: 'Tasty Dumplings',
       image: '/images/food/tasty-dumplings.jpg',
@@ -71,7 +61,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
     },
     {
       page: 'food-polland-fresh-lumpia',
-      street: 'quintin-paredes',
+      street: 'escolta',
       category: 'street-food',
       badge: 'Fresh Lumpia',
       title: 'Polland Fresh Lumpia',
@@ -101,7 +91,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
     },
     {
       page: 'food-chef-panda-dimsum-house',
-      street: 'ongpin',
+      street: 'reina-regente',
       category: 'dim-sum',
       badge: 'Cantonese Tea House',
       title: 'Chef Panda Dimsum House',
@@ -111,7 +101,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
     },
     {
       page: 'food-1919-grand-cafe',
-      street: 'sabino-padilla',
+      street: 'juan-luna',
       category: 'fine-dining',
       badge: 'Coffee',
       title: '1919 Grand Cafe',
@@ -151,7 +141,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
     },
     {
       page: 'food-big-bowl-noodles',
-      street: 'ongpin',
+      street: 'yuchengco',
       category: 'noodle-houses',
       badge: 'Noodle House',
       title: 'Big Bowl Noodles',
@@ -225,6 +215,14 @@ export default function FoodCrawlGuide({ onNavigate }) {
     matches(item.street, item.category)
   )
 
+  // Now that visibleExtraStops is defined, compute hasMatches properly
+  const hasMatches =
+    matches('benavidez', 'dim-sum') ||
+    matches('quintin-paredes', 'street-food') ||
+    matches('ongpin', 'pastries-hopia') ||
+    matches('sabino-padilla', 'fine-dining') ||
+    visibleExtraStops.length > 0
+
   const chipClass = (isActive) =>
     isActive
       ? 'px-5 py-2 rounded-full bg-secondary-container text-on-secondary-container font-bold text-sm shadow-sm'
@@ -286,17 +284,31 @@ export default function FoodCrawlGuide({ onNavigate }) {
               </button>
               <button
                 type="button"
-                className={mobileChipClass(streetFilter === 'sabino-padilla')}
-                onClick={() => toggleStreetFilter('sabino-padilla')}
-              >
-                Yuchengco
-              </button>
-              <button
-                type="button"
                 className={mobileChipClass(streetFilter === 'quintin-paredes')}
                 onClick={() => toggleStreetFilter('quintin-paredes')}
               >
-                Carvajal
+                Quintin Paredes
+              </button>
+              <button
+                type="button"
+                className={mobileChipClass(streetFilter === 'sabino-padilla')}
+                onClick={() => toggleStreetFilter('sabino-padilla')}
+              >
+                Sabino Padilla
+              </button>
+              <button
+                type="button"
+                className={mobileChipClass(streetFilter === 'benavidez')}
+                onClick={() => toggleStreetFilter('benavidez')}
+              >
+                Benavidez
+              </button>
+              <button
+                type="button"
+                className={mobileChipClass(streetFilter === 'yuchengco')}
+                onClick={() => toggleStreetFilter('yuchengco')}
+              >
+                Yuchengco
               </button>
             </div>
             <div className="flex gap-2">
@@ -333,7 +345,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
         </section>
 
         <section className="px-6 space-y-10">
-          {matches('quintin-paredes', 'dim-sum') && (
+          {matches('benavidez', 'dim-sum') && (
             <article
               className="bg-surface-container-low rounded-xl overflow-hidden"
               onClick={openWaiYingProfile}
@@ -366,7 +378,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
                       Wai Ying Fastfood
                     </h3>
                     <p className="text-secondary font-label text-sm font-medium">
-                      Binondo Masterpiece • Dim Sum
+                      Benavidez Street • Dim Sum
                     </p>
                   </div>
                 </div>
@@ -436,7 +448,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
                       Quik Snack
                     </h3>
                     <p className="text-secondary font-label text-sm font-medium">
-                      Carvajal Alley • Heritage Cuisine
+                      Quintin Paredes Street • Street Food
                     </p>
                   </div>
                 </div>
@@ -542,7 +554,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
             </article>
           )}
 
-          {matches('sabino-padilla', 'fine-dining') && (
+          {matches('quintin-paredes', 'fine-dining') && (
             <article
               className="bg-surface-container-low rounded-xl overflow-hidden mt-6"
               onClick={openPresidentGrandPalaceProfile}
@@ -556,7 +568,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
                 <img
                   className="w-full h-full object-cover"
                   alt="Traditional Cantonese banquet table"
-                    src="/images/food/1919-grand-cafe.jpg"
+                  src="/images/food/president.jpg"
                 />
                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-1">
                   <span
@@ -575,7 +587,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
                       President Grand Palace
                     </h3>
                     <p className="text-secondary font-label text-sm font-medium">
-                      Yuchengco Street • Fine Dining
+                      Sabino Padilla Street • Fine Dining
                     </p>
                   </div>
                 </div>
@@ -611,7 +623,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
             </article>
           )}
 
-          {matches('sabino-padilla', 'fine-dining') && (
+          {matches('quintin-paredes', 'fine-dining') && (
             <article
               className="bg-surface-container-low rounded-xl overflow-hidden"
               onClick={openSincerityCafeProfile}
@@ -644,7 +656,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
                       Sincerity Cafe
                     </h3>
                     <p className="text-secondary font-label text-sm font-medium">
-                      Yuchengco Street • Fine Dining
+                      Sabino Padilla Street • Fine Dining
                     </p>
                   </div>
                 </div>
@@ -723,9 +735,9 @@ export default function FoodCrawlGuide({ onNavigate }) {
                     </div>
                     <p className="text-xs font-bold text-on-surface-variant mb-4 flex items-center gap-1">
                       <span className="material-symbols-outlined text-sm">payments</span>{' '}
-                      ${item.price}
+                      {item.price}
                       <span className="material-symbols-outlined text-sm">location_on</span>{' '}
-                        {item.address}
+                      {item.address}
                     </p>
                     <p className="text-on-surface/80 text-sm mb-6 leading-relaxed">
                       Short description for {item.title} — incorporated into the unified crawl.
@@ -781,628 +793,624 @@ export default function FoodCrawlGuide({ onNavigate }) {
       </main>
 
       <main className="hidden md:block pt-28 pb-20 px-6 max-w-screen-2xl mx-auto">
-      <header className="mb-16">
-        <h1 className="font-headline text-6xl md:text-8xl font-black text-primary leading-none tracking-tighter mb-4">
-          The Great <br />Food Crawl
-        </h1>
-        <p className="max-w-2xl text-lg text-on-surface-variant font-medium">
-          A curated journey through the world&apos;s oldest Chinatown. From
-          century-old noodle houses to secret street-side dim sum windows.
-        </p>
-      </header>
+        <header className="mb-16">
+          <h1 className="font-headline text-6xl md:text-8xl font-black text-primary leading-none tracking-tighter mb-4">
+            The Great <br />Food Crawl
+          </h1>
+          <p className="max-w-2xl text-lg text-on-surface-variant font-medium">
+            A curated journey through the world&apos;s oldest Chinatown. From
+            century-old noodle houses to secret street-side dim sum windows.
+          </p>
+        </header>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-        <div className="lg:col-span-9">
-          <section className="mb-12 flex flex-col gap-6">
-            <div className="flex flex-col md:flex-row md:items-center gap-4">
-              <span className="font-label text-xs font-extrabold uppercase tracking-widest text-secondary">
-                By Street
-              </span>
-              <div className="flex flex-wrap gap-2">
-                <button
-                  type="button"
-                  className={chipClass(streetFilter === 'all')}
-                  onClick={() => setStreetFilter('all')}
-                >
-                  All Streets
-                </button>
-                <button
-                  type="button"
-                  className={chipClass(streetFilter === 'ongpin')}
-                  onClick={() => toggleStreetFilter('ongpin')}
-                >
-                  Ongpin
-                </button>
-                <button
-                  type="button"
-                  className={chipClass(streetFilter === 'quintin-paredes')}
-                  onClick={() => toggleStreetFilter('quintin-paredes')}
-                >
-                  Quintin Paredes
-                </button>
-                <button
-                  type="button"
-                  className={chipClass(streetFilter === 'sabino-padilla')}
-                  onClick={() => toggleStreetFilter('sabino-padilla')}
-                >
-                  Sabino Padilla
-                </button>
-              </div>
-            </div>
-            <div className="flex flex-col md:flex-row md:items-center gap-4">
-              <span className="font-label text-xs font-extrabold uppercase tracking-widest text-secondary">
-                By Category
-              </span>
-              <div className="flex flex-wrap gap-2">
-                <button
-                  type="button"
-                  className={chipClass(categoryFilter === 'all')}
-                  onClick={() => setCategoryFilter('all')}
-                >
-                  All
-                </button>
-                <button
-                  type="button"
-                  className={chipClass(categoryFilter === 'dim-sum')}
-                  onClick={() => toggleCategoryFilter('dim-sum')}
-                >
-                  Dim Sum
-                </button>
-                <button
-                  type="button"
-                  className={chipClass(categoryFilter === 'noodle-houses')}
-                  onClick={() => toggleCategoryFilter('noodle-houses')}
-                >
-                  Noodle Houses
-                </button>
-                <button
-                  type="button"
-                  className={chipClass(categoryFilter === 'pastries-hopia')}
-                  onClick={() => toggleCategoryFilter('pastries-hopia')}
-                >
-                  Pastries &amp; Hopia
-                </button>
-                <button
-                  type="button"
-                  className={chipClass(categoryFilter === 'street-food')}
-                  onClick={() => toggleCategoryFilter('street-food')}
-                >
-                  Street Food
-                </button>
-                <button
-                  type="button"
-                  className={chipClass(categoryFilter === 'fine-dining')}
-                  onClick={() => toggleCategoryFilter('fine-dining')}
-                >
-                  Fine Dining
-                </button>
-              </div>
-            </div>
-          </section>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {matches('quintin-paredes', 'dim-sum') && (
-              <article
-                className="bg-surface-container-low rounded-xl overflow-hidden group transition-all duration-500 hover:shadow-2xl cursor-pointer"
-                onClick={openWaiYingProfile}
-              >
-              <div className="relative h-64 overflow-hidden">
-                <img
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  alt="Steaming xiao long bao"
-                  src="/images/food/waiying-dim-sum.jpg"
-                />
-                <div className="absolute top-4 left-4">
-                  <span className="bg-secondary-container text-on-secondary-container text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
-                    Legendary Spot
-                  </span>
-                </div>
-              </div>
-              <div className="p-8">
-                <div className="flex justify-between items-start mb-2">
-                  <h3 className="font-headline text-2xl font-bold text-primary">
-                    Wai Ying Fastfood
-                  </h3>
-                  <div className="flex items-center gap-1 text-secondary">
-                    <span
-                      className="material-symbols-outlined text-sm"
-                      style={{ fontVariationSettings: "'FILL' 1" }}
-                    >
-                      star
-                    </span>
-                    <span className="font-bold text-sm">4.8</span>
-                  </div>
-                </div>
-                <p className="text-xs font-bold text-on-surface-variant mb-4 flex items-center gap-1">
-                  <span className="material-symbols-outlined text-sm">
-                    payments
-                  </span>{' '}
-                  ₱500–1,000
-                  <span className="material-symbols-outlined text-sm">
-                    location_on
-                  </span>{' '}
-                  810 Benavidez St.
-                </p>
-                <p className="text-on-surface/80 text-sm mb-6 leading-relaxed">
-                  Famous for their{' '}
-                  <span className="font-bold text-primary italic">
-                    Roasted Duck Rice
-                  </span>{' '}
-                  and hand-pulled dim sum. Expect a queue during lunch hours.
-                </p>
-                <div className="flex gap-4 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div className="lg:col-span-9">
+            <section className="mb-12 flex flex-col gap-6">
+              <div className="flex flex-col md:flex-row md:items-center gap-4">
+                <span className="font-label text-xs font-extrabold uppercase tracking-widest text-secondary">
+                  By Street
+                </span>
+                <div className="flex flex-wrap gap-2">
                   <button
-                    className="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest group/link"
                     type="button"
-                    onClick={(event) => {
-                      event.stopPropagation()
-                      openWaiYingProfile()
-                    }}
+                    className={chipClass(streetFilter === 'all')}
+                    onClick={() => setStreetFilter('all')}
                   >
-                    View Profile
-                    <span className="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">
-                      arrow_forward
-                    </span>
+                    All Streets
                   </button>
-                  <div className="h-px flex-grow bg-outline-variant/30" />
-                </div>
-                <div className="mt-8 pt-6 border-t border-outline-variant/20">
-                  <button className="w-full py-3 rounded-lg bg-surface-container-highest text-on-surface font-bold text-xs uppercase tracking-widest hover:bg-secondary-container transition-colors">
-                    Rate Your Experience
+                  <button
+                    type="button"
+                    className={chipClass(streetFilter === 'ongpin')}
+                    onClick={() => toggleStreetFilter('ongpin')}
+                  >
+                    Ongpin
+                  </button>
+                  <button
+                    type="button"
+                    className={chipClass(streetFilter === 'quintin-paredes')}
+                    onClick={() => toggleStreetFilter('quintin-paredes')}
+                  >
+                    Quintin Paredes
+                  </button>   
+                  <button
+                    type="button"
+                    className={chipClass(streetFilter === 'benavidez')}
+                    onClick={() => toggleStreetFilter('benavidez')}
+                  >
+                    Benavidez
+                  </button>
+                  <button
+                    type="button"
+                    className={chipClass(streetFilter === 'yuchengco')}
+                    onClick={() => toggleStreetFilter('yuchengco')}
+                  >
+                    Yuchengco
                   </button>
                 </div>
               </div>
-              </article>
-            )}
-
-            {visibleExtraStops.length > 0 && (
-              <>
-                {visibleExtraStops.map((item) => (
-                  <article
-                    key={item.page}
-                    className="bg-surface-container-low rounded-xl overflow-hidden group transition-all duration-500 hover:shadow-2xl cursor-pointer"
-                    onClick={() => onNavigate?.(item.page)}
+              <div className="flex flex-col md:flex-row md:items-center gap-4">
+                <span className="font-label text-xs font-extrabold uppercase tracking-widest text-secondary">
+                  By Category
+                </span>
+                <div className="flex flex-wrap gap-2">
+                  <button
+                    type="button"
+                    className={chipClass(categoryFilter === 'all')}
+                    onClick={() => setCategoryFilter('all')}
                   >
-                    <div className="relative h-64 overflow-hidden">
-                      <img
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                        alt={item.title}
-                        src={item.image}
-                      />
-                      <div className="absolute top-4 left-4">
-                        <span className="bg-secondary-container text-on-secondary-container text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
-                          {item.badge}
+                    All
+                  </button>
+                  <button
+                    type="button"
+                    className={chipClass(categoryFilter === 'dim-sum')}
+                    onClick={() => toggleCategoryFilter('dim-sum')}
+                  >
+                    Dim Sum
+                  </button>
+                  <button
+                    type="button"
+                    className={chipClass(categoryFilter === 'noodle-houses')}
+                    onClick={() => toggleCategoryFilter('noodle-houses')}
+                  >
+                    Noodle Houses
+                  </button>
+                  <button
+                    type="button"
+                    className={chipClass(categoryFilter === 'pastries-hopia')}
+                    onClick={() => toggleCategoryFilter('pastries-hopia')}
+                  >
+                    Pastries &amp; Hopia
+                  </button>
+                  <button
+                    type="button"
+                    className={chipClass(categoryFilter === 'street-food')}
+                    onClick={() => toggleCategoryFilter('street-food')}
+                  >
+                    Street Food
+                  </button>
+                  <button
+                    type="button"
+                    className={chipClass(categoryFilter === 'fine-dining')}
+                    onClick={() => toggleCategoryFilter('fine-dining')}
+                  >
+                    Fine Dining
+                  </button>
+                </div>
+              </div>
+            </section>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {matches('benavidez', 'dim-sum') && (
+                <article
+                  className="bg-surface-container-low rounded-xl overflow-hidden group transition-all duration-500 hover:shadow-2xl cursor-pointer"
+                  onClick={openWaiYingProfile}
+                >
+                  <div className="relative h-64 overflow-hidden">
+                    <img
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      alt="Steaming xiao long bao"
+                      src="/images/food/waiying-dim-sum.jpg"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <span className="bg-secondary-container text-on-secondary-container text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
+                        Legendary Spot
+                      </span>
+                    </div>
+                  </div>
+                  <div className="p-8">
+                    <div className="flex justify-between items-start mb-2">
+                      <h3 className="font-headline text-2xl font-bold text-primary">
+                        Wai Ying Fastfood
+                      </h3>
+                      <div className="flex items-center gap-1 text-secondary">
+                        <span
+                          className="material-symbols-outlined text-sm"
+                          style={{ fontVariationSettings: "'FILL' 1" }}
+                        >
+                          star
                         </span>
+                        <span className="font-bold text-sm">4.8</span>
                       </div>
                     </div>
-                    <div className="p-8">
-                      <div className="flex justify-between items-start mb-2">
-                        <h3 className="font-headline text-2xl font-bold text-primary">
-                          {item.title}
-                        </h3>
-                        <div className="flex items-center gap-1 text-secondary">
-                          <span
-                            className="material-symbols-outlined text-sm"
-                            style={{ fontVariationSettings: "'FILL' 1" }}
-                          >
-                            star
+                    <p className="text-xs font-bold text-on-surface-variant mb-4 flex items-center gap-1">
+                      <span className="material-symbols-outlined text-sm">payments</span>{' '}
+                      ₱500–1,000
+                      <span className="material-symbols-outlined text-sm">location_on</span>{' '}
+                      810 Benavidez St.
+                    </p>
+                    <p className="text-on-surface/80 text-sm mb-6 leading-relaxed">
+                      Famous for their{' '}
+                      <span className="font-bold text-primary italic">
+                        Roasted Duck Rice
+                      </span>{' '}
+                      and hand-pulled dim sum. Expect a queue during lunch hours.
+                    </p>
+                    <div className="flex gap-4 items-center">
+                      <button
+                        className="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest group/link"
+                        type="button"
+                        onClick={(event) => {
+                          event.stopPropagation()
+                          openWaiYingProfile()
+                        }}
+                      >
+                        View Profile
+                        <span className="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">
+                          arrow_forward
+                        </span>
+                      </button>
+                      <div className="h-px flex-grow bg-outline-variant/30" />
+                    </div>
+                    <div className="mt-8 pt-6 border-t border-outline-variant/20">
+                      <button
+                        type="button"
+                        className="w-full py-3 rounded-lg bg-surface-container-highest text-on-surface font-bold text-xs uppercase tracking-widest hover:bg-secondary-container transition-colors"
+                        onClick={(event) => {
+                          event.stopPropagation()
+                          goToRate()
+                        }}
+                      >
+                        Rate Your Experience
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              )}
+
+              {matches('carvajal', 'street-food') && (
+                <article
+                  className="bg-surface-container-low rounded-xl overflow-hidden group transition-all duration-500 hover:shadow-2xl cursor-pointer"
+                  onClick={openQuikSnackProfile}
+                >
+                  <div className="relative h-64 overflow-hidden">
+                    <img
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      alt="Outdoor noodle stall in Binondo"
+                      src="/images/food/quik-snack-street-food.jpg"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <span className="bg-primary text-on-primary text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
+                        Must Try
+                      </span>
+                    </div>
+                  </div>
+                  <div className="p-8">
+                    <div className="flex justify-between items-start mb-2">
+                      <h3 className="font-headline text-2xl font-bold text-primary">
+                        Quik Snack
+                      </h3>
+                      <div className="flex items-center gap-1 text-secondary">
+                        <span
+                          className="material-symbols-outlined text-sm"
+                          style={{ fontVariationSettings: "'FILL' 1" }}
+                        >
+                          star
+                        </span>
+                        <span className="font-bold text-sm">4.6</span>
+                      </div>
+                    </div>
+                    <p className="text-xs font-bold text-on-surface-variant mb-4 flex items-center gap-1">
+                      <span className="material-symbols-outlined text-sm">payments</span>{' '}
+                      ₱200–400
+                      <span className="material-symbols-outlined text-sm">location_on</span>{' '}
+                      637 Carvajal St
+                    </p>
+                    <p className="text-on-surface/80 text-sm mb-6 leading-relaxed">
+                      Tucked in a narrow alley, their{' '}
+                      <span className="font-bold text-primary italic">
+                        Indonesian Tauhu
+                      </span>{' '}
+                      and Oyster Cake are cultural heritage on a plate.
+                    </p>
+                    <div className="flex gap-4 items-center">
+                      <a
+                        className="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest group/link"
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault()
+                          onNavigate?.('map')
+                        }}
+                      >
+                        View on Map
+                        <span className="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">
+                          arrow_forward
+                        </span>
+                      </a>
+                      <div className="h-px flex-grow bg-outline-variant/30" />
+                    </div>
+                    <div className="mt-8 pt-6 border-t border-outline-variant/20">
+                      <button
+                        type="button"
+                        className="w-full py-3 rounded-lg bg-surface-container-highest text-on-surface font-bold text-xs uppercase tracking-widest hover:bg-secondary-container transition-colors"
+                        onClick={() => onNavigate?.('rate')}
+                      >
+                        Rate Your Experience
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              )}
+
+              {matches('ongpin', 'pastries-hopia') && (
+                <article
+                  className="bg-surface-container-low rounded-xl overflow-hidden group transition-all duration-500 hover:shadow-2xl cursor-pointer"
+                  onClick={openEngBeeTinProfile}
+                >
+                  <div className="relative h-64 overflow-hidden">
+                    <img
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      alt="Stack of hopia pastries"
+                      src="/images/food/engbeetin-store.jpg"
+                    />
+                  </div>
+                  <div className="p-8">
+                    <div className="flex justify-between items-start mb-2">
+                      <h3 className="font-headline text-2xl font-bold text-primary">
+                        Eng Bee Tin
+                      </h3>
+                      <div className="flex items-center gap-1 text-secondary">
+                        <span
+                          className="material-symbols-outlined text-sm"
+                          style={{ fontVariationSettings: "'FILL' 1" }}
+                        >
+                          star
+                        </span>
+                        <span className="font-bold text-sm">4.9</span>
+                      </div>
+                    </div>
+                    <p className="text-xs font-bold text-on-surface-variant mb-4 flex items-center gap-1">
+                      <span className="material-symbols-outlined text-sm">payments</span>{' '}
+                      ₱1–500
+                      <span className="material-symbols-outlined text-sm">location_on</span>{' '}
+                      628 Ongpin St.
+                    </p>
+                    <p className="text-on-surface/80 text-sm mb-6 leading-relaxed">
+                      The pioneer of{' '}
+                      <span className="font-bold text-primary italic">Ube Hopia</span>
+                      . A massive purple-clad flagship store that is a mandatory
+                      souvenir stop.
+                    </p>
+                    <div className="flex gap-4 items-center">
+                      <a
+                        className="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest group/link"
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault()
+                          onNavigate?.('map')
+                        }}
+                      >
+                        View on Map
+                        <span className="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">
+                          arrow_forward
+                        </span>
+                      </a>
+                      <div className="h-px flex-grow bg-outline-variant/30" />
+                    </div>
+                    <div className="mt-8 pt-6 border-t border-outline-variant/20">
+                      <button
+                        type="button"
+                        className="w-full py-3 rounded-lg bg-surface-container-highest text-on-surface font-bold text-xs uppercase tracking-widest hover:bg-secondary-container transition-colors"
+                        onClick={() => onNavigate?.('rate')}
+                      >
+                        Rate Your Experience
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              )}
+
+              {matches('quintin-paredes', 'fine-dining') && (
+                <article
+                  className="bg-surface-container-low rounded-xl overflow-hidden group transition-all duration-500 hover:shadow-2xl cursor-pointer"
+                  onClick={openPresidentGrandPalaceProfile}
+                >
+                  <div className="relative h-64 overflow-hidden">
+                    <img
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      alt="Traditional Cantonese banquet table"
+                      src="/images/food/president.jpg"
+                    />
+                  </div>
+                  <div className="p-8">
+                    <div className="flex justify-between items-start mb-2">
+                      <h3 className="font-headline text-2xl font-bold text-primary">
+                        President Grand Palace
+                      </h3>
+                      <div className="flex items-center gap-1 text-secondary">
+                        <span
+                          className="material-symbols-outlined text-sm"
+                          style={{ fontVariationSettings: "'FILL' 1" }}
+                        >
+                          star
+                        </span>
+                        <span className="font-bold text-sm">4.6</span>
+                      </div>
+                    </div>
+                    <p className="text-xs font-bold text-on-surface-variant mb-4 flex items-center gap-1">
+                      <span className="material-symbols-outlined text-sm">payments</span>{' '}
+                      ₱1–500
+                      <span className="material-symbols-outlined text-sm">location_on</span>{' '}
+                      519 Quintin Paredes St.
+                    </p>
+                    <p className="text-on-surface/80 text-sm mb-6 leading-relaxed">
+                      Traditional Cantonese banquet dining—best shared family-style
+                      for celebrations and big gatherings.
+                    </p>
+                    <div className="flex gap-4 items-center">
+                      <a
+                        className="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest group/link"
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault()
+                          e.stopPropagation()
+                          onNavigate?.('map')
+                        }}
+                      >
+                        View on Map
+                        <span className="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">
+                          arrow_forward
+                        </span>
+                      </a>
+                      <div className="h-px flex-grow bg-outline-variant/30" />
+                    </div>
+                    <div className="mt-8 pt-6 border-t border-outline-variant/20">
+                      <button
+                        type="button"
+                        className="w-full py-3 rounded-lg bg-surface-container-highest text-on-surface font-bold text-xs uppercase tracking-widest hover:bg-secondary-container transition-colors"
+                        onClick={(event) => {
+                          event.stopPropagation()
+                          onNavigate?.('rate')
+                        }}
+                      >
+                        Rate Your Experience
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              )}
+
+              {matches('quintin-paredes', 'fine-dining') && (
+                <article
+                  className="bg-surface-container-low rounded-xl overflow-hidden group transition-all duration-500 hover:shadow-2xl cursor-pointer"
+                  onClick={openSincerityCafeProfile}
+                >
+                  <div className="relative h-64 overflow-hidden">
+                    <img
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      alt="Traditional fried chicken"
+                      src="/images/food/sincerity-fried-chicken.jpg"
+                    />
+                  </div>
+                  <div className="p-8">
+                    <div className="flex justify-between items-start mb-2">
+                      <h3 className="font-headline text-2xl font-bold text-primary">
+                        Sincerity Cafe
+                      </h3>
+                      <div className="flex items-center gap-1 text-secondary">
+                        <span
+                          className="material-symbols-outlined text-sm"
+                          style={{ fontVariationSettings: "'FILL' 1" }}
+                        >
+                          star
+                        </span>
+                        <span className="font-bold text-sm">4.7</span>
+                      </div>
+                    </div>
+                    <p className="text-xs font-bold text-on-surface-variant mb-4 flex items-center gap-1">
+                      <span className="material-symbols-outlined text-sm">payments</span>{' '}
+                      ₱1–500 •{' '}
+                      <span className="material-symbols-outlined text-sm">location_on</span>{' '}
+                      519 Quintin Paredes St.
+                    </p>
+                    <p className="text-on-surface/80 text-sm mb-6 leading-relaxed">
+                      Their signature{' '}
+                      <span className="font-bold text-primary italic">
+                        Fried Chicken
+                      </span>{' '}
+                      with secret spices has been a local favorite since 1956.
+                    </p>
+                    <div className="flex gap-4 items-center">
+                      <a
+                        className="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest group/link"
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault()
+                          onNavigate?.('map')
+                        }}
+                      >
+                        View on Map
+                        <span className="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">
+                          arrow_forward
+                        </span>
+                      </a>
+                      <div className="h-px flex-grow bg-outline-variant/30" />
+                    </div>
+                    <div className="mt-8 pt-6 border-t border-outline-variant/20">
+                      <button
+                        type="button"
+                        className="w-full py-3 rounded-lg bg-surface-container-highest text-on-surface font-bold text-xs uppercase tracking-widest hover:bg-secondary-container transition-colors"
+                        onClick={() => onNavigate?.('rate')}
+                      >
+                        Rate Your Experience
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              )}
+
+              {visibleExtraStops.length > 0 && (
+                <>
+                  {visibleExtraStops.map((item) => (
+                    <article
+                      key={item.page}
+                      className="bg-surface-container-low rounded-xl overflow-hidden group transition-all duration-500 hover:shadow-2xl cursor-pointer"
+                      onClick={() => onNavigate?.(item.page)}
+                    >
+                      <div className="relative h-64 overflow-hidden">
+                        <img
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                          alt={item.title}
+                          src={item.image}
+                        />
+                        <div className="absolute top-4 left-4">
+                          <span className="bg-secondary-container text-on-secondary-container text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
+                            {item.badge}
                           </span>
-                          <span className="font-bold text-sm">4.6</span>
                         </div>
                       </div>
-                      <p className="text-xs font-bold text-on-surface-variant mb-4 flex items-center gap-1">
-                        <span className="material-symbols-outlined text-sm">payments</span>{' '}
-                        {item.price}
-                      <span className="material-symbols-outlined text-sm">location_on</span>{' '}
-                        {item.address}
-                      </p>
-                      <p className="text-on-surface/80 text-sm mb-6 leading-relaxed">
-                        Short description for {item.title} — incorporated into the unified crawl.
-                      </p>
-                      <div className="flex gap-4 items-center">
-                        <button
-                          className="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest group/link"
-                          type="button"
-                          onClick={(event) => {
-                            event.stopPropagation()
-                            onNavigate?.(item.page)
-                          }}
-                        >
-                          View Profile
-                          <span className="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">
-                            arrow_forward
-                          </span>
-                        </button>
-                        <div className="h-px flex-grow bg-outline-variant/30" />
+                      <div className="p-8">
+                        <div className="flex justify-between items-start mb-2">
+                          <h3 className="font-headline text-2xl font-bold text-primary">
+                            {item.title}
+                          </h3>
+                          <div className="flex items-center gap-1 text-secondary">
+                            <span
+                              className="material-symbols-outlined text-sm"
+                              style={{ fontVariationSettings: "'FILL' 1" }}
+                            >
+                              star
+                            </span>
+                            <span className="font-bold text-sm">4.6</span>
+                          </div>
+                        </div>
+                        <p className="text-xs font-bold text-on-surface-variant mb-4 flex items-center gap-1">
+                          <span className="material-symbols-outlined text-sm">payments</span>{' '}
+                          {item.price}
+                          <span className="material-symbols-outlined text-sm">location_on</span>{' '}
+                          {item.address}
+                        </p>
+                        <p className="text-on-surface/80 text-sm mb-6 leading-relaxed">
+                          Short description for {item.title} — incorporated into the unified crawl.
+                        </p>
+                        <div className="flex gap-4 items-center">
+                          <button
+                            className="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest group/link"
+                            type="button"
+                            onClick={(event) => {
+                              event.stopPropagation()
+                              onNavigate?.(item.page)
+                            }}
+                          >
+                            View Profile
+                            <span className="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">
+                              arrow_forward
+                            </span>
+                          </button>
+                          <div className="h-px flex-grow bg-outline-variant/30" />
+                        </div>
                       </div>
-                    </div>
-                  </article>
-                ))}
-              </>
-            )}
+                    </article>
+                  ))}
+                </>
+              )}
+            </div>
 
-            {matches('quintin-paredes', 'street-food') && (
-              <article
-                className="bg-surface-container-low rounded-xl overflow-hidden group transition-all duration-500 hover:shadow-2xl cursor-pointer"
-                onClick={openQuikSnackProfile}
-              >
-              <div className="relative h-64 overflow-hidden">
-                <img
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  alt="Outdoor noodle stall in Binondo"
-                  src="/images/food/quik-snack-street-food.jpg"
-                />
-                <div className="absolute top-4 left-4">
-                  <span className="bg-primary text-on-primary text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
-                    Must Try
+            {!hasMatches && (
+              <div className="mt-10 bg-surface-container-low rounded-xl p-8 text-on-surface-variant">
+                No matches found for your filters.
+              </div>
+            )}
+          </div>
+
+          <aside className="lg:col-span-3">
+            <div className="sticky top-32 flex flex-col gap-8">
+              <div className="bg-surface-container p-8 rounded-xl relative overflow-hidden">
+                <div className="absolute -right-4 -top-4 opacity-10">
+                  <span className="material-symbols-outlined text-8xl text-primary">
+                    restaurant
                   </span>
                 </div>
-              </div>
-              <div className="p-8">
-                <div className="flex justify-between items-start mb-2">
-                  <h3 className="font-headline text-2xl font-bold text-primary">
-                    Quik Snack
-                  </h3>
-                  <div className="flex items-center gap-1 text-secondary">
-                    <span
-                      className="material-symbols-outlined text-sm"
-                      style={{ fontVariationSettings: "'FILL' 1" }}
-                    >
-                      star
-                    </span>
-                    <span className="font-bold text-sm">4.6</span>
+                <h4 className="font-headline text-xl font-black text-primary mb-6 flex items-center gap-2">
+                  <span className="material-symbols-outlined text-secondary">
+                    tips_and_updates
+                  </span>
+                  Food Crawl Tip
+                </h4>
+                <div className="space-y-6">
+                  <div>
+                    <h5 className="text-xs font-black uppercase tracking-widest text-secondary mb-2">
+                      Best Time to Visit
+                    </h5>
+                    <p className="text-sm text-on-surface/80 leading-relaxed">
+                      Start early at 8:30 AM for the freshest dim sum. Avoid
+                      weekends if you want to skip the massive 1-hour queues at
+                      popular spots.
+                    </p>
+                  </div>
+                  <div>
+                    <h5 className="text-xs font-black uppercase tracking-widest text-secondary mb-2">
+                      What to Bring
+                    </h5>
+                    <ul className="text-sm text-on-surface/80 space-y-2">
+                      <li className="flex items-center gap-2">
+                        <span className="material-symbols-outlined text-xs text-primary">
+                          check_circle
+                        </span>
+                        Cash (Many stalls only take cash)
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <span className="material-symbols-outlined text-xs text-primary">
+                          check_circle
+                        </span>
+                        Hand Sanitizer
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <span className="material-symbols-outlined text-xs text-primary">
+                          check_circle
+                        </span>
+                        Portable Fan &amp; Umbrella
+                      </li>
+                    </ul>
                   </div>
                 </div>
-                <p className="text-xs font-bold text-on-surface-variant mb-4 flex items-center gap-1">
-                  <span className="material-symbols-outlined text-sm">
-                    payments
-                  </span>{' '}
-                  ₱200–400
-                  <span className="material-symbols-outlined text-sm">
-                    location_on
-                  </span>{' '}
-                  637 Carvajal St
-                </p>
-                <p className="text-on-surface/80 text-sm mb-6 leading-relaxed">
-                  Tucked in a narrow alley, their{' '}
-                  <span className="font-bold text-primary italic">
-                    Indonesian Tauhu
-                  </span>{' '}
-                  and Oyster Cake are cultural heritage on a plate.
-                </p>
-                <div className="flex gap-4 items-center">
-                  <a
-                    className="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest group/link"
-                    href="#"
-                    onClick={(e) => {
-                      e.preventDefault()
-                      onNavigate?.('map')
-                    }}
-                  >
-                    View on Map
-                    <span className="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">
-                      arrow_forward
-                    </span>
-                  </a>
-                  <div className="h-px flex-grow bg-outline-variant/30" />
-                </div>
-                <div className="mt-8 pt-6 border-t border-outline-variant/20">
+                <div className="mt-8 pt-8 border-t border-outline-variant/30">
                   <button
                     type="button"
-                    className="w-full py-3 rounded-lg bg-surface-container-highest text-on-surface font-bold text-xs uppercase tracking-widest hover:bg-secondary-container transition-colors"
-                    onClick={() => onNavigate?.('rate')}
+                    className="bg-[linear-gradient(15deg,#610008_0%,#890613_100%)] w-full py-4 text-on-primary font-bold text-sm rounded-lg flex items-center justify-center gap-2 shadow-lg hover:opacity-90 transition-opacity"
+                    onClick={goToMap}
                   >
-                    Rate Your Experience
+                    <span className="material-symbols-outlined">map</span>
+                    Download Crawl Route
                   </button>
                 </div>
               </div>
-              </article>
-            )}
 
-            {matches('ongpin', 'pastries-hopia') && (
-              <article
-                className="bg-surface-container-low rounded-xl overflow-hidden group transition-all duration-500 hover:shadow-2xl cursor-pointer"
-                onClick={openEngBeeTinProfile}
-              >
-              <div className="relative h-64 overflow-hidden">
-                <img
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  alt="Stack of hopia pastries"
-                  src="/images/food/engbeetin-store.jpg"
-                />
-              </div>
-              <div className="p-8">
-                <div className="flex justify-between items-start mb-2">
-                  <h3 className="font-headline text-2xl font-bold text-primary">
-                    Eng Bee Tin
-                  </h3>
-                  <div className="flex items-center gap-1 text-secondary">
-                    <span
-                      className="material-symbols-outlined text-sm"
-                      style={{ fontVariationSettings: "'FILL' 1" }}
-                    >
-                      star
-                    </span>
-                    <span className="font-bold text-sm">4.9</span>
-                  </div>
+              <div className="bg-surface-container-low p-4 rounded-xl">
+                <div className="aspect-square bg-surface-container-highest rounded-lg relative overflow-hidden mb-4">
+                  <img
+                    className="w-full h-full object-cover"
+                    alt="Stylized map of Binondo district"
+                    data-location="Manila, Philippines"
+                    src="/images/heritage/escolta-street.jpg"
+                  />
                 </div>
-                <p className="text-xs font-bold text-on-surface-variant mb-4 flex items-center gap-1">
-                  <span className="material-symbols-outlined text-sm">
-                    payments
-                  </span>{' '}
-                  ₱1–500
-                  <span className="material-symbols-outlined text-sm">
-                    location_on
-                  </span>{' '}
-                  628 Ongpin St.
+                <p className="text-[10px] text-center font-bold uppercase tracking-widest text-on-surface-variant">
+                  Live District Activity: High
                 </p>
-                <p className="text-on-surface/80 text-sm mb-6 leading-relaxed">
-                  The pioneer of{' '}
-                  <span className="font-bold text-primary italic">Ube Hopia</span>
-                  . A massive purple-clad flagship store that is a mandatory
-                  souvenir stop.
-                </p>
-                <div className="flex gap-4 items-center">
-                  <a
-                    className="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest group/link"
-                    href="#"
-                    onClick={(e) => {
-                      e.preventDefault()
-                      onNavigate?.('map')
-                    }}
-                  >
-                    View on Map
-                    <span className="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">
-                      arrow_forward
-                    </span>
-                  </a>
-                  <div className="h-px flex-grow bg-outline-variant/30" />
-                </div>
-                <div className="mt-8 pt-6 border-t border-outline-variant/20">
-                  <button
-                    type="button"
-                    className="w-full py-3 rounded-lg bg-surface-container-highest text-on-surface font-bold text-xs uppercase tracking-widest hover:bg-secondary-container transition-colors"
-                    onClick={() => onNavigate?.('rate')}
-                  >
-                    Rate Your Experience
-                  </button>
-                </div>
               </div>
-              </article>
-            )}
-
-            {matches('sabino-padilla', 'fine-dining') && (
-              <article
-                className="bg-surface-container-low rounded-xl overflow-hidden group transition-all duration-500 hover:shadow-2xl cursor-pointer"
-                onClick={openPresidentGrandPalaceProfile}
-              >
-              <div className="relative h-64 overflow-hidden">
-                <img
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  alt="Traditional Cantonese banquet table"
-                  src="/images/food/president.jpg"
-                />
-              </div>
-              <div className="p-8">
-                <div className="flex justify-between items-start mb-2">
-                  <h3 className="font-headline text-2xl font-bold text-primary">
-                    President Grand Palace
-                  </h3>
-                  <div className="flex items-center gap-1 text-secondary">
-                    <span
-                      className="material-symbols-outlined text-sm"
-                      style={{ fontVariationSettings: "'FILL' 1" }}
-                    >
-                      star
-                    </span>
-                    <span className="font-bold text-sm">4.6</span>
-                  </div>
-                </div>
-                <p className="text-xs font-bold text-on-surface-variant mb-4 flex items-center gap-1">
-                  <span className="material-symbols-outlined text-sm">
-                    payments
-                  </span>{' '}
-                  ₱1–500
-                  <span className="material-symbols-outlined text-sm">
-                    location_on
-                  </span>{' '}
-                  519 Quintin Paredes St.
-                </p>
-                <p className="text-on-surface/80 text-sm mb-6 leading-relaxed">
-                  Traditional Cantonese banquet dining—best shared family-style
-                  for celebrations and big gatherings.
-                </p>
-                <div className="flex gap-4 items-center">
-                  <a
-                    className="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest group/link"
-                    href="#"
-                    onClick={(e) => {
-                      e.preventDefault()
-                      e.stopPropagation()
-                      onNavigate?.('map')
-                    }}
-                  >
-                    View on Map
-                    <span className="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">
-                      arrow_forward
-                    </span>
-                  </a>
-                  <div className="h-px flex-grow bg-outline-variant/30" />
-                </div>
-                <div className="mt-8 pt-6 border-t border-outline-variant/20">
-                  <button
-                    type="button"
-                    className="w-full py-3 rounded-lg bg-surface-container-highest text-on-surface font-bold text-xs uppercase tracking-widest hover:bg-secondary-container transition-colors"
-                    onClick={(event) => {
-                      event.stopPropagation()
-                      onNavigate?.('rate')
-                    }}
-                  >
-                    Rate Your Experience
-                  </button>
-                </div>
-              </div>
-              </article>
-            )}
-
-            {matches('sabino-padilla', 'fine-dining') && (
-              <article
-                className="bg-surface-container-low rounded-xl overflow-hidden group transition-all duration-500 hover:shadow-2xl cursor-pointer"
-                onClick={openSincerityCafeProfile}
-              >
-              <div className="relative h-64 overflow-hidden">
-                <img
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  alt="Traditional fried chicken"
-                  src="/images/food/sincerity-fried-chicken.jpg"
-                />
-              </div>
-              <div className="p-8">
-                <div className="flex justify-between items-start mb-2">
-                  <h3 className="font-headline text-2xl font-bold text-primary">
-                    Sincerity Cafe
-                  </h3>
-                  <div className="flex items-center gap-1 text-secondary">
-                    <span
-                      className="material-symbols-outlined text-sm"
-                      style={{ fontVariationSettings: "'FILL' 1" }}
-                    >
-                      star
-                    </span>
-                    <span className="font-bold text-sm">4.7</span>
-                  </div>
-                </div>
-                <p className="text-xs font-bold text-on-surface-variant mb-4 flex items-center gap-1">
-                  <span className="material-symbols-outlined text-sm">
-                    payments
-                  </span>{' '}
-                  ₱1–500 •{' '}
-                  <span className="material-symbols-outlined text-sm">
-                    location_on
-                  </span>{' '}
-                  519 Quintin Paredes St.
-                </p>
-                <p className="text-on-surface/80 text-sm mb-6 leading-relaxed">
-                  Their signature{' '}
-                  <span className="font-bold text-primary italic">
-                    Fried Chicken
-                  </span>{' '}
-                  with secret spices has been a local favorite since 1956.
-                </p>
-                <div className="flex gap-4 items-center">
-                  <a
-                    className="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest group/link"
-                    href="#"
-                    onClick={(e) => {
-                      e.preventDefault()
-                      onNavigate?.('map')
-                    }}
-                  >
-                    View on Map
-                    <span className="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">
-                      arrow_forward
-                    </span>
-                  </a>
-                  <div className="h-px flex-grow bg-outline-variant/30" />
-                </div>
-                <div className="mt-8 pt-6 border-t border-outline-variant/20">
-                  <button
-                    type="button"
-                    className="w-full py-3 rounded-lg bg-surface-container-highest text-on-surface font-bold text-xs uppercase tracking-widest hover:bg-secondary-container transition-colors"
-                    onClick={() => onNavigate?.('rate')}
-                  >
-                    Rate Your Experience
-                  </button>
-                </div>
-              </div>
-              </article>
-            )}
-          </div>
-
-          
-
-          {!hasMatches && (
-            <div className="mt-10 bg-surface-container-low rounded-xl p-8 text-on-surface-variant">
-              No matches found for your filters.
             </div>
-          )}
+          </aside>
         </div>
-
-        <aside className="lg:col-span-3">
-          <div className="sticky top-32 flex flex-col gap-8">
-            <div className="bg-surface-container p-8 rounded-xl relative overflow-hidden">
-              <div className="absolute -right-4 -top-4 opacity-10">
-                <span className="material-symbols-outlined text-8xl text-primary">
-                  restaurant
-                </span>
-              </div>
-              <h4 className="font-headline text-xl font-black text-primary mb-6 flex items-center gap-2">
-                <span className="material-symbols-outlined text-secondary">
-                  tips_and_updates
-                </span>
-                Food Crawl Tip
-              </h4>
-              <div className="space-y-6">
-                <div>
-                  <h5 className="text-xs font-black uppercase tracking-widest text-secondary mb-2">
-                    Best Time to Visit
-                  </h5>
-                  <p className="text-sm text-on-surface/80 leading-relaxed">
-                    Start early at 8:30 AM for the freshest dim sum. Avoid
-                    weekends if you want to skip the massive 1-hour queues at
-                    popular spots.
-                  </p>
-                </div>
-                <div>
-                  <h5 className="text-xs font-black uppercase tracking-widest text-secondary mb-2">
-                    What to Bring
-                  </h5>
-                  <ul className="text-sm text-on-surface/80 space-y-2">
-                    <li className="flex items-center gap-2">
-                      <span className="material-symbols-outlined text-xs text-primary">
-                        check_circle
-                      </span>
-                      Cash (Many stalls only take cash)
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="material-symbols-outlined text-xs text-primary">
-                        check_circle
-                      </span>
-                      Hand Sanitizer
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="material-symbols-outlined text-xs text-primary">
-                        check_circle
-                      </span>
-                      Portable Fan &amp; Umbrella
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="mt-8 pt-8 border-t border-outline-variant/30">
-                <button className="bg-[linear-gradient(15deg,#610008_0%,#890613_100%)] w-full py-4 text-on-primary font-bold text-sm rounded-lg flex items-center justify-center gap-2 shadow-lg hover:opacity-90 transition-opacity">
-                  <span className="material-symbols-outlined">map</span>
-                  Download Crawl Route
-                </button>
-              </div>
-            </div>
-
-            <div className="bg-surface-container-low p-4 rounded-xl">
-              <div className="aspect-square bg-surface-container-highest rounded-lg relative overflow-hidden mb-4">
-                <img
-                  className="w-full h-full object-cover"
-                  alt="Stylized map of Binondo district"
-                  data-location="Manila, Philippines"
-                  src="/images/heritage/escolta-street.jpg"
-                />
-              </div>
-              <p className="text-[10px] text-center font-bold uppercase tracking-widest text-on-surface-variant">
-                Live District Activity: High
-              </p>
-            </div>
-          </div>
-        </aside>
-      </div>
       </main>
     </>
   )

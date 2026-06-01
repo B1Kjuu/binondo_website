@@ -257,7 +257,7 @@ export default function HomePageExploreBinondo({
               <img
                 className="w-full h-40 object-cover"
                 alt="Wai Ying Fastfood exterior"
-                src="/images/food/waiying.jpg"
+                src="/images/food/waiying-dim-sum.jpg"
               />
               <div className="p-4 space-y-3">
                 <span className="inline-block px-2 py-0.5 bg-secondary/10 text-secondary text-[9px] font-bold uppercase tracking-widest rounded">
@@ -601,7 +601,7 @@ export default function HomePageExploreBinondo({
                     <img
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       alt="Bustling dim sum teahouse"
-                      src="/images/food/waiying.jpg"
+                      src="/images/food/waiying-dim-sum.jpg"
                     />
                   <div className="absolute top-4 left-4">
                     <span className="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold uppercase">
