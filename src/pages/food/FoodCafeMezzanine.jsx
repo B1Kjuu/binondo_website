@@ -10,8 +10,8 @@ export default function FoodCafeMezzanine({ onNavigate }) {
       heroImage="/images/food/binondo-food-crawl.jpg"
       heroAlt="Cafe Mezzanine interior"
       rating={4.3}
-      priceLabel="$$"
-      location="650 Ongpin St., Binondo"
+      priceLabel="₱1–500"
+      location="650 Ongpin St"
       storyTitle="Dine with a Cause"
       storyText="Cafe Mezzanine supports a local volunteer fire brigade and offers classic dishes in an airconditioned setting."
       signatureTitle="Kiampong"

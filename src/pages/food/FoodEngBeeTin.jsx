@@ -416,7 +416,7 @@ export default function FoodEngBeeTin({ onNavigate }) {
               {[
                 ['location_on', 'Address', '628 Ongpin St, Binondo, Manila'],
                 ['restaurant', 'Specialty', 'Hopia (Ube) • Pastries'],
-                ['payments', 'Price Range', '$$'],
+                ['payments', 'Price Range', '₱1–500'],
               ].map(([icon, title, detail]) => (
                 <div className="flex gap-4" key={title}>
                   <span className="material-symbols-outlined text-secondary">

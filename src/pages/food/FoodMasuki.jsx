@@ -10,8 +10,8 @@ export default function FoodMasuki({ onNavigate }) {
       heroImage="/images/food/binondo-food-crawl.jpg"
       heroAlt="Masuki mami bowl"
       rating={4.2}
-      priceLabel="$"
-      location="Benavidez St., Binondo"
+      priceLabel="₱1–500"
+      location="931 Benavidez St"
       storyTitle="Nostalgic Noodles"
       storyText="A classic mami spot that evokes nostalgia — perfect for a warm, satisfying bowl."
       signatureTitle="Mami"

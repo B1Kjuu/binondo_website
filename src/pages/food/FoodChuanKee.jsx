@@ -10,8 +10,8 @@ export default function FoodChuanKee({ onNavigate }) {
       heroImage="/images/food/binondo-food-crawl.jpg"
       heroAlt="Chuan Kee roast meats"
       rating={4.2}
-      priceLabel="$"
-      location="650 Ongpin St., Binondo"
+      priceLabel="₱1–500"
+      location="6650 Ongpin St"
       storyTitle="Street-Level Favorite"
       storyText="Chuan Kee has been serving Binondo for years — expect queues but quick, satisfying meals."
       signatureTitle="Roast Pork Asado"

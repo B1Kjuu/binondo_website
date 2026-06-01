@@ -10,8 +10,8 @@ export default function Food1919GrandCafe({ onNavigate }) {
       heroImage="/images/food/1919-grand-cafe.jpg"
       heroAlt="Coffee at 1919 Grand Cafe"
       rating={4.5}
-      priceLabel="$$"
-      location="Escolta / Binondo edge"
+      priceLabel="₱500-1000"
+      location="117 Juan Luna St"
       storyTitle="Wind-Down Stop"
       storyText="The article suggests 1919 Grand Cafe as the optional coffee finish. It’s the kind of place that turns the last hour of the crawl into a pause."
       signatureTitle="Coffee and Dessert"
