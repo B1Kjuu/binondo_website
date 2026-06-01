@@ -2,7 +2,7 @@ export default function NewsLunarNewYearTraffic({ onNavigate }) {
   const handleShare = () => {
     const shareData = {
       title: 'Binondo fire affects over 2,500 families — Manila mayor',
-      text: 'Binondo fire affects over 2,500 families — Binondo Heritage Journal',
+      text: 'Binondo fire affects over 2,500 families — Explore Binondo Journal',
       url: window.location?.href,
     }
 

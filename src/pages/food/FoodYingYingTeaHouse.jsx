@@ -10,8 +10,8 @@ export default function FoodYingYingTeaHouse({ onNavigate }) {
       heroImage="/images/food/yingying.jpg"
       heroAlt="Ying Ying roast meats"
       rating={4.3}
-      priceLabel="$$"
-      location="Dasmariñas St., Binondo"
+      priceLabel="₱1–500"
+      location="233-235 Yuchengco St."
       storyTitle="Classic Tea House"
       storyText="A favorite for roast meats and Cantonese classics — a staple for dim sum lovers."
       signatureTitle="Roast Meats"

@@ -10,8 +10,8 @@ export default function FoodTohoPanciteria({ onNavigate }) {
       heroImage="/images/food/toho.jpg"
       heroAlt="Toho Panciteria interior and dishes"
       rating={4.6}
-      priceLabel="$$"
-      location="Tomas Pinpin St., Binondo"
+      priceLabel="₱1–500"
+      location="422 Tomas Pinpin St."
       storyTitle="A Century of Pancit"
       storyText="Historic panciteria known for asado, Toho chicken, and well-preserved recipes dating back generations."
       signatureTitle="Toho Chicken"

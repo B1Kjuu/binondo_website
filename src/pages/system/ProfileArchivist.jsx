@@ -1,6 +1,17 @@
+import { useAuth } from '../../context/AuthContext'
 import { MAP_LOCATIONS } from '../../utils/locations.js'
 
 export default function ProfileArchivist({ onNavigate }) {
+  const { user, logout } = useAuth()
+
+  const handleLogout = async () => {
+    try {
+      await logout()
+      onNavigate?.('home')
+    } catch (error) {
+      console.error('Logout error:', error)
+    }
+  }
   return (
     <main className="pt-24 pb-12 bg-background">
       {/* Mobile layout (based on provided HTML) */}
@@ -9,9 +20,9 @@ export default function ProfileArchivist({ onNavigate }) {
           <div className="relative">
             <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-surface-container-highest shadow-xl">
               <img
-                alt="Cong. Joel Chua"
+                alt={user?.displayName || 'User'}
                 className="w-full h-full object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWRXjGT13NtS-BdbQjfYQ9tQEgBx3JYFQcSTDHJNzkpWjPTFJH6kTzVgmA_EzwKJsEyH9ukrt9Kga2xGiBtyTgjmNWgJ83KehK9u6QWYPuQmtD4FlwOzBUxW9UtvaKiVJ22b-9O_5LHH0NXFQhCkqK22vpybWwcJ-KYvFQeQmjvKDH0TO4kOaP7Bufi5swTv3dUJerSbxLYW7GIgd6f6zb6KpQWlxztpLXK6gf-VZs3uuksisK0oaBFn5o1Tml_itrZnS_OMv0ysY"
+                src="/images/contacts/default-person.svg"
               />
             </div>
             <div className="absolute -bottom-1 -right-1 bg-secondary-container text-on-secondary-container w-8 h-8 rounded-full flex items-center justify-center shadow-lg">
@@ -26,29 +37,18 @@ export default function ProfileArchivist({ onNavigate }) {
 
           <div className="flex-1">
             <h2 className="font-headline text-2xl text-primary leading-tight">
-              Cong. Joel Chua
+              {user?.displayName || 'Digital Archivist'}
             </h2>
             <p className="text-secondary font-medium text-xs uppercase tracking-widest mt-1">
-              Digital Archivist
+              {user?.email}
             </p>
             <div className="flex gap-4 mt-3">
-              <div className="text-center">
-                <span className="block font-headline text-lg text-on-surface">
-                  42
-                </span>
-                <span className="text-[10px] uppercase tracking-tighter opacity-60">
-                  Landmarks
-                </span>
-              </div>
-              <div className="w-px h-8 bg-outline-variant/30 self-center" />
-              <div className="text-center">
-                <span className="block font-headline text-lg text-on-surface">
-                  128
-                </span>
-                <span className="text-[10px] uppercase tracking-tighter opacity-60">
-                  Contributions
-                </span>
-              </div>
+              <button
+                onClick={handleLogout}
+                className="text-xs font-bold text-error hover:text-error/80 transition-colors uppercase tracking-widest"
+              >
+                Sign Out
+              </button>
             </div>
           </div>
         </section>
@@ -279,15 +279,15 @@ export default function ProfileArchivist({ onNavigate }) {
             <div className="flex items-center gap-3 px-2 mb-2">
               <div className="w-12 h-12 rounded-full overflow-hidden bg-surface-container-highest">
                 <img
-                  alt="Archivist Profile Avatar"
+                  alt={user?.displayName || 'User'}
                   className="w-full h-full object-cover"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBv3KF-jtkqCbAdDTAsYIDrehw-sQPB9v9KNwq4L0TLbrHyu22RVXUs0hyR6cab_srQlF2pE7fEm_CQeclGh62Y5V6zRXt_Lh8D6timHvvAk0eFCzz4eQzqEhQmHR1MPGWAOBl68sfC3Vt2iASoXMaE6iJfkqiwpSQkbpGLwEOF4usY6F0UhsWcP3ahMnyq_HdrXKf-UicfdvkaLD1ObYLL56JqTW112QlE3f361Z-zJYALq4rONGsaLl5kiSQJUgksQkg2vX1t7xE"
+                  src="/images/contacts/default-person.svg"
                 />
               </div>
               <div>
-                <p className="text-on-surface font-bold text-sm">Cong. Joel Chua</p>
+                <p className="text-on-surface font-bold text-sm">{user?.displayName || 'Digital Archivist'}</p>
                 <p className="text-secondary text-xs italic">
-                  Level 4 Heritage Guardian
+                  {user?.email}
                 </p>
               </div>
             </div>
@@ -326,11 +326,11 @@ export default function ProfileArchivist({ onNavigate }) {
               </button>
               <button
                 type="button"
-                className="flex items-center gap-3 p-3 text-on-surface hover:bg-surface-container-low hover:translate-x-1 transition-transform duration-200 rounded-lg mt-auto"
-                onClick={() => onNavigate?.('settings')}
+                className="flex items-center gap-3 p-3 text-error hover:bg-error/10 hover:translate-x-1 transition-transform duration-200 rounded-lg mt-auto font-bold"
+                onClick={handleLogout}
               >
-                <span className="material-symbols-outlined">settings</span>
-                <span className="text-sm">Settings</span>
+                <span className="material-symbols-outlined">logout</span>
+                <span className="text-sm">Sign Out</span>
               </button>
             </nav>
 
@@ -383,31 +383,12 @@ export default function ProfileArchivist({ onNavigate }) {
                     Heritage Guardian
                   </span>
                   <h2 className="text-5xl font-black text-primary leading-tight">
-                    Master Julian Cheng
+                    {user?.displayName || 'Digital Archivist'}
                   </h2>
-                  <p className="text-on-surface/70 font-body max-w-lg">
-                    Dedicated to preserving the culinary and architectural secrets
-                    of Binondo since 2012.
-                  </p>
                 </div>
 
                 <div className="flex gap-12 pb-2">
-                  <div className="text-center">
-                    <p className="text-3xl font-headline font-black text-secondary">
-                      42
-                    </p>
-                    <p className="text-[10px] uppercase tracking-tighter text-on-surface/50 font-bold">
-                      Landmarks Visited
-                    </p>
-                  </div>
-                  <div className="text-center border-l border-outline-variant/30 pl-12">
-                    <p className="text-3xl font-headline font-black text-secondary">
-                      128
-                    </p>
-                    <p className="text-[10px] uppercase tracking-tighter text-on-surface/50 font-bold">
-                      Contributions
-                    </p>
-                  </div>
+                  {/* Placeholder for dynamic stats */}
                 </div>
               </div>
             </header>

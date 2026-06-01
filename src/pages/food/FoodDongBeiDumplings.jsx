@@ -10,8 +10,8 @@ export default function FoodDongBeiDumplings({ onNavigate }) {
       heroImage="/images/food/dongbei-dumplings.jpg"
       heroAlt="Steaming dumplings and xiao long bao"
       rating={4.7}
-      priceLabel="$$"
-      location="Quintin Paredes St."
+      priceLabel="₱1–500"
+      location="642 Yuchengco St."
       storyTitle="Dumpling House Notes"
       storyText="Known for delicate wrappers and comforting broth-forward dishes, Dong Bei Dumplings is a dependable stop for a quick but memorable Binondo meal."
       signatureTitle="Pork & Chive Dumplings"

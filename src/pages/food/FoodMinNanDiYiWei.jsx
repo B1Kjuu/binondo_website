@@ -10,8 +10,8 @@ export default function FoodMinNanDiYiWei({ onNavigate }) {
       heroImage="/images/food/minnan.jpg"
       heroAlt="Oyster panada"
       rating={4.1}
-      priceLabel="$"
-      location="Benavidez St., Binondo"
+      priceLabel="₱1–500"
+      location="832 Benavidez St."
       storyTitle="Savory Snacks"
       storyText="Known for oyster panada and flavorful cold cuts — a great savory snack during the crawl."
       signatureTitle="Oyster Panada"

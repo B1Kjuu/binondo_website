@@ -1,4 +1,14 @@
-export default function LoginPage({ onNavigate, onLogin }) {
+import { useState } from 'react'
+import { useAuth } from '../../context/AuthContext'
+
+export default function LoginPage({ onNavigate }) {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
+
+  const { login } = useAuth()
+
   const parchmentTexture =
     "url(\"data:image/svg+xml,%3Csvg%20width='100'%20height='100'%20viewBox='0%200%20100%20100'%20xmlns='http://www.w3.org/2000/svg'%3E%3Cpath%20d='M11%2018c3.866%200%207-3.134%207-7s-3.134-7-7-7-7%203.134-7%207%203.134%207%207%207zm48%2025c3.866%200%207-3.134%207-7s-3.134-7-7-7-7%203.134-7%207%203.134%207%207%207zm-43-7c1.657%200%203-1.343%203-3s-1.343-3-3-3-3%201.343-3%203%201.343%203%203%203zm63%2031c1.657%200%203-1.343%203-3s-1.343-3-3-3-3%201.343-3%203%201.343%203%203%203zM34%2090c1.657%200%203-1.343%203-3s-1.343-3-3-3-3%201.343-3%203%201.343%203%203%203zm56-76c1.105%200%202-.895%202-2s-.895-2-2-2-2%20.895-2%202%20.895%202%202%202zM12%2086c1.105%200%202-.895%202-2s-.895-2-2-2-2%20.895-2%202%20.895%202%202%202zm76-52c.552%200%201-.448%201-1s-.448-1-1-1-1%20.448-1%201%20.448%201%201%201zm-3-11c.552%200%201-.448%201-1s-.448-1-1-1-1%20.448-1%201%20.448%201%201%201zM14%207c.552%200%201-.448%201-1s-.448-1-1-1-1%20.448-1%201%20.448%201%201%201z'%20fill='%23610008'%20fill-opacity='0.03'%20fill-rule='evenodd'/%3E%3C/svg%3E\")"
 
@@ -51,21 +61,41 @@ export default function LoginPage({ onNavigate, onLogin }) {
             <div className="absolute inset-0 pointer-events-none opacity-20" style={{ backgroundImage: parchmentTexture }} />
             <form
               className="relative z-10 space-y-6"
-              onSubmit={(event) => {
-                event.preventDefault()
-                onLogin?.()
+              onSubmit={(e) => {
+                e.preventDefault()
+                setError('')
+                setLoading(true)
+                login(email, password)
+                  .then(() => {
+                    onNavigate?.('profile')
+                  })
+                  .catch((err) => {
+                    setError(err.message || 'Failed to sign in')
+                  })
+                  .finally(() => {
+                    setLoading(false)
+                  })
               }}
             >
+              {error && (
+                <div className="p-4 bg-error/10 border border-error rounded-lg">
+                  <p className="text-error text-sm font-medium">{error}</p>
+                </div>
+              )}
+
               <div className="space-y-1.5">
                 <label className="font-label text-xs font-bold uppercase tracking-widest text-secondary block ml-1" htmlFor="identity-mobile">
-                  Email or Username
+                  Email
                 </label>
                 <input
                   id="identity-mobile"
                   className="w-full bg-surface-container-highest border-none rounded-lg p-4 text-on-surface placeholder:text-outline/50 focus:ring-1 focus:ring-primary/20 transition-all font-body"
                   placeholder="e.g. archivist@binondo.ph"
-                  type="text"
-                  autoComplete="username"
+                  type="email"
+                  autoComplete="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
                 />
               </div>
 
@@ -87,17 +117,30 @@ export default function LoginPage({ onNavigate, onLogin }) {
                   placeholder="••••••••"
                   type="password"
                   autoComplete="current-password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
                 />
               </div>
 
               <button
-                className="w-full text-on-primary py-4 rounded-lg font-bold shadow-md hover:shadow-lg active:scale-[0.98] transition-all flex items-center justify-center gap-2 group bg-gradient-to-br from-primary to-primary-container"
+                disabled={loading}
+                className="w-full text-on-primary py-4 rounded-lg font-bold shadow-md hover:shadow-lg active:scale-[0.98] transition-all flex items-center justify-center gap-2 group bg-gradient-to-br from-primary to-primary-container disabled:opacity-50 disabled:cursor-not-allowed"
                 type="submit"
               >
-                <span>Sign In</span>
-                <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">
-                  login
-                </span>
+                {loading ? (
+                  <>
+                    <span className="animate-spin rounded-full h-5 w-5 border-2 border-on-primary border-t-transparent"></span>
+                    <span>Signing in...</span>
+                  </>
+                ) : (
+                  <>
+                    <span>Sign In</span>
+                    <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">
+                      login
+                    </span>
+                  </>
+                )}
               </button>
             </form>
 
@@ -171,7 +214,7 @@ export default function LoginPage({ onNavigate, onLogin }) {
           <div className="relative z-10 p-8 md:p-16 h-full flex flex-col justify-between">
             <div>
               <h1 className="font-headline font-black text-3xl md:text-5xl text-surface-container-lowest uppercase tracking-widest drop-shadow-lg">
-                Binondo Heritage
+                Explore Binondo
               </h1>
               <div className="h-1 w-24 bg-secondary-container mt-4" />
             </div>
@@ -204,25 +247,45 @@ export default function LoginPage({ onNavigate, onLogin }) {
 
             <form
               className="space-y-6"
-              onSubmit={(event) => {
-                event.preventDefault()
-                onLogin?.()
+              onSubmit={(e) => {
+                e.preventDefault()
+                setError('')
+                setLoading(true)
+                login(email, password)
+                  .then(() => {
+                    onNavigate?.('profile')
+                  })
+                  .catch((err) => {
+                    setError(err.message || 'Failed to sign in')
+                  })
+                  .finally(() => {
+                    setLoading(false)
+                  })
               }}
             >
+              {error && (
+                <div className="p-4 bg-error/10 border border-error rounded-lg">
+                  <p className="text-error text-sm font-medium">{error}</p>
+                </div>
+              )}
+
               <div className="space-y-2">
                 <label
                   className="block font-label text-sm font-bold text-on-surface-variant uppercase tracking-tighter"
                   htmlFor="identity"
                 >
-                  Email/Username
+                  Email
                 </label>
                 <div className="relative group">
                   <input
                     id="identity"
                     className="w-full bg-surface-container-highest border-none rounded px-4 py-3.5 text-on-surface font-body focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-low transition-all duration-300 outline-none"
-                    placeholder="Enter your identity"
-                    type="text"
-                    autoComplete="username"
+                    placeholder="your@email.com"
+                    type="email"
+                    autoComplete="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
                   />
                 </div>
               </div>
@@ -249,19 +312,32 @@ export default function LoginPage({ onNavigate, onLogin }) {
                     placeholder="••••••••"
                     type="password"
                     autoComplete="current-password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
                   />
                 </div>
               </div>
 
               <div className="pt-4 space-y-4">
                 <button
-                  className="w-full py-4 rounded font-label font-extrabold text-on-primary uppercase tracking-widest shadow-xl active:scale-[0.98] transition-transform flex items-center justify-center gap-2 group bg-gradient-to-br from-primary to-primary-container"
+                  disabled={loading}
+                  className="w-full py-4 rounded font-label font-extrabold text-on-primary uppercase tracking-widest shadow-xl active:scale-[0.98] transition-transform flex items-center justify-center gap-2 group bg-gradient-to-br from-primary to-primary-container disabled:opacity-50 disabled:cursor-not-allowed"
                   type="submit"
                 >
-                  <span>Sign In</span>
-                  <span className="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">
-                    arrow_right_alt
-                  </span>
+                  {loading ? (
+                    <>
+                      <span className="animate-spin rounded-full h-5 w-5 border-2 border-on-primary border-t-transparent"></span>
+                      <span>Signing in...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Sign In</span>
+                      <span className="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">
+                        arrow_right_alt
+                      </span>
+                    </>
+                  )}
                 </button>
 
                 <div className="flex items-center gap-4 py-2">

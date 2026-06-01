@@ -410,9 +410,9 @@ export default function FoodQuikSnack({ onNavigate }) {
 
             <div className="space-y-6">
               {[
-                ['location_on', 'Area', 'Carvajal St, Binondo, Manila'],
+                ['location_on', 'Area', '637 Carvajal St, Binondo, Manila'],
                 ['restaurant', 'Specialty', 'Indonesian Tauhu • Oyster Cake'],
-                ['payments', 'Price Range', '$'],
+                ['payments', 'Price Range', '₱200–400'],
               ].map(([icon, title, detail]) => (
                 <div className="flex gap-4" key={title}>
                   <span className="material-symbols-outlined text-secondary">

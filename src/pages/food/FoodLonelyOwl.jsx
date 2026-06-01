@@ -10,8 +10,8 @@ export default function FoodLonelyOwl({ onNavigate }) {
       heroImage="/images/food/lonelyowl.jpg"
       heroAlt="Lonely Owl desserts"
       rating={4.4}
-      priceLabel="$$"
-      location="Lucky Chinatown Mall"
+      priceLabel="₱1–200"
+      location="Lucky Chinatown Mall, Lachambre St"
       storyTitle="Modern Dessert Stop"
       storyText="A contemporary dessert brand serving creative fruit teas and Hong Kong-style treats — a cooling stop during the crawl."
       signatureTitle="Dragon Lemon Tea"

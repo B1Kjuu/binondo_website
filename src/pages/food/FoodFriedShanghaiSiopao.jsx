@@ -5,13 +5,13 @@ export default function FoodFriedShanghaiSiopao({ onNavigate }) {
     <FoodDetailTemplate
       onNavigate={onNavigate}
       badge="Specialty Bun"
-      title="Fried Shanghai Siopao"
+      title="Shanghai Fried Siopao"
       subtitle="A specialty bun with a crisp exterior and juicy bola-bola filling that turns a simple snack into the main event."
       heroImage="/images/food/fried-shanghai-siopao.jpg"
       heroAlt="Fried Shanghai siopao"
       rating={4.6}
-      priceLabel="$"
-      location="Ongpin Street"
+      priceLabel="₱1–500"
+      location="828 Ongpin St."
       storyTitle="Bun of the Crowd"
       storyText="This is the sort of specialty item that justifies a queue. It’s singular enough to become a crawl memory on its own."
       signatureTitle="Fried Shanghai Siopao"

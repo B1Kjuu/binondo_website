@@ -20,7 +20,7 @@ export default function MapPage({ onNavigate, mapTarget }) {
         <div className="flex items-center justify-between gap-4 px-5 py-4 bg-surface-container-low border-b border-outline-variant/20">
           <div>
             <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-secondary">Map Target</p>
-            <h1 className="font-headline text-2xl font-black text-primary">{target.label ?? 'Binondo Heritage Core'}</h1>
+            <h1 className="font-headline text-2xl font-black text-primary">{target.label ?? 'Explore Binondo Core'}</h1>
           </div>
           <a
             className="inline-flex items-center gap-2 rounded-full bg-primary text-on-primary px-4 py-2 font-bold"
