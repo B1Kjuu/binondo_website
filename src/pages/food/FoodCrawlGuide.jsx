@@ -63,9 +63,9 @@ export default function FoodCrawlGuide({ onNavigate }) {
       page: 'food-tasty-dumplings',
       street: 'quintin-paredes',
       category: 'street-food',
-      image: '/images/food/minnan.jpg',
+      title: 'Tasty Dumplings',
+      image: '/images/food/tasty-dumplings.jpg',
       badge: 'Street Favorite',
-      image: '/images/food/chef-panda-dimsum-house.jpg',
       address: 'Norberto Ty St.',
       price: '₱1–500',
     },
@@ -125,7 +125,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
       category: 'cafe',
       badge: 'Cafe',
       title: 'Apologue Coffee & Pastry',
-      image: '/images/food/masuki.jpg',
+      image: '/images/food/apologue.jpg',
       address: '934 Benavidez St',
       price: '₱1-500',
     },
@@ -185,7 +185,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
       category: 'noodle-houses',
       badge: 'Noodle House',
       title: 'Masuki',
-      image: '/images/food/toho.jpg',
+      image: '/images/food/masuki.jpg',
       address: '931 Benavidez St',
       price: '₱1–500',
     },
@@ -195,7 +195,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
       category: 'street-food',
       badge: 'Specialty',
       title: 'Min Nan Di Yi Wei',
-      image: '/images/food/yingying.jpg',
+      image: '/images/food/minnan.jpg',
       address: '832 Benavidez St.',
       price: '₱1–500',
     },
@@ -205,7 +205,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
       category: 'panciteria',
       badge: 'Historic',
       title: 'Toho Panciteria Antigua',
-      image: '/images/food/binondo-food-crawl.jpg',
+      image: '/images/food/toho.jpg',
       address: '422 Tomas Pinpin St.',
       price: '₱1–500',
     },
@@ -215,7 +215,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
       category: 'tea-house',
       badge: 'Tea House',
       title: 'Ying Ying Tea House',
-      image: '/images/food/binondo-food-crawl.jpg',
+      image: '/images/food/yingying.jpg',
       address: '233-235 Yuchengco St.',
       price: '₱1–500',
     },
@@ -487,7 +487,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
                 <img
                   className="w-full h-full object-cover"
                   alt="Stack of hopia pastries"
-                  src="/images/food/engbeetin-hopia.jpg"
+                  src="/images/food/engbeetin-store.jpg"
                 />
                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-1">
                   <span
@@ -1108,7 +1108,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
                 <img
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   alt="Stack of hopia pastries"
-                  src="/images/food/engbeetin-hopia.jpg"
+                  src="/images/food/engbeetin-store.jpg"
                 />
               </div>
               <div className="p-8">
@@ -1180,7 +1180,7 @@ export default function FoodCrawlGuide({ onNavigate }) {
                 <img
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   alt="Traditional Cantonese banquet table"
-                  src="/images/food/president-grand-palace.jpg"
+                  src="/images/food/president.jpg"
                 />
               </div>
               <div className="p-8">

@@ -7,7 +7,7 @@ export default function FoodApologue({ onNavigate }) {
       badge="Cafe"
       title="Apologue Coffee & Pastry"
       subtitle="A modern sit-down cafe with Binondo-inspired desserts and specialty coffee."
-      heroImage="/images/food/binondo-food-crawl.jpg"
+      heroImage="/images/food/apologue.jpg"
       heroAlt="Apologue interior and pastries"
       rating={4.6}
       priceLabel="₱1-500"
@@ -16,7 +16,7 @@ export default function FoodApologue({ onNavigate }) {
       storyText="A welcome modern stop on the crawl; cozy interiors and excellent tiramisu make this a great rest point between heritage spots."
       signatureTitle="Binondo Latte"
       signatureText="Ube-infused latte — a local twist on classic cafe offerings."
-      signatureImage="/images/food/binondo-food-crawl.jpg"
+      signatureImage="/images/food/apologue.jpg"
       signatureAlt="Binondo latte and pastry"
       detailItems={[
         { icon: 'schedule', label: 'Hours', value: '9AM - 11PM daily' },
